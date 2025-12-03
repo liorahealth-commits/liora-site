@@ -16,27 +16,31 @@
         font-size: 1rem;
       }
       <script>
-// FAQ FIX - SIMPLE
+// FAQ FIX - CLICK ANYWHERE ON THE QUESTION
 document.addEventListener('DOMContentLoaded', function() {
-  // 1. HIDE all FAQ answers
+  // Hide all answers initially
   const answers = document.querySelectorAll('.faq91-container12, .faq91-container15, .faq91-container18, .faq91-container21');
   answers.forEach(a => a.style.display = 'none');
   
-  // 2. HIDE all minus icons
+  // Hide all minus icons initially
   const minusIcons = document.querySelectorAll('.faq91-icon12, .faq91-icon16, .faq91-icon20, .faq91-icon24');
   minusIcons.forEach(icon => icon.style.display = 'none');
   
-  // 3. SETUP click handlers
-  const triggers = document.querySelectorAll('.faq91-trigger1, .faq91-trigger2, .faq91-trigger3, .faq91-trigger4');
+  // Set up click handlers for EACH FAQ ITEM (not just triggers)
+  const faqItems = document.querySelectorAll('.faq91-faq1, .faq91-faq2, .faq91-faq3, .faq91-faq4');
   
-  triggers.forEach(trigger => {
-    trigger.style.cursor = 'pointer';
+  faqItems.forEach(faq => {
+    const trigger = faq.querySelector('[class*="trigger"]');
+    const answer = faq.querySelector('[class*="container"]');
+    const plusIcon = faq.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
+    const minusIcon = faq.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
     
-    trigger.addEventListener('click', function() {
-      const faq = this.closest('[class*="faq91-faq"]');
-      const answer = faq.querySelector('[class*="container"]');
-      const plusIcon = this.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
-      const minusIcon = this.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
+    // Make the ENTIRE question area clickable
+    trigger.style.cursor = 'pointer';
+    trigger.style.userSelect = 'none';
+    
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent event bubbling
       
       const isOpen = answer.style.display === 'block';
       
@@ -48,9 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (minusIcon) minusIcon.style.display = isOpen ? 'none' : 'block';
     });
   });
+  
+  console.log('FAQ fix loaded - click any question');
 });
 </script>
-
       body {
         font-weight: 400;
         font-style:normal;
