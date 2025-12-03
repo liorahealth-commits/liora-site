@@ -15,8 +15,41 @@
         font-family: Lato;
         font-size: 1rem;
       }
-      <script defer src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
-<script defer src="https://unpkg.com/@teleporthq/react-components/dist/animate-on-reveal.umd.js"></script>
+      <script>
+// FAQ FIX - SIMPLE
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. HIDE all FAQ answers
+  const answers = document.querySelectorAll('.faq91-container12, .faq91-container15, .faq91-container18, .faq91-container21');
+  answers.forEach(a => a.style.display = 'none');
+  
+  // 2. HIDE all minus icons
+  const minusIcons = document.querySelectorAll('.faq91-icon12, .faq91-icon16, .faq91-icon20, .faq91-icon24');
+  minusIcons.forEach(icon => icon.style.display = 'none');
+  
+  // 3. SETUP click handlers
+  const triggers = document.querySelectorAll('.faq91-trigger1, .faq91-trigger2, .faq91-trigger3, .faq91-trigger4');
+  
+  triggers.forEach(trigger => {
+    trigger.style.cursor = 'pointer';
+    
+    trigger.addEventListener('click', function() {
+      const faq = this.closest('[class*="faq91-faq"]');
+      const answer = faq.querySelector('[class*="container"]');
+      const plusIcon = this.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
+      const minusIcon = this.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
+      
+      const isOpen = answer.style.display === 'block';
+      
+      // Toggle answer
+      answer.style.display = isOpen ? 'none' : 'block';
+      
+      // Toggle icons
+      if (plusIcon) plusIcon.style.display = isOpen ? 'block' : 'none';
+      if (minusIcon) minusIcon.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+});
+</script>
 
       body {
         font-weight: 400;
