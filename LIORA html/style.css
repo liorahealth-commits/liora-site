@@ -2347,6 +2347,107 @@
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
+
+/* ===== Additional Recommendations Section ===== */
+.secondary-products-section {
+  padding: var(--spacing-4xl) 0;
+  background: var(--color-surface);
+}
+
+.secondary-products-wrapper {
+  width: 100%;
+}
+
+.secondary-products-container {
+  width: 100%;
+  padding: 0 var(--spacing-xl);
+}
+
+.secondary-products-content {
+  max-width: 800px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.secondary-products-icon {
+  color: var(--color-on-primary);
+  width: 72px;
+  height: 72px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  align-items: center;
+  border-radius: var(--border-radius-lg);
+  justify-content: center;
+}
+
+.secondary-products-title {
+  color: var(--color-on-surface);
+  font-size: var(--font-size-3xl);
+  font-style: var(--font-style-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  text-transform: var(--text-transform-heading);
+  margin-bottom: var(--spacing-lg);
+}
+
+.secondary-products-description {
+  opacity: 0.85;
+  font-size: var(--font-size-lg);
+  font-style: var(--font-style-subheading);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  max-width: 680px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.secondary-products-cta {
+  margin-top: var(--spacing-xl);
+}
+
+/* Responsive adjustments */
+@media(max-width: 991px) {
+  .secondary-products-section {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .secondary-products-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .secondary-products-description {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media(max-width: 767px) {
+  .secondary-products-section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .secondary-products-container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .secondary-products-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .secondary-products-title {
+    font-size: var(--font-size-xl);
+  }
+}
+/* ===== END Additional Recommendations Section ===== */
  
 @media(max-width: 991px) {
   .thq-grid-4 {
