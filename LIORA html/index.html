@@ -1591,42 +1591,88 @@
                 })()
               });
             </script>
-            <!-- FAQ Toggle JavaScript -->
+<!-- SIMPLE, RELIABLE FAQ TOGGLE - REPLACE EXISTING SCRIPT -->
 <script>
-// FAQ SIMPLE WORKING FIX
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('FAQ fix loading...');
+  console.log('Initializing FAQ toggle...');
   
-  const triggers = document.querySelectorAll('.faq91-trigger1, .faq91-trigger2, .faq91-trigger3, .faq91-trigger4');
-  
-  triggers.forEach(trigger => {
-    trigger.style.cursor = 'pointer';
+  // Function to handle FAQ toggle
+  function setupFAQToggle() {
+    // Select all FAQ triggers
+    const triggers = [
+      { trigger: '.faq91-trigger1', container: '.faq91-container12', plus: '.faq91-icon10', minus: '.faq91-icon12' },
+      { trigger: '.faq91-trigger2', container: '.faq91-container15', plus: '.faq91-icon14', minus: '.faq91-icon16' },
+      { trigger: '.faq91-trigger3', container: '.faq91-container18', plus: '.faq91-icon18', minus: '.faq91-icon20' },
+      { trigger: '.faq91-trigger4', container: '.faq91-container21', plus: '.faq91-icon22', minus: '.faq91-icon24' }
+    ];
     
-    trigger.addEventListener('click', function() {
-      console.log('FAQ clicked');
+    triggers.forEach(({ trigger, container, plus, minus }) => {
+      const triggerEl = document.querySelector(trigger);
+      const containerEl = document.querySelector(container);
+      const plusIcon = document.querySelector(plus);
+      const minusIcon = document.querySelector(minus);
       
-      // Get the FAQ item
-      const faqItem = this.closest('[class*="faq91-faq"]');
-      const answer = faqItem.querySelector('[class*="container"]');
-      const plusIcon = this.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
-      const minusIcon = this.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
-      
-      // Toggle active class
-      const isActive = answer.classList.contains('active');
-      
-      if (isActive) {
-        answer.classList.remove('active');
-        if (plusIcon) plusIcon.style.display = 'block';
-        if (minusIcon) minusIcon.style.display = 'none';
+      if (triggerEl && containerEl) {
+        // Make it obvious it's clickable
+        triggerEl.style.cursor = 'pointer';
+        
+        triggerEl.addEventListener('click', function(e) {
+          e.stopPropagation();
+          
+          console.log(`FAQ clicked: ${trigger}`);
+          
+          // Check if this FAQ is already active
+          const isActive = containerEl.classList.contains('active');
+          
+          if (isActive) {
+            // Close this FAQ
+            containerEl.classList.remove('active');
+            if (plusIcon) plusIcon.style.display = 'block';
+            if (minusIcon) minusIcon.style.display = 'none';
+          } else {
+            // Close all other FAQs first (optional - remove if you want multiple open)
+            triggers.forEach(({ container: otherContainer }) => {
+              const otherEl = document.querySelector(otherContainer);
+              const otherPlus = document.querySelector(triggers.find(t => t.container === otherContainer)?.plus);
+              const otherMinus = document.querySelector(triggers.find(t => t.container === otherContainer)?.minus);
+              
+              if (otherEl && otherEl !== containerEl) {
+                otherEl.classList.remove('active');
+                if (otherPlus) otherPlus.style.display = 'block';
+                if (otherMinus) otherMinus.style.display = 'none';
+              }
+            });
+            
+            // Open this FAQ
+            containerEl.classList.add('active');
+            if (plusIcon) plusIcon.style.display = 'none';
+            if (minusIcon) minusIcon.style.display = 'block';
+          }
+        });
+        
+        console.log(`Set up FAQ: ${trigger} -> ${container}`);
       } else {
-        answer.classList.add('active');
-        if (plusIcon) plusIcon.style.display = 'none';
-        if (minusIcon) minusIcon.style.display = 'block';
+        console.warn(`Could not find elements for: ${trigger} or ${container}`);
+      }
+    });
+    
+    console.log('FAQ toggle setup complete');
+  }
+  
+  // Initialize FAQ toggle
+  setupFAQToggle();
+  
+  // Optional: Add click handlers to FAQ questions too
+  document.querySelectorAll('.faq91-faq1-question, .faq91-faq2-question1, .faq91-faq2-question2, .faq91-faq2-question3').forEach(question => {
+    question.style.cursor = 'pointer';
+    question.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const trigger = this.closest('[class*="trigger"]');
+      if (trigger) {
+        trigger.click();
       }
     });
   });
-  
-  console.log('FAQ fix loaded');
 });
 </script>
           </div>
