@@ -15,6 +15,34 @@
         font-family: Lato;
         font-size: 1rem;
       }
+      <script>
+// FAQ Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqTriggers = document.querySelectorAll('[class*="trigger"]');
+  
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      // Find the answer/container
+      const parent = this.closest('[class*="faq"]');
+      const answer = parent.querySelector('[class*="container"]');
+      const icons = this.querySelectorAll('svg');
+      
+      // Toggle visibility
+      if (answer.style.display === 'block' || answer.classList.contains('active')) {
+        answer.style.display = 'none';
+        answer.classList.remove('active');
+        // Rotate icons back
+        icons.forEach(icon => icon.style.transform = 'rotate(0deg)');
+      } else {
+        answer.style.display = 'block';
+        answer.classList.add('active');
+        // Rotate icons
+        icons.forEach(icon => icon.style.transform = 'rotate(180deg)');
+      }
+    });
+  });
+});
+</script>
 
       body {
         font-weight: 400;
