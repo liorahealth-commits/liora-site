@@ -15,48 +15,8 @@
         font-family: Lato;
         font-size: 1rem;
       }
-      <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all FAQ items
-  const faqItems = document.querySelectorAll('.faq91-faq1, .faq91-faq2, .faq91-faq3, .faq91-faq4');
-  
-  faqItems.forEach(item => {
-    const trigger = item.querySelector('[class*="trigger"]');
-    const answer = item.querySelector('[class*="container"]');
-    const plusIcon = trigger.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
-    const minusIcon = trigger.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
-    
-    // Initialize: hide answers, show plus, hide minus
-    if (answer) answer.style.display = 'none';
-    if (plusIcon) plusIcon.style.display = 'block';
-    if (minusIcon) minusIcon.style.display = 'none';
-    
-    // Add click event
-    trigger.addEventListener('click', function() {
-      const isOpen = answer.style.display === 'block';
-      
-      // Toggle answer
-      answer.style.display = isOpen ? 'none' : 'block';
-      
-      // Toggle icons
-      if (plusIcon) plusIcon.style.display = isOpen ? 'block' : 'none';
-      if (minusIcon) minusIcon.style.display = isOpen ? 'none' : 'block';
-      
-      // Add/remove active class for CSS animations
-      if (isOpen) {
-        answer.classList.remove('active');
-        trigger.classList.remove('active');
-      } else {
-        answer.classList.add('active');
-        trigger.classList.add('active');
-      }
-    });
-    
-    // Make trigger clickable
-    trigger.style.cursor = 'pointer';
-  });
-});
-</script>
+      <script defer src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+<script defer src="https://unpkg.com/@teleporthq/react-components/dist/animate-on-reveal.umd.js"></script>
 
       body {
         font-weight: 400;
