@@ -2797,18 +2797,36 @@
     justify-content: space-between;
   }
 }
-/* ===== FAQ SIMPLE SOLUTION - ALWAYS EXPANDED ===== */
+/* ===== FAQ 100% WORKING FIX ===== */
 .faq91-container12,
 .faq91-container15,
 .faq91-container18,
 .faq91-container21 {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  padding: var(--dl-layout-space-unit) !important;
+  display: none !important;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: all 0.3s ease;
 }
 
-/* Hide the minus icons (keep only plus) */
+.faq91-container12.active,
+.faq91-container15.active,
+.faq91-container18.active,
+.faq91-container21.active {
+  display: flex !important;
+  opacity: 1;
+  max-height: 500px;
+  padding: var(--dl-layout-space-unit) !important;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .faq91-icon12,
 .faq91-icon16,
 .faq91-icon20,
@@ -2816,20 +2834,36 @@
   display: none !important;
 }
 
-/* Show only the plus icons (as decorative) */
 .faq91-icon10,
 .faq91-icon14,
 .faq91-icon18,
 .faq91-icon22 {
   display: block !important;
-  opacity: 0.5;
 }
 
-/* Remove pointer cursor since no more clicking */
 .faq91-trigger1,
 .faq91-trigger2,
 .faq91-trigger3,
 .faq91-trigger4 {
-  cursor: default !important;
+  cursor: pointer !important;
+  user-select: none !important;
 }
-/* ===== END FAQ SIMPLE SOLUTION ===== */
+
+.faq91-trigger1 *,
+.faq91-trigger2 *,
+.faq91-trigger3 *,
+.faq91-trigger4 * {
+  pointer-events: none;
+}
+
+.faq91-icon10,
+.faq91-icon12,
+.faq91-icon14,
+.faq91-icon16,
+.faq91-icon18,
+.faq91-icon20,
+.faq91-icon22,
+.faq91-icon24 {
+  pointer-events: auto !important;
+}
+/* ===== END FAQ FIX ===== */
