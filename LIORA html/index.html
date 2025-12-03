@@ -1591,6 +1591,44 @@
                 })()
               });
             </script>
+            <!-- FAQ Toggle JavaScript -->
+<script>
+// FAQ SIMPLE WORKING FIX
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('FAQ fix loading...');
+  
+  const triggers = document.querySelectorAll('.faq91-trigger1, .faq91-trigger2, .faq91-trigger3, .faq91-trigger4');
+  
+  triggers.forEach(trigger => {
+    trigger.style.cursor = 'pointer';
+    
+    trigger.addEventListener('click', function() {
+      console.log('FAQ clicked');
+      
+      // Get the FAQ item
+      const faqItem = this.closest('[class*="faq91-faq"]');
+      const answer = faqItem.querySelector('[class*="container"]');
+      const plusIcon = this.querySelector('[class*="icon10"], [class*="icon14"], [class*="icon18"], [class*="icon22"]');
+      const minusIcon = this.querySelector('[class*="icon12"], [class*="icon16"], [class*="icon20"], [class*="icon24"]');
+      
+      // Toggle active class
+      const isActive = answer.classList.contains('active');
+      
+      if (isActive) {
+        answer.classList.remove('active');
+        if (plusIcon) plusIcon.style.display = 'block';
+        if (minusIcon) minusIcon.style.display = 'none';
+      } else {
+        answer.classList.add('active');
+        if (plusIcon) plusIcon.style.display = 'none';
+        if (minusIcon) minusIcon.style.display = 'block';
+      }
+    });
+  });
+  
+  console.log('FAQ fix loaded');
+});
+</script>
           </div>
         </div>
           <!--Footer component-->
