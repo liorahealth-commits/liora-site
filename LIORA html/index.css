@@ -422,21 +422,6 @@
   height: 24px;
 }
  
-.faq91-container12 {
-  display: flex;
-  padding: var(--dl-layout-space-unit);
-  align-self: stretch;
-  align-items: flex-start;
-  animation-name: fadeIn;
-  flex-direction: row;
-  animation-delay: 0s;
-  justify-content: space-between;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
- 
 .faq91-faq2 {
   width: 100%;
   display: flex;
@@ -478,21 +463,6 @@
   height: 24px;
 }
  
-.faq91-container15 {
-  display: flex;
-  padding: var(--dl-layout-space-unit);
-  align-self: stretch;
-  align-items: flex-start;
-  animation-name: fadeIn;
-  flex-direction: row;
-  animation-delay: 0s;
-  justify-content: space-between;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
- 
 .faq91-faq3 {
   border-color: var(--dl-color-theme-neutral-dark);
   border-width: 1px;
@@ -530,21 +500,6 @@
   height: 24px;
 }
  
-.faq91-container18 {
-  display: flex;
-  padding: var(--dl-layout-space-unit);
-  align-self: stretch;
-  align-items: flex-start;
-  animation-name: fadeIn;
-  flex-direction: row;
-  animation-delay: 0s;
-  justify-content: space-between;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
- 
 .faq91-faq4 {
   border-color: var(--dl-color-theme-neutral-dark);
   border-width: 1px;
@@ -580,21 +535,6 @@
 .faq91-icon24 {
   width: 24px;
   height: 24px;
-}
- 
-.faq91-container21 {
-  display: flex;
-  padding: var(--dl-layout-space-unit);
-  align-self: stretch;
-  align-items: flex-start;
-  animation-name: fadeIn;
-  flex-direction: row;
-  animation-delay: 0s;
-  justify-content: space-between;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
 }
  
 .home-fragment21 {
