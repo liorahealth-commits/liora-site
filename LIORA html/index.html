@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEGD6PZ4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ESEGD6PZ4J');
+</script>
 
     <style data-tag="reset-style-sheet">
       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
@@ -1920,5 +1929,67 @@
           </div>
       </div>
     </div>
+    <!-- Professional Cookie Banner (matches LIORA Health design) -->
+<div id="cookieConsentBanner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 1000; font-family: 'Lato', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+    <div style="flex: 1; min-width: 300px;">
+      <p style="margin: 0; font-size: 15px; line-height: 1.5;">
+        <strong style="font-weight: 600;">We value your privacy</strong><br>
+        LIORA Health uses cookies to enhance your browsing experience, analyze site traffic, and provide personalized content. By clicking "Accept", you consent to our use of cookies as described in our 
+        <a href="https://drive.google.com/file/d/1AoM-V5crCrtSNsqCUBUdNL3Eo_49qCG1/view?usp=sharing" target="_blank" style="color: #fff; text-decoration: underline;">Cookie Policy</a>.
+      </p>
+    </div>
+    <div style="display: flex; gap: 10px; flex-shrink: 0;">
+      <button onclick="declineCookies()" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+        Decline
+      </button>
+      <button onclick="acceptCookies()" style="background: white; border: none; color: #764ba2; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        Accept All
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Cookie Consent Logic
+function acceptCookies() {
+  localStorage.setItem('liora_cookies', 'accepted');
+  document.getElementById('cookieConsentBanner').style.display = 'none';
+}
+
+function declineCookies() {
+  localStorage.setItem('liora_cookies', 'declined');
+  document.getElementById('cookieConsentBanner').style.display = 'none';
+  // Disable Google Analytics if declined
+  window['ga-disable-G-8ECNVB1KHJ'] = true; // REPLACE WITH YOUR GA ID
+}
+
+// Show banner if not decided in last 365 days
+function shouldShowBanner() {
+  const decision = localStorage.getItem('liora_cookies');
+  const decisionTime = localStorage.getItem('liora_cookies_time');
+  
+  if (!decision) return true;
+  if (decision === 'declined') return false;
+  
+  // If accepted more than 365 days ago, show again
+  if (decisionTime) {
+    const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
+    return parseInt(decisionTime) < oneYearAgo;
+  }
+  
+  return false;
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (shouldShowBanner()) {
+    // Small delay for better UX
+    setTimeout(() => {
+      document.getElementById('cookieConsentBanner').style.display = 'block';
+    }, 1000);
+  }
+});
+</script>
   </body>
 </html>
