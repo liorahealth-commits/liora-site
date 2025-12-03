@@ -1011,6 +1011,30 @@
   color: var(--color-on-primary);
   padding-left: var(--spacing-lg);
 }
+
+/* Hide FAQ answers by default */
+.faq91-container12,
+.faq91-container15,
+.faq91-container18,
+.faq91-container21 {
+  display: none !important;
+}
+
+/* Show when active */
+.faq91-container12.active,
+.faq91-container15.active,
+.faq91-container18.active,
+.faq91-container21.active {
+  display: flex !important;
+}
+
+/* Pointer cursor for clickable areas */
+.faq91-trigger1,
+.faq91-trigger2,
+.faq91-trigger3,
+.faq91-trigger4 {
+  cursor: pointer;
+}
  
 .footer {
   color: var(--color-on-surface);
