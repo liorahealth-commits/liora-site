@@ -2797,3 +2797,34 @@
     justify-content: space-between;
   }
 }
+/* Make ENTIRE FAQ trigger area clickable */
+.faq91-trigger1,
+.faq91-trigger2,
+.faq91-trigger3,
+.faq91-trigger4 {
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Ensure pointer events work on all children */
+.faq91-trigger1 *,
+.faq91-trigger2 *,
+.faq91-trigger3 *,
+.faq91-trigger4 * {
+  pointer-events: none; /* Lets click pass through to parent */
+}
+
+/* Except SVG icons - they should handle pointer events */
+.faq91-icon10,
+.faq91-icon12,
+.faq91-icon14,
+.faq91-icon16,
+.faq91-icon18,
+.faq91-icon20,
+.faq91-icon22,
+.faq91-icon24 {
+  pointer-events: auto !important;
+}
