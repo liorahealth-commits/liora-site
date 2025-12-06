@@ -897,5 +897,34 @@
       });
     });
   </script>
+    <script>
+  // Fix Worldwide Products to match Region-Restricted Products
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the first card from Region-Restricted section
+    const sampleCard = document.querySelector('#region-restricted .product-card');
+    const worldCards = document.querySelectorAll('#non-restricted .product-card');
+    
+    if (sampleCard && worldCards.length > 0) {
+      // Apply the exact same width to all Worldwide cards
+      const computedStyle = window.getComputedStyle(sampleCard);
+      worldCards.forEach(card => {
+        card.style.width = computedStyle.width;
+        card.style.maxWidth = computedStyle.maxWidth;
+        card.style.minWidth = computedStyle.minWidth;
+      });
+      
+      // Also fix the grid container
+      const regionGrid = document.querySelector('#region-restricted .product-grid');
+      const worldGrid = document.querySelector('#non-restricted .product-grid');
+      
+      if (regionGrid && worldGrid) {
+        const gridStyle = window.getComputedStyle(regionGrid);
+        worldGrid.style.display = gridStyle.display;
+        worldGrid.style.gridTemplateColumns = gridStyle.gridTemplateColumns;
+        worldGrid.style.gap = gridStyle.gap;
+      }
+    }
+  });
+</script>
 </body>
 </html>
