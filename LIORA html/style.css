@@ -2897,6 +2897,14 @@
     width: 100%;
     justify-content: space-between;
   }
+  .geo-notice {
+  font-size: 0.8rem;
+  color: #d97706;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
 }
 /* ===== FAQ 100% WORKING FIX - UPDATED ===== */
 .faq91-container12,
