@@ -262,6 +262,27 @@
         margin: 0 0.5rem;
       }
     }
+        /* Ensure 2 rows of 3 on desktop */
+    @media (min-width: 769px) {
+      #non-restricted .product-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+    
+    /* Fix mobile padding alignment */
+    @media (max-width: 768px) {
+      #region-restricted,
+      #non-restricted,
+      .non-restricted-section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      .product-grid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -897,33 +918,88 @@
       });
     });
   </script>
-    <script>
+   <script>
   // Fix Worldwide Products to match Region-Restricted Products
   document.addEventListener('DOMContentLoaded', function() {
-    // Get the first card from Region-Restricted section
-    const sampleCard = document.querySelector('#region-restricted .product-card');
-    const worldCards = document.querySelectorAll('#non-restricted .product-card');
+    // Fix grid to be 2 rows of 3 (like region-restricted)
+    const worldGrid = document.querySelector('#non-restricted .product-grid');
+    if (worldGrid) {
+      worldGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+      worldGrid.style.gap = '2rem';
+    }
     
-    if (sampleCard && worldCards.length > 0) {
-      // Apply the exact same width to all Worldwide cards
-      const computedStyle = window.getComputedStyle(sampleCard);
-      worldCards.forEach(card => {
-        card.style.width = computedStyle.width;
-        card.style.maxWidth = computedStyle.maxWidth;
-        card.style.minWidth = computedStyle.minWidth;
-      });
+    // Fix card widths
+    const worldCards = document.querySelectorAll('#non-restricted .product-card');
+    worldCards.forEach(card => {
+      card.style.width = '100%';
+      card.style.maxWidth = '100%';
+    });
+    
+    // Fix mobile burger menu - add "All Offers" link
+    const mobileMenu = document.querySelector('.navbar2-links2');
+    if (mobileMenu) {
+      // Check if "All Offers" link already exists in mobile menu
+      const hasAllOffers = Array.from(mobileMenu.querySelectorAll('a')).some(a => 
+        a.textContent.includes('All Offers') || a.getAttribute('href') === 'regional-segmented-offers.html'
+      );
       
-      // Also fix the grid container
-      const regionGrid = document.querySelector('#region-restricted .product-grid');
-      const worldGrid = document.querySelector('#non-restricted .product-grid');
-      
-      if (regionGrid && worldGrid) {
-        const gridStyle = window.getComputedStyle(regionGrid);
-        worldGrid.style.display = gridStyle.display;
-        worldGrid.style.gridTemplateColumns = gridStyle.gridTemplateColumns;
-        worldGrid.style.gap = gridStyle.gap;
+      if (!hasAllOffers) {
+        // Add "All Offers" link to mobile menu
+        const allOffersLink = document.createElement('a');
+        allOffersLink.href = 'regional-segmented-offers.html';
+        allOffersLink.className = 'thq-link thq-body-small';
+        allOffersLink.innerHTML = '<span>All Offers</span>';
+        mobileMenu.appendChild(allOffersLink);
       }
     }
+    
+    // Fix alignment on mobile
+    function fixMobileAlignment() {
+      const isMobile = window.innerWidth <= 768;
+      const regionSection = document.getElementById('region-restricted');
+      const worldSection = document.getElementById('non-restricted');
+      const footer = document.querySelector('.footer-container1');
+      
+      if (isMobile) {
+        // Force same padding for both sections on mobile
+        if (regionSection && worldSection) {
+          regionSection.style.padding = '2rem 1rem';
+          worldSection.style.padding = '2rem 1rem';
+        }
+        
+        // Fix footer alignment
+        if (footer) {
+          footer.style.padding = '0';
+          footer.style.margin = '0';
+          const footerContent = footer.querySelector('.footer-content');
+          if (footerContent) {
+            footerContent.style.padding = '0 1rem';
+            footerContent.style.maxWidth = '100%';
+          }
+        }
+        
+        // Update grid to single column on mobile
+        if (worldGrid) {
+          worldGrid.style.gridTemplateColumns = '1fr';
+          worldGrid.style.gap = '1.5rem';
+        }
+      } else {
+        // Reset for desktop
+        if (regionSection && worldSection) {
+          regionSection.style.padding = '';
+          worldSection.style.padding = '';
+        }
+        
+        if (worldGrid) {
+          worldGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+          worldGrid.style.gap = '2rem';
+        }
+      }
+    }
+    
+    // Run on load and resize
+    fixMobileAlignment();
+    window.addEventListener('resize', fixMobileAlignment);
   });
 </script>
 </body>
