@@ -64,6 +64,126 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
     
     <style>
+      /* Navbar Styles */
+      .navbar2-container {
+        background: white;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+      }
+
+      .navbar2-navbar-interactive {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar2-text1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a202c;
+      }
+
+      .navbar2-text1 a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .navbar2-desktop-menu {
+        display: flex;
+      }
+
+      .navbar2-links1 {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .navbar2-links1 a {
+        color: #4a5568;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .navbar2-links1 a:hover {
+        color: #3b82f6;
+      }
+
+      /* Burger Menu Styles */
+      .navbar2-burger-menu {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .navbar2-icon10 {
+        width: 24px;
+        height: 24px;
+        fill: #4a5568;
+      }
+
+      /* Mobile Menu Styles */
+      .navbar2-mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        z-index: 1001;
+        display: none;
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      .navbar2-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 40px;
+      }
+
+      .navbar2-close-menu {
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .navbar2-icon12 {
+        width: 24px;
+        height: 24px;
+        fill: #4a5568;
+      }
+
+      .navbar2-links2 {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .navbar2-links2 a {
+        color: #1a202c;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 15px 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        display: block;
+      }
+
+      .navbar2-links2 a:hover {
+        background-color: #f1f5f9;
+      }
+
       /* Policy-specific styles */
       .policy-container {
         max-width: 1200px;
@@ -73,27 +193,40 @@
       
       .policy-header {
         text-align: center;
-        margin-bottom: 40px;
-        padding-bottom: 25px;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
         border-bottom: 2px solid #e2e8f0;
       }
       
       .logo-container {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      
+      .logo-wrapper {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        display: inline-block;
+        margin: 0 auto;
       }
       
       .liora-logo {
-        height: 80px;
-        width: auto;
+        width: 600px;
+        max-width: 90%;
+        height: auto;
         margin: 0 auto;
+        display: block;
       }
       
       .policy-header h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 2.8rem;
+        font-size: 3.2rem;
         font-weight: 700;
-        color: #1e3a8a; /* Navy blue */
-        margin-bottom: 10px;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        margin-top: 30px;
       }
       
       .policy-header .last-updated {
@@ -101,22 +234,23 @@
         color: #64748b;
         font-weight: 500;
         background: #f1f5f9;
-        padding: 8px 20px;
-        border-radius: 20px;
+        padding: 10px 25px;
+        border-radius: 25px;
         display: inline-block;
+        margin-top: 10px;
       }
       
       .policy-content {
         background: white;
         border-radius: 12px;
-        padding: 40px;
+        padding: 50px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         max-width: 1100px;
         margin: 0 auto;
       }
       
       .policy-section {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
         scroll-margin-top: 20px;
       }
       
@@ -348,6 +482,84 @@
         top: -80px;
       }
       
+      /* Highlight for clicked TOC items */
+      .toc-highlight {
+        background-color: #eff6ff;
+        border-radius: 6px;
+        padding: 5px 10px;
+        margin: 2px 0;
+        transition: background-color 0.3s ease;
+      }
+      
+      /* Footer Styles */
+      .policy-footer {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        color: white;
+        padding: 50px 20px;
+        margin-top: 80px;
+        text-align: center;
+      }
+      
+      .policy-footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .policy-footer-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      
+      .policy-footer-tagline {
+        color: #cbd5e0;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+      
+      .policy-footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      
+      .policy-footer-links a {
+        color: #cbd5e0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .policy-footer-links a:hover {
+        color: white;
+      }
+      
+      .policy-footer-copyright {
+        color: #a0aec0;
+        font-size: 0.875rem;
+        margin-top: 20px;
+      }
+      
+      /* Responsive Navbar */
+      @media (max-width: 768px) {
+        .navbar2-desktop-menu {
+          display: none;
+        }
+        
+        .navbar2-burger-menu {
+          display: block;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .navbar2-mobile-menu {
+          display: none !important;
+        }
+      }
+      
       /* Mobile responsiveness */
       @media (max-width: 1024px) {
         .policy-container {
@@ -356,12 +568,20 @@
         }
         
         .policy-content {
-          padding: 30px;
+          padding: 40px;
           margin: 0 10px;
         }
         
         .toc ol {
           column-count: 1;
+        }
+        
+        .liora-logo {
+          width: 500px;
+        }
+        
+        .policy-header h1 {
+          font-size: 2.8rem;
         }
       }
       
@@ -371,11 +591,15 @@
         }
         
         .liora-logo {
-          height: 60px;
+          width: 400px;
+        }
+        
+        .logo-wrapper {
+          padding: 20px;
         }
         
         .policy-content {
-          padding: 25px 20px;
+          padding: 30px;
           margin: 0;
         }
         
@@ -391,18 +615,18 @@
           font-size: 1.05rem;
         }
         
-        .policy-table {
-          display: block;
-          overflow-x: auto;
-          white-space: nowrap;
-        }
-        
         .toc {
           padding: 20px;
         }
         
         .toc ol {
           column-count: 1;
+        }
+        
+        .policy-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
         }
       }
       
@@ -412,11 +636,15 @@
         }
         
         .liora-logo {
-          height: 50px;
+          width: 300px;
+        }
+        
+        .logo-wrapper {
+          padding: 15px;
         }
         
         .policy-content {
-          padding: 20px 15px;
+          padding: 25px 15px;
         }
         
         .policy-section {
@@ -427,6 +655,11 @@
           width: 100%;
           justify-content: center;
           padding: 12px 20px;
+        }
+        
+        .policy-footer-links {
+          gap: 20px;
+          flex-direction: column;
         }
       }
       
@@ -445,39 +678,55 @@
         .policy-back-link,
         .toc,
         .navbar2-container,
-        footer {
+        .policy-footer {
           display: none;
         }
-      }
-      
-      /* Highlight for clicked TOC items */
-      .toc-highlight {
-        background-color: #eff6ff;
-        border-radius: 6px;
-        padding: 5px 10px;
-        margin: 2px 0;
-        transition: background-color 0.3s ease;
       }
     </style>
 </head>
 <body>
     <link rel="stylesheet" href="./style.css" />
     
-    <!-- Navigation (same as main page) -->
-    <header class="navbar2-container" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000;">
+    <!-- Navigation -->
+    <header class="navbar2-container">
       <header data-thq="thq-navbar" class="navbar2-navbar-interactive">
         <span class="navbar2-text1">
-          <a href="index.html" style="text-decoration: none;">
-            <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #1a202c;">LIORA Health</span>
-          </a>
+          <a href="index.html">LIORA Health</a>
         </span>
+        
         <div data-thq="thq-navbar-nav" class="navbar2-desktop-menu">
           <nav class="navbar2-links1">
-            <a href="index.html" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Home</a>
-            <a href="index.html#products" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Our Top Picks</a>
-            <a href="index.html#lab" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">In Our Lab</a>
-            <a href="index.html#guide" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Free Guide</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#products">Our Top Picks</a>
+            <a href="index.html#lab">In Our Lab</a>
+            <a href="index.html#guide">Free Guide</a>
           </nav>
+        </div>
+        
+        <!-- Burger Menu for Mobile -->
+        <div data-thq="thq-burger-menu" class="navbar2-burger-menu">
+          <svg viewBox="0 0 1024 1024" class="navbar2-icon10">
+            <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+          </svg>
+        </div>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div data-thq="thq-mobile-menu" class="navbar2-mobile-menu">
+          <div class="navbar2-nav">
+            <div class="navbar2-top">
+              <div data-thq="thq-close-menu" class="navbar2-close-menu">
+                <svg viewBox="0 0 1024 1024" class="navbar2-icon12">
+                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                </svg>
+              </div>
+            </div>
+            <nav class="navbar2-links2">
+              <a href="index.html">Home</a>
+              <a href="index.html#products">Our Top Picks</a>
+              <a href="index.html#lab">In Our Lab</a>
+              <a href="index.html#guide">Free Guide</a>
+            </nav>
+          </div>
         </div>
       </header>
     </header>
@@ -486,7 +735,9 @@
     <div class="policy-container animate__animated animate__fadeIn">
       <div class="policy-header">
         <div class="logo-container">
-          <img src="https://i.ibb.co/mFcd1XD3/Liora-Logo.png" alt="LIORA Health Logo" class="liora-logo">
+          <div class="logo-wrapper">
+            <img src="https://i.ibb.co/mFcd1XD3/Liora-Logo.png" alt="LIORA Health Logo" class="liora-logo">
+          </div>
         </div>
         <h1>Privacy Policy</h1>
         <div class="last-updated">Last updated December 02, 2025</div>
@@ -527,6 +778,7 @@
           </ol>
         </div>
 
+        <!-- Policy Content Sections (same as before) -->
         <div class="policy-section" id="section1">
           <span class="section-anchor" id="section1-anchor"></span>
           <h2>1. WHAT INFORMATION DO WE COLLECT?</h2>
@@ -892,23 +1144,67 @@
       </div>
     </div>
     
-    <!-- Footer (simplified version) -->
-    <footer style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: white; padding: 40px 20px; margin-top: 60px;">
-      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px;">LIORA Health</p>
-        <p style="color: #cbd5e0; margin-bottom: 30px;">Your Trusted Guide to Science-Backed Wellness</p>
-        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px;">
-          <a href="privacy-policy.html" style="color: #cbd5e0; text-decoration: none; font-weight: 500;">Privacy Policy</a>
-          <a href="terms-of-service.html" style="color: #cbd5e0; text-decoration: none; font-weight: 500;">Terms of Service</a>
-          <a href="cookie-policy.html" style="color: #cbd5e0; text-decoration: none; font-weight: 500;">Cookie Policy</a>
+    <!-- Footer -->
+    <footer class="policy-footer">
+      <div class="policy-footer-content">
+        <p class="policy-footer-logo">LIORA Health</p>
+        <p class="policy-footer-tagline">Your Trusted Guide to Science-Backed Wellness</p>
+        <div class="policy-footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
         </div>
-        <p style="color: #a0aec0; font-size: 0.875rem;">© 2025 LIORA Health. All rights reserved.</p>
+        <p class="policy-footer-copyright">© 2025 LIORA Health. All rights reserved.</p>
       </div>
     </footer>
     
     <script>
+      // Mobile Menu Toggle
       document.addEventListener('DOMContentLoaded', function() {
-        // Smooth scroll for anchor links within the page
+        const burgerMenu = document.querySelector('.navbar2-burger-menu');
+        const closeMenu = document.querySelector('.navbar2-close-menu');
+        const mobileMenu = document.querySelector('.navbar2-mobile-menu');
+        
+        if (burgerMenu && mobileMenu) {
+          burgerMenu.addEventListener('click', function() {
+            mobileMenu.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          });
+          
+          if (closeMenu) {
+            closeMenu.addEventListener('click', function() {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            });
+          }
+          
+          // Close menu when clicking on a link
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            });
+          });
+          
+          // Close menu when clicking outside
+          mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            }
+          });
+        }
+        
+        // Close mobile menu on window resize (if needed)
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768 && mobileMenu) {
+            mobileMenu.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // TOC Click Functionality
         document.querySelectorAll('.toc a').forEach(anchor => {
           anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -926,12 +1222,6 @@
                 behavior: 'smooth',
                 block: 'start'
               });
-              
-              // Add highlight effect to the target section
-              targetElement.style.backgroundColor = '#f0f9ff';
-              setTimeout(() => {
-                targetElement.style.backgroundColor = '';
-              }, 2000);
               
               // Update URL without page reload
               history.pushState(null, null, targetId);
@@ -955,11 +1245,6 @@
               if (tocLink && tocLink.parentElement) {
                 tocLink.parentElement.classList.add('toc-highlight');
               }
-              
-              // Scroll to section if needed
-              setTimeout(() => {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
             }
           }
         }
@@ -969,11 +1254,6 @@
         
         // Update highlight on hash change
         window.addEventListener('hashchange', highlightCurrentSection);
-        
-        // Scroll to top when clicking logo
-        document.querySelector('.logo-container').addEventListener('click', function() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
       });
     </script>
 </body>
