@@ -66,6 +66,173 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       data-tag="font"
     />
+          /* ========== PRODUCTS UNDER REVIEW - NEW DESIGN ========== */
+    .review-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    .review-product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .review-product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .review-product-image-container {
+      position: relative;
+      height: 220px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    
+    .review-product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-width: 180px;
+      transition: transform 0.5s ease;
+    }
+    
+    .review-product-card:hover .review-product-image {
+      transform: scale(1.05);
+    }
+    
+    .review-product-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(102, 126, 234, 0.95);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      backdrop-filter: blur(5px);
+    }
+    
+    .review-product-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .review-product-content {
+      padding: 1.75rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .review-product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .review-product-subtitle {
+      color: #667eea;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .review-product-description {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      font-size: 0.95rem;
+    }
+    
+    .review-product-status {
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-left: 4px solid #667eea;
+    }
+    
+    .review-status-label {
+      font-weight: 600;
+      color: #475569;
+      font-size: 0.85rem;
+    }
+    
+    .review-status-value {
+      color: #667eea;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 6px;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .review-products-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 0.5rem;
+      }
+      
+      .review-product-card {
+        max-width: 100%;
+      }
+      
+      .review-product-image-container {
+        height: 200px;
+      }
+      
+      .review-product-image {
+        max-width: 160px;
+      }
+      
+      .review-product-content {
+        padding: 1.5rem;
+      }
+      
+      .review-product-title {
+        font-size: 1.35rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .review-product-image-container {
+        height: 180px;
+      }
+      
+      .review-product-image {
+        max-width: 140px;
+      }
+      
+      .review-product-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+    /* ========== END PRODUCTS UNDER REVIEW ========== */
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
@@ -909,7 +1076,7 @@
         </section>
         <!-- ===== END Additional Recommendations Section ===== -->
         
-        <section id="lab" class="process-section home-process-section">
+               <section id="lab" class="process-section home-process-section">
           <div class="process-wrapper">
             <div class="process-container home-process-container">
               <div class="process-header">
@@ -920,8 +1087,7 @@
                   <span class="home-text30">
                     Exploring the latest science for your wellness journey.
                   </span>
-                  <br class="home-text31" />
-                  <br class="home-text32" />
+                  <br />
                   <br />
                   <span>
                     At LIORA Health, our recommendations don't happen overnight.
@@ -929,168 +1095,117 @@
                     supplements we're currently evaluating for potential
                     recommendation.
                   </span>
-                  Every recommendation is backed by rigorous scientific
-                  evaluation and independent testing
                 </p>
               </div>
-              <div class="home-process-timeline process-timeline">
-                <div class="process-line"></div>
-                <article
-                  class="home-process-step1 process-step-left process-step"
-                >
-                  <div class="home-container13">
-                    <div class="home-process-content1 process-content">
-                      <div class="process-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48">
-                          <g fill="currentColor">
-                            <path
-                              d="M38 30.263C38 37.85 31.732 44 24 44s-14-6.15-14-13.737C10 18.243 24 4 24 4s14 14.242 14 26.263"
-                            ></path>
-                            <path
-                              d="M24 42c6.663 0 12-5.29 12-11.737c0-5.357-3.178-11.486-6.645-16.502A73 73 0 0 0 24 6.95q-.311.35-.672.769a73 73 0 0 0-4.683 6.042C15.178 18.777 12 24.906 12 30.263C12 36.709 17.337 42 24 42M22.64 5.47C19.122 9.409 10 20.56 10 30.263C10 37.85 16.268 44 24 44s14-6.15 14-13.737C38 20.56 28.878 9.409 25.36 5.47C24.52 4.53 24 4 24 4s-.52.53-1.36 1.47"
-                              clip-rule="evenodd"
-                              fill-rule="evenodd"
-                            ></path>
-                          </g>
-                        </svg>
-                      </div>
-                      <h3 class="process-step-title">
-                        <span>Gluco Ally</span>
-                        <br />
-                        <span class="home-text37">
-                          Metabolic &amp; Blood Sugar Support
-                        </span>
-                        <br />
-                      </h3>
-                      <p
-                        class="process-step-description section-content home-section-content17"
-                      >
-                        We're reviewing the clinical research behind its key
-                        ingredients and evaluating customer feedback on its role
-                        in a balanced wellness routine.
-                      </p>
-                    </div>
+              
+              <!-- New Grid Layout for Products Under Review -->
+              <div class="review-products-grid">
+                
+                <!-- Moringa Magic -->
+                <div class="review-product-card">
+                  <div class="review-product-image-container">
                     <img
-                      alt="image"
-                      src="public/glucoally-mockup-200w.jpg"
-                      class="home-image1"
+                      alt="Moringa Magic Superfood Supplement"
+                      src="https://i.ibb.co/cKWpWYtH/Moringa-Magic.png"
+                      class="review-product-image"
                     />
-                  </div>
-                </article>
-                <div class="home-container14">
-                  <article
-                    class="home-process-step2 process-step-right process-step"
-                  >
-                   <img alt="Advanced Joint Support Formula"
-                     src="https://i.ibb.co/67yMgPT1/advanced-joint-support.png"
-                     class="home-image2">
-                    <div class="process-content home-process-content2">
-                      <div class="process-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48">
-                          <path
-                            d="M20 4a1 1 0 0 1 1 1v8.343a5 5 0 0 1-1.465 3.536l-.503.504a2.287 2.287 0 0 0 2.64 3.663l.242-.121a4.66 4.66 0 0 1 4.171 0l.243.12a2.287 2.287 0 0 0 2.64-3.662l-.503-.504A5 5 0 0 1 27 13.343V5a1 1 0 1 1 2 0v1.704C36.509 8.87 42 15.794 42 24s-5.491 15.13-13 17.297V43a1 1 0 1 1-2 0v-8.343a5 5 0 0 1 1.465-3.536l.503-.504a2.287 2.287 0 0 0-2.64-3.663l-.242.121a4.66 4.66 0 0 1-4.171 0l-.243-.12a2.287 2.287 0 0 0-2.64 3.662l.503.504A5 5 0 0 1 21 34.657V43a1 1 0 1 1-2 0v-1.703C11.491 39.13 6 32.207 6 24c0-8.206 5.491-15.13 13-17.296V5a1 1 0 0 1 1-1m-1 4.797C12.612 10.897 8 16.91 8 24s4.612 13.104 11 15.203v-4.546a3 3 0 0 0-.879-2.121l-.504-.504a4.288 4.288 0 0 1 4.95-6.867l.242.121c.75.375 1.632.375 2.382 0l.242-.12a4.288 4.288 0 0 1 4.95 6.866l-.504.504a3 3 0 0 0-.879 2.12v4.547c6.388-2.1 11-8.113 11-15.203S35.388 10.896 29 8.797v4.546a3 3 0 0 0 .879 2.121l.504.504a4.288 4.288 0 0 1-4.95 6.867l-.242-.121a2.66 2.66 0 0 0-2.382 0l-.242.12a4.288 4.288 0 0 1-4.95-6.866l.504-.504a3 3 0 0 0 .879-2.12z"
-                            fill="currentColor"
-                            clip-rule="evenodd"
-                            fill-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </div>
-                      <h3 class="process-step-title">
-                        <span>Advanced Joint Support</span>
-                        <br />
-                        <span class="home-text41">
-                          Mobility &amp; Cartilage Health
-                        </span>
-                        <br />
-                      </h3>
-                      <p class="process-step-description section-content">
-                        Our focus is on understanding the scientific consensus
-                        around its formulation and assessing its value compared
-                        to other joint health solutions.
-                      </p>
-                    </div>
-                  </article>
-                </div>
-                <article
-                  class="home-process-step3 process-step-left process-step"
-                >
-                  <div class="process-content home-process-content3">
-                    <div class="process-icon">
-                      <svg width="24" height="24" viewBox="0 0 24 24">
-                        <path
-                          d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5z"
-                          fill="currentColor"
-                        ></path>
+                    <div class="review-product-badge">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/>
                       </svg>
+                      <span>Antioxidant Focus</span>
                     </div>
-                    <h3 class="process-step-title">
-                      <span>T-Care Immuno</span>
-                      <br />
-                      <span class="home-text45">
-                        Year-Round Immune Resilience
-                      </span>
-                      <br />
-                    </h3>
-                    <p class="process-step-description section-content">
+                  </div>
+                  <div class="review-product-content">
+                    <h3 class="review-product-title">Moringa Magic</h3>
+                    <p class="review-product-subtitle">Natural Superfood Antioxidant Boost</p>
+                    <p class="review-product-description">
+                      We're investigating this nutrient-dense superfood for its potential to support 
+                      energy levels and immune function. Our team is analyzing the bioavailability 
+                      of its 90+ vitamins, minerals, and antioxidants to assess its role in a 
+                      comprehensive wellness routine.
+                    </p>
+                    <div class="review-product-status">
+                      <span class="review-status-label">Status:</span>
+                      <span class="review-status-value">In Research Phase</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Tonic Greens -->
+                <div class="review-product-card">
+                  <div class="review-product-image-container">
+                    <img
+                      alt="Tonic Greens Superfood Formula"
+                      src="https://i.ibb.co/4nm1B7Cz/Tonic-Greens.png"
+                      class="review-product-image"
+                    />
+                    <div class="review-product-badge">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/>
+                      </svg>
+                      <span>Greens Formula</span>
+                    </div>
+                  </div>
+                  <div class="review-product-content">
+                    <h3 class="review-product-title">Tonic Greens</h3>
+                    <p class="review-product-subtitle">Daily Greens & Immune Support Formula</p>
+                    <p class="review-product-description">
+                      Our research team is evaluating this comprehensive greens blend for its 
+                      potential immune-supporting properties. We're examining the synergy between 
+                      its 57 superfood ingredients and assessing whether it delivers on its 
+                      promise of daily foundational nutrition support.
+                    </p>
+                    <div class="review-product-status">
+                      <span class="review-status-label">Status:</span>
+                      <span class="review-status-value">Clinical Review</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- T-Care Immuno -->
+                <div class="review-product-card">
+                  <div class="review-product-image-container">
+                    <img
+                      alt="T-Care Immuno Immune Support Formula"
+                      src="https://i.ibb.co/SSvsgj9/t-care-immuno.png"
+                      class="review-product-image"
+                    />
+                    <div class="review-product-badge">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/>
+                      </svg>
+                      <span>Immune Support</span>
+                    </div>
+                  </div>
+                  <div class="review-product-content">
+                    <h3 class="review-product-title">T-Care Immuno</h3>
+                    <p class="review-product-subtitle">Year-Round Immune Resilience</p>
+                    <p class="review-product-description">
                       We are investigating the studies cited for its blend and
                       gauging its place in foundational daily health for our
-                      audience.
+                      audience. Current focus is on bioavailability studies and
+                      long-term efficacy data.
                     </p>
-                  </div>
-                  <img alt="T-Care Immuno Immune Support Formula"
-                   src="https://i.ibb.co/SSvsgj9/t-care-immuno.png"
-                   class="home-image3">
-                </article>
-                <div class="home-container15">
-                  <article
-                    class="home-process-step4 process-step-right process-step"
-                  >
-                  <img alt="Integrative Digestive Formula"
-                     src="https://i.ibb.co/QF22FZ53/integrative-digestive-formula.png"
-                         class="home-image4">
-                    <div class="process-content">
-                      <div class="process-icon">
-                        <svg
-                          width="32"
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="32"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M20 6L9 17l-5-5"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </svg>
-                      </div>
-                      <h3 class="process-step-title">
-                        <span>Integrative Digestive Formula</span>
-                        <br />
-                        <span class="home-text49">
-                          Gut Health &amp; Microbiome Balance
-                        </span>
-                        <br />
-                      </h3>
-                      <p class="process-step-description section-content">
-                        This product is on our radar due to high audience
-                        interest. We are beginning our preliminary research into
-                        its proposed benefits.
-                      </p>
+                    <div class="review-product-status">
+                      <span class="review-status-label">Status:</span>
+                      <span class="review-status-value">Data Analysis</span>
                     </div>
-                  </article>
+                  </div>
                 </div>
+                
               </div>
+              <!-- End of Review Products Grid -->
+              
             </div>
           </div>
-          <p
-            class="home-section-content21 process-step-description section-content"
-          >
+          
+          <!-- Contact Form Section -->
+          <p class="home-section-content21 process-step-description section-content" style="text-align: center; margin-top: 3rem;">
             How You Can Participate
           </p>
         </section>
+        
           <!--ContactForm3 component-->
           <div
             id="review"
