@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /components/
+Disallow: /public/
+
+Sitemap: https://liora-health.vercel.app/sitemap.xml
