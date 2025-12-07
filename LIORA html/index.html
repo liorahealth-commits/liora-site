@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
+    <meta name="description" content="LIORA Health: Science-backed wellness supplements reviewed by experts. Get our free 7-Day Reset Protocol and discover top-rated health products for vitality after 40.">
+<meta property="og:description" content="Expertly curated health supplements reviewed by our research team. Get your free 7-Day Reset Protocol.">
+<meta property="og:image" content="https://liora-health.vercel.app/public/hero-image.jpg">
+<meta property="og:url" content="https://liora-health.vercel.app/">
+<meta property="og:type" content="website">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESEGD6PZ4J"></script>
 <script>
@@ -14,6 +19,36 @@
   gtag('js', new Date());
 
   gtag('config', 'G-ESEGD6PZ4J');
+  // ========== ADD THIS NEW CODE BELOW ==========
+  // Track affiliate clicks
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track product link clicks
+    document.querySelectorAll('.product-button, .features-card-cta').forEach(link => {
+      link.addEventListener('click', function(e) {
+        gtag('event', 'affiliate_click', {
+          'product_name': this.innerText.trim().substring(0, 50),
+          'link_url': this.href
+        });
+      });
+    });
+    
+    // Track guide downloads
+    const guideLinks = document.querySelectorAll('a[href*="mailchi.mp"], .home-btn7');
+    guideLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'guide_download');
+      });
+    });
+    
+    // Track form submissions
+    const contactForm = document.querySelector('.contact-form3-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function() {
+        gtag('event', 'form_submission');
+      });
+    }
+  });
+  // ========== END NEW CODE ==========
 </script>
 
     <style data-tag="reset-style-sheet">
@@ -66,6 +101,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       data-tag="font"
     />
+     <!-- ========== JSON-LD SCHEMA ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LIORA Health",
+      "url": "https://liora-health.vercel.app/",
+      "description": "Science-backed wellness supplement reviews and recommendations for adults over 40",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://liora-health.vercel.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <!-- ========== END JSON-LD SCHEMA ========== -->
     <style>
     /* ========== PRODUCTS UNDER REVIEW - NEW DESIGN ========== */
     .review-products-grid {
