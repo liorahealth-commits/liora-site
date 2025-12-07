@@ -66,6 +66,77 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       data-tag="font"
     />
+    <style>
+      /* Fix for process review images on mobile */
+      .process-review-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        border-radius: 12px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .process-step {
+          flex-direction: column !important;
+        }
+        
+        .process-step-left,
+        .process-step-right {
+          flex-direction: column !important;
+        }
+        
+        .home-container13,
+        .home-container14,
+        .home-container15 {
+          flex-direction: column !important;
+        }
+        
+        .home-image1,
+        .home-image2,
+        .home-image3,
+        .home-image4 {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: 250px !important;
+          margin-top: 1.5rem !important;
+          order: 2 !important;
+        }
+        
+        .home-process-content1,
+        .home-process-content2,
+        .home-process-content3,
+        .process-content {
+          order: 1 !important;
+          width: 100% !important;
+          padding: 1rem !important;
+        }
+        
+        .process-content {
+          padding: 1.5rem !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .home-image1,
+        .home-image2,
+        .home-image3,
+        .home-image4 {
+          height: 200px !important;
+        }
+        
+        .process-step-title {
+          font-size: 1.5rem !important;
+        }
+        
+        .process-step-description {
+          font-size: 0.95rem !important;
+        }
+      }
+    </style>
+    <!-- END OF NEW STYLE SECTION -->
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
@@ -909,7 +980,7 @@
         </section>
         <!-- ===== END Additional Recommendations Section ===== -->
         
-        <section id="lab" class="process-section home-process-section">
+                <section id="lab" class="process-section home-process-section">
           <div class="process-wrapper">
             <div class="process-container home-process-container">
               <div class="process-header">
@@ -955,25 +1026,26 @@
                         </svg>
                       </div>
                       <h3 class="process-step-title">
-                        <span>Gluco Ally</span>
+                        <span>Moringa Magic</span>
                         <br />
                         <span class="home-text37">
-                          Metabolic &amp; Blood Sugar Support
+                          Natural Superfood Antioxidant Boost
                         </span>
                         <br />
                       </h3>
                       <p
                         class="process-step-description section-content home-section-content17"
                       >
-                        We're reviewing the clinical research behind its key
-                        ingredients and evaluating customer feedback on its role
-                        in a balanced wellness routine.
+                        We're investigating this nutrient-dense superfood supplement for its potential 
+                        to support energy levels, immune function, and antioxidant protection. Our team 
+                        is analyzing the bioavailability of its 90+ vitamins, minerals, and antioxidants 
+                        to assess its role in a comprehensive wellness routine.
                       </p>
                     </div>
                     <img
-                      alt="image"
-                      src="public/glucoally-mockup-200w.jpg"
-                      class="home-image1"
+                      alt="Moringa Magic Superfood Supplement"
+                      src="https://i.ibb.co/cKWpWYtH/Moringa-Magic.png"
+                      class="home-image1 process-review-image"
                     />
                   </div>
                 </article>
@@ -981,9 +1053,9 @@
                   <article
                     class="home-process-step2 process-step-right process-step"
                   >
-                   <img alt="Advanced Joint Support Formula"
-                     src="https://i.ibb.co/67yMgPT1/advanced-joint-support.png"
-                     class="home-image2">
+                   <img alt="Tonic Greens Superfood Formula"
+                     src="https://i.ibb.co/4nm1B7Cz/Tonic-Greens.png"
+                     class="home-image2 process-review-image">
                     <div class="process-content home-process-content2">
                       <div class="process-icon">
                         <svg width="48" height="48" viewBox="0 0 48 48">
@@ -996,17 +1068,18 @@
                         </svg>
                       </div>
                       <h3 class="process-step-title">
-                        <span>Advanced Joint Support</span>
+                        <span>Tonic Greens</span>
                         <br />
                         <span class="home-text41">
-                          Mobility &amp; Cartilage Health
+                          Daily Greens & Immune Support Formula
                         </span>
                         <br />
                       </h3>
                       <p class="process-step-description section-content">
-                        Our focus is on understanding the scientific consensus
-                        around its formulation and assessing its value compared
-                        to other joint health solutions.
+                        Our research team is evaluating this comprehensive greens blend for its 
+                        potential immune-supporting properties and nutritional completeness. We're 
+                        examining the synergy between its 57 superfood ingredients and assessing 
+                        whether it delivers on its promise of daily foundational nutrition support.
                       </p>
                     </div>
                   </article>
@@ -1039,7 +1112,7 @@
                   </div>
                   <img alt="T-Care Immuno Immune Support Formula"
                    src="https://i.ibb.co/SSvsgj9/t-care-immuno.png"
-                   class="home-image3">
+                   class="home-image3 process-review-image">
                 </article>
                 <div class="home-container15">
                   <article
@@ -1047,7 +1120,7 @@
                   >
                   <img alt="Integrative Digestive Formula"
                      src="https://i.ibb.co/QF22FZ53/integrative-digestive-formula.png"
-                         class="home-image4">
+                         class="home-image4 process-review-image">
                     <div class="process-content">
                       <div class="process-icon">
                         <svg
