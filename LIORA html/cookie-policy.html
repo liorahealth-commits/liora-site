@@ -79,17 +79,23 @@
       }
       
       .logo-container {
-        margin-bottom: 30px;
-        padding: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      
+      .logo-wrapper {
         background: white;
         border-radius: 12px;
+        padding: 25px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         display: inline-block;
+        margin: 0 auto;
       }
       
       .liora-logo {
-        height: 120px; /* MUCH larger logo */
-        width: auto;
+        width: 600px; /* Matches policy content width */
+        max-width: 90%; /* Responsive */
+        height: auto;
         margin: 0 auto;
         display: block;
       }
@@ -98,7 +104,7 @@
         font-family: 'Playfair Display', serif;
         font-size: 3.2rem;
         font-weight: 700;
-        color: #1e3a8a; /* Navy blue */
+        color: #1e3a8a;
         margin-bottom: 15px;
         margin-top: 20px;
       }
@@ -211,6 +217,118 @@
         box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
       }
       
+      /* Navbar Styles */
+      .navbar2-container {
+        background: white;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar2-navbar-interactive {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar2-text1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a202c;
+      }
+
+      .navbar2-desktop-menu {
+        display: flex;
+      }
+
+      .navbar2-links1 {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .navbar2-links1 a {
+        color: #4a5568;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .navbar2-links1 a:hover {
+        color: #3b82f6;
+      }
+
+      /* Burger Menu Styles */
+      .navbar2-burger-menu {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .navbar2-icon10 {
+        width: 24px;
+        height: 24px;
+        fill: #4a5568;
+      }
+
+      /* Mobile Menu Styles */
+      .navbar2-mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        z-index: 1001;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .navbar2-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 40px;
+      }
+
+      .navbar2-close-menu {
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .navbar2-icon12 {
+        width: 24px;
+        height: 24px;
+        fill: #4a5568;
+      }
+
+      .navbar2-links2 {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .navbar2-links2 a {
+        color: #1a202c;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar2-links2 a:hover {
+        background-color: #f1f5f9;
+      }
+
       /* Cookie table styles */
       .cookie-table {
         width: 100%;
@@ -369,21 +487,34 @@
         }
         
         .liora-logo {
-          height: 100px;
+          width: 500px;
         }
         
-        .policy-header h1 {
-          font-size: 2.8rem;
+        .cookie-table {
+          display: block;
+          overflow-x: auto;
         }
       }
       
       @media (max-width: 768px) {
+        .navbar2-desktop-menu {
+          display: none;
+        }
+        
+        .navbar2-burger-menu {
+          display: block;
+        }
+        
         .policy-header h1 {
           font-size: 2.2rem;
         }
         
         .liora-logo {
-          height: 90px;
+          width: 400px;
+        }
+        
+        .logo-wrapper {
+          padding: 20px;
         }
         
         .policy-content {
@@ -418,13 +549,23 @@
         }
       }
       
+      @media (min-width: 769px) {
+        .navbar2-mobile-menu {
+          display: none !important;
+        }
+      }
+      
       @media (max-width: 480px) {
-        .policy-header h1 {
-          font-size: 1.8rem;
+        .liora-logo {
+          width: 300px;
         }
         
-        .liora-logo {
-          height: 80px;
+        .logo-wrapper {
+          padding: 15px;
+        }
+        
+        .policy-header h1 {
+          font-size: 1.8rem;
         }
         
         .policy-content {
@@ -439,10 +580,6 @@
           width: 100%;
           justify-content: center;
           padding: 12px 20px;
-        }
-        
-        .logo-container {
-          padding: 15px;
         }
       }
       
@@ -479,8 +616,8 @@
 <body>
     <link rel="stylesheet" href="./style.css" />
     
-    <!-- Navigation (same as main page) -->
-    <header class="navbar2-container" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000;">
+    <!-- Navigation -->
+    <header class="navbar2-container">
       <header data-thq="thq-navbar" class="navbar2-navbar-interactive">
         <span class="navbar2-text1">
           <a href="index.html" style="text-decoration: none;">
@@ -489,11 +626,37 @@
         </span>
         <div data-thq="thq-navbar-nav" class="navbar2-desktop-menu">
           <nav class="navbar2-links1">
-            <a href="index.html" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Home</a>
-            <a href="index.html#products" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Our Top Picks</a>
-            <a href="index.html#lab" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">In Our Lab</a>
-            <a href="index.html#guide" class="thq-link thq-body-small" style="color: #4a5568; margin: 0 15px;">Free Guide</a>
+            <a href="index.html" class="thq-link thq-body-small">Home</a>
+            <a href="index.html#products" class="thq-link thq-body-small">Our Top Picks</a>
+            <a href="index.html#lab" class="thq-link thq-body-small">In Our Lab</a>
+            <a href="index.html#guide" class="thq-link thq-body-small">Free Guide</a>
           </nav>
+        </div>
+        
+        <!-- Burger Menu for Mobile -->
+        <div data-thq="thq-burger-menu" class="navbar2-burger-menu">
+          <svg viewBox="0 0 1024 1024" class="navbar2-icon10">
+            <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+          </svg>
+        </div>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div data-thq="thq-mobile-menu" class="navbar2-mobile-menu">
+          <div class="navbar2-nav">
+            <div class="navbar2-top">
+              <div data-thq="thq-close-menu" class="navbar2-close-menu">
+                <svg viewBox="0 0 1024 1024" class="navbar2-icon12">
+                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                </svg>
+              </div>
+            </div>
+            <nav class="navbar2-links2">
+              <a href="index.html" class="thq-link thq-body-small">Home</a>
+              <a href="index.html#products" class="thq-link thq-body-small">Our Top Picks</a>
+              <a href="index.html#lab" class="thq-link thq-body-small">In Our Lab</a>
+              <a href="index.html#guide" class="thq-link thq-body-small">Free Guide</a>
+            </nav>
+          </div>
         </div>
       </header>
     </header>
@@ -502,7 +665,9 @@
     <div class="policy-container animate__animated animate__fadeIn">
       <div class="policy-header">
         <div class="logo-container">
-          <img src="https://i.ibb.co/mFcd1XD3/Liora-Logo.png" alt="LIORA Health Logo" class="liora-logo">
+          <div class="logo-wrapper">
+            <img src="https://i.ibb.co/mFcd1XD3/Liora-Logo.png" alt="LIORA Health Logo" class="liora-logo">
+          </div>
         </div>
         <h1>COOKIE POLICY</h1>
         <div class="last-updated">Last updated December 02, 2025</div>
@@ -631,7 +796,7 @@
       </div>
     </div>
     
-    <!-- Footer (simplified version) -->
+    <!-- Footer -->
     <footer style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); color: white; padding: 40px 20px; margin-top: 60px;">
       <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
         <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px;">LIORA Health</p>
@@ -647,6 +812,50 @@
     
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Menu Toggle
+        const burgerMenu = document.querySelector('.navbar2-burger-menu');
+        const closeMenu = document.querySelector('.navbar2-close-menu');
+        const mobileMenu = document.querySelector('.navbar2-mobile-menu');
+        
+        if (burgerMenu && mobileMenu) {
+          burgerMenu.addEventListener('click', function() {
+            mobileMenu.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          });
+          
+          if (closeMenu) {
+            closeMenu.addEventListener('click', function() {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            });
+          }
+          
+          // Close menu when clicking on a link
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            });
+          });
+          
+          // Close menu when clicking outside
+          mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+              mobileMenu.style.display = 'none';
+              document.body.style.overflow = '';
+            }
+          });
+        }
+        
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768 && mobileMenu) {
+            mobileMenu.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+
         // Smooth scroll for anchor links within the page
         document.querySelectorAll('.toc a').forEach(anchor => {
           anchor.addEventListener('click', function(e) {
