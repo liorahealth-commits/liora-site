@@ -342,6 +342,34 @@
       src="https://ct.pinterest.com/v3/?event=init&tid=2614285367115&noscript=1" />
     </noscript>
     <!-- end Pinterest Tag -->
+  <!-- Pinterest Event Tracking for Affiliate Links -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track affiliate link clicks as "Lead" events
+      document.querySelectorAll('.product-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const productName = this.closest('.product-card').querySelector('.product-title').innerText;
+          
+          pintrk('track', 'lead', {
+            event_id: 'affiliate_click_' + Date.now(),
+            lead_type: 'Product Interest'
+          });
+          
+          // Optional: Also track as custom event with product name
+          pintrk('track', 'custom', {
+            event_id: 'product_click_' + Date.now(),
+            product_name: productName
+          });
+        });
+      });
+      
+      // Track page visit to product offers page
+      pintrk('track', 'pagevisit', {
+        event_id: 'product_offers_page'
+      });
+    });
+    </script>
+    <!-- End Pinterest Event Tracking -->
   
   <!-- ========== GOOGLE TAG MANAGER ========== -->
    <!-- Google Tag Manager -->
