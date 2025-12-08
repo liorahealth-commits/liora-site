@@ -141,6 +141,37 @@
     <!-- end Pinterest Tag -->
     <!-- ========== END PINTEREST CONVERSIONS TAG ========== -->
 
+    <!-- Pinterest Event Tracking for Main Page -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track main page visit
+      pintrk('track', 'pagevisit', {
+        event_id: 'homepage_visit'
+      });
+      
+      // Track guide downloads as "Lead" events
+      document.querySelectorAll('.home-btn7').forEach(button => {
+        button.addEventListener('click', function() {
+          pintrk('track', 'lead', {
+            event_id: 'guide_download_' + Date.now(),
+            lead_type: 'Free Guide'
+          });
+        });
+      });
+      
+      // Track product clicks on main page
+      document.querySelectorAll('.features-card-cta').forEach(button => {
+        button.addEventListener('click', function() {
+          pintrk('track', 'lead', {
+            event_id: 'main_product_click_' + Date.now(),
+            lead_type: 'Featured Product'
+          });
+        });
+      });
+    });
+    </script>
+    <!-- End Pinterest Event Tracking -->
+
     <!-- ========== GOOGLE TAG MANAGER ========== -->
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
