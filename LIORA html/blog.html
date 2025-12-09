@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta name="description" content="Evidence-based articles on brain health, supplements, and wellness strategies. Science translated. Hype filtered.">
-    <meta property="og:description" content="Evidence-based articles on brain health, supplements, and wellness strategies.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta name="description" content="Evidence-based articles on health, supplements, and wellness strategies for adults over 40. Science translated. Hype filtered.">
+    <meta property="og:description" content="Evidence-based articles on health, supplements, and wellness strategies.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://liora-health.vercel.app/blog.html">
     <meta property="og:type" content="article">
     
@@ -18,7 +18,7 @@
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "LIORA Health Blog",
-      "description": "Science-backed wellness insights and evidence-based health articles",
+      "description": "Science-backed wellness insights and evidence-based health articles for adults over 40",
       "url": "https://liora-health.vercel.app/blog.html",
       "publisher": {
         "@type": "Organization",
@@ -121,76 +121,190 @@
         --blog-card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         --article-max-width: 800px;
         --transition-duration: 0.4s;
+        --roman-beige: #d4bc94;
+        --parchment: #f5f1e9;
+        --terra-cotta: #c17c54;
+        --olive: #8a7f5e;
+        --aged-paper: #e8dfc8;
       }
       
-      /* Blog Hero - REVISED DESIGN */
+      /* Blog Hero - COMPLETELY REVAMPED DESIGN */
       .blog-hero {
         position: relative;
-        height: 70vh;
-        min-height: 500px;
+        height: 80vh;
+        min-height: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white;
+        color: #2d3748;
         overflow: hidden;
         margin-bottom: 3rem;
+        background: linear-gradient(135deg, var(--parchment) 0%, var(--aged-paper) 100%);
+        padding: 2rem;
       }
       
-      .blog-hero-bg {
+      .blog-hero::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-      
-      .blog-hero-bg-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.7);
-      }
-      
-      .blog-hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
-        z-index: 2;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        filter: sepia(0.4) brightness(1.1);
       }
       
       .blog-hero-content {
         position: relative;
         z-index: 3;
-        max-width: 800px;
-        padding: 2rem;
+        max-width: 900px;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(212, 188, 148, 0.3);
+        backdrop-filter: blur(10px);
       }
       
       .blog-hero h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
         font-family: 'Playfair Display', serif;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        color: #2d3748;
+        line-height: 1.1;
+        text-shadow: none;
       }
       
-      .blog-hero p {
+      .hero-subtitle {
         font-size: 1.5rem;
-        opacity: 0.95;
+        color: #4a5568;
         margin-bottom: 2rem;
-        font-weight: 300;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        font-weight: 400;
+        font-family: 'Lato', sans-serif;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
       
-      .blog-hero-subtitle {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        font-style: italic;
+      .hero-divider {
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, var(--roman-beige), var(--terra-cotta));
+        margin: 2rem auto;
+        border-radius: 2px;
+      }
+      
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--terra-cotta);
+        font-family: 'Playfair Display', serif;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        color: #718096;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+      }
+      
+      /* Blog Controls - Search & Filter */
+      .blog-controls {
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+        padding: 0 1.5rem;
+      }
+      
+      .search-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+      
+      #blog-search {
+        width: 100%;
+        padding: 1.25rem 1.5rem 1.25rem 3rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: 'Lato', sans-serif;
+        transition: all 0.3s ease;
+        background: white;
+      }
+      
+      #blog-search:focus {
+        outline: none;
+        border-color: var(--roman-beige);
+        box-shadow: 0 0 0 3px rgba(212, 188, 148, 0.2);
+      }
+      
+      .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 1.25rem;
+      }
+      
+      .category-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      
+      .category-filter {
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 25px;
+        background: white;
+        color: #4a5568;
+        font-weight: 600;
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      }
+      
+      .category-filter:hover {
+        border-color: var(--roman-beige);
+        color: #2d3748;
+      }
+      
+      .category-filter.active {
+        background: var(--roman-beige);
+        border-color: var(--roman-beige);
+        color: white;
+      }
+      
+      .search-results-info {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95rem;
         margin-top: 1rem;
+        display: none;
       }
       
       /* Blog Grid Container */
@@ -220,6 +334,18 @@
         flex-direction: column;
         height: 100%;
         cursor: pointer;
+        position: relative;
+      }
+      
+      .blog-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(to right, var(--roman-beige), var(--terra-cotta));
+        z-index: 2;
       }
       
       .blog-card:hover {
@@ -238,6 +364,7 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
+        filter: sepia(0.3) contrast(1.1);
       }
       
       .blog-card:hover .blog-card-image {
@@ -248,7 +375,7 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
-        background: rgba(74, 85, 104, 0.95);
+        background: rgba(45, 55, 72, 0.95);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 20px;
@@ -292,7 +419,7 @@
       }
       
       .blog-read-more {
-        background: #2d3748;
+        background: var(--roman-beige);
         color: white;
         border: none;
         padding: 0.75rem 1.5rem;
@@ -304,7 +431,7 @@
       }
       
       .blog-read-more:hover {
-        background: #4a5568;
+        background: var(--terra-cotta);
         transform: translateY(-2px);
       }
       
@@ -328,7 +455,7 @@
         align-items: center;
         gap: 0.5rem;
         background: white;
-        border: 2px solid #2d3748;
+        border: 2px solid var(--roman-beige);
         color: #2d3748;
         padding: 0.75rem 1.5rem;
         border-radius: 8px;
@@ -340,10 +467,11 @@
         top: 100px;
         z-index: 100;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: 'Lato', sans-serif;
       }
       
       .back-button:hover {
-        background: #2d3748;
+        background: var(--roman-beige);
         color: white;
       }
       
@@ -355,7 +483,6 @@
       /* Article Content */
       .article-header {
         margin-bottom: 3rem;
-        text-align: center;
       }
       
       .article-title {
@@ -369,11 +496,11 @@
       
       .article-meta {
         display: flex;
-        justify-content: center;
         gap: 1.5rem;
         color: #64748b;
         font-size: 0.95rem;
         margin-bottom: 2rem;
+        flex-wrap: wrap;
       }
       
       .article-hero-image {
@@ -382,6 +509,8 @@
         object-fit: cover;
         border-radius: 12px;
         margin-bottom: 2rem;
+        filter: sepia(0.2) contrast(1.05);
+        border: 1px solid rgba(212, 188, 148, 0.3);
       }
       
       .article-content {
@@ -396,6 +525,8 @@
         color: #1e293b;
         margin: 2.5rem 0 1rem;
         font-family: 'Playfair Display', serif;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--roman-beige);
       }
       
       .article-content h3 {
@@ -430,18 +561,18 @@
       }
       
       .article-highlight {
-        background: linear-gradient(120deg, rgba(45, 55, 72, 0.05) 0%, rgba(45, 55, 72, 0.02) 100%);
-        border-left: 4px solid #2d3748;
+        background: linear-gradient(120deg, rgba(212, 188, 148, 0.08) 0%, rgba(212, 188, 148, 0.02) 100%);
+        border-left: 4px solid var(--roman-beige);
         padding: 1.5rem;
         margin: 2rem 0;
         border-radius: 0 8px 8px 0;
+        border: 1px solid rgba(212, 188, 148, 0.2);
       }
       
       .article-footer {
         margin-top: 3rem;
         padding-top: 2rem;
         border-top: 2px solid #e2e8f0;
-        text-align: center;
       }
       
       /* Grid/Detail Transitions */
@@ -456,6 +587,22 @@
       
       .article-detail.hidden {
         display: none;
+      }
+      
+      /* No Results Message */
+      .no-results {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #64748b;
+        display: none;
+        grid-column: 1 / -1;
+      }
+      
+      .no-results h3 {
+        font-size: 1.5rem;
+        color: #4a5568;
+        margin-bottom: 1rem;
+        font-family: 'Playfair Display', serif;
       }
       
       /* Animations */
@@ -494,19 +641,32 @@
         .blog-hero h1 {
           font-size: 3rem;
         }
+        
+        .hero-stats {
+          gap: 2rem;
+        }
+        
+        .stat-number {
+          font-size: 2rem;
+        }
       }
       
       @media (max-width: 768px) {
         .blog-hero {
-          height: 60vh;
-          min-height: 400px;
+          height: 70vh;
+          min-height: 500px;
+          padding: 1rem;
+        }
+        
+        .blog-hero-content {
+          padding: 2rem 1.5rem;
         }
         
         .blog-hero h1 {
           font-size: 2.5rem;
         }
         
-        .blog-hero p {
+        .hero-subtitle {
           font-size: 1.25rem;
         }
         
@@ -531,19 +691,32 @@
           position: static;
           margin-top: 1rem;
         }
+        
+        .category-filters {
+          gap: 0.5rem;
+        }
+        
+        .category-filter {
+          padding: 0.5rem 1rem;
+          font-size: 0.85rem;
+        }
+        
+        .hero-stats {
+          gap: 1.5rem;
+        }
       }
       
       @media (max-width: 480px) {
         .blog-hero {
-          height: 50vh;
-          min-height: 350px;
+          height: 60vh;
+          min-height: 400px;
         }
         
         .blog-hero h1 {
           font-size: 2rem;
         }
         
-        .blog-hero p {
+        .hero-subtitle {
           font-size: 1.125rem;
         }
         
@@ -558,11 +731,15 @@
         .article-meta {
           flex-direction: column;
           gap: 0.5rem;
-          align-items: center;
         }
         
         .article-hero-image {
           height: 250px;
+        }
+        
+        .hero-stats {
+          flex-direction: column;
+          gap: 1rem;
         }
       }
       
@@ -593,24 +770,26 @@
       
       .page-button {
         background: white;
-        border: 1px solid #e2e8f0;
+        border: 2px solid #e2e8f0;
         color: #4a5568;
         padding: 0.75rem 1.5rem;
         border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
+        font-family: 'Lato', sans-serif;
       }
       
       .page-button:hover:not(:disabled) {
         background: #f7fafc;
-        border-color: #cbd5e0;
+        border-color: var(--roman-beige);
+        color: #2d3748;
       }
       
       .page-button.active {
-        background: #2d3748;
+        background: var(--roman-beige);
         color: white;
-        border-color: #2d3748;
+        border-color: var(--roman-beige);
       }
       
       .page-button:disabled {
@@ -662,6 +841,18 @@
           opacity: 1;
         }
       }
+      
+      /* Category pill colors */
+      .category-pill-prostate { background: #e8dfc8; color: #8a7f5e; }
+      .category-pill-gut { background: #f0e6d3; color: #8a7f5e; }
+      .category-pill-metabolism { background: #d4bc94; color: #5d473a; }
+      .category-pill-circulation { background: #c17c54; color: white; }
+      .category-pill-joints { background: #8a7f5e; color: white; }
+      .category-pill-brain { background: #e8dfc8; color: #8a7f5e; }
+      .category-pill-energy { background: #f0e6d3; color: #8a7f5e; }
+      .category-pill-lifestyle { background: #d4bc94; color: #5d473a; }
+      .category-pill-cardiovascular { background: #c17c54; color: white; }
+      .category-pill-supplements { background: #8a7f5e; color: white; }
     </style>
     
     <!-- Google Tag Manager -->
@@ -794,21 +985,55 @@
         </header>
         
         <main id="main-content">
-          <!-- Blog Hero Section - REVISED DESIGN -->
+          <!-- COMPLETELY REVAMPED Blog Hero Section -->
           <section class="blog-hero">
-            <div class="blog-hero-bg">
-              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-                   alt="Wellness and health research" 
-                   class="blog-hero-bg-image"
-                   loading="eager">
-              <div class="blog-hero-overlay"></div>
-            </div>
             <div class="blog-hero-content">
-              <h1>LIORA Health Blog</h1>
-              <p>Expertly Curated. Independently Reviewed.</p>
-              <p class="blog-hero-subtitle">Science Translated. Hype Filtered.</p>
+              <h1>Timeless Health Wisdom<br>For Modern Living</h1>
+              <div class="hero-divider"></div>
+              <p class="hero-subtitle">
+                Drawing from ancient principles and contemporary science, we explore holistic wellness strategies 
+                for adults navigating life after 40. Evidence-based guidance free from modern health trends.
+              </p>
+              
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <div class="stat-number">10+</div>
+                  <div class="stat-label">In-Depth Articles</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">200+</div>
+                  <div class="stat-label">Studies Analyzed</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">0</div>
+                  <div class="stat-label">Sponsored Content</div>
+                </div>
+              </div>
             </div>
           </section>
+          
+          <!-- Blog Controls (Search & Filter) -->
+          <div class="blog-controls">
+            <div class="search-container">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="blog-search" placeholder="Search articles by keyword, topic, or supplement...">
+            </div>
+            
+            <div class="category-filters">
+              <button class="category-filter active" data-category="all">All Topics</button>
+              <button class="category-filter" data-category="prostate">Prostate Health</button>
+              <button class="category-filter" data-category="gut">Gut Health</button>
+              <button class="category-filter" data-category="metabolism">Metabolism</button>
+              <button class="category-filter" data-category="circulation">Circulation</button>
+              <button class="category-filter" data-category="joints">Joint Health</button>
+              <button class="category-filter" data-category="brain">Brain Health</button>
+              <button class="category-filter" data-category="supplements">Supplements</button>
+            </div>
+            
+            <div class="search-results-info" id="search-results-info">
+              Showing <span id="results-count">0</span> results for "<span id="search-term"></span>"
+            </div>
+          </div>
           
           <!-- Blog Grid Container -->
           <div class="blog-grid-container">
@@ -823,6 +1048,12 @@
             <!-- Blog Grid (Visible by default) -->
             <div class="blog-grid visible" id="blog-grid">
               <!-- Blog cards will be populated by JavaScript -->
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results">
+              <h3>No articles found</h3>
+              <p>Try adjusting your search or filter criteria.</p>
             </div>
             
             <!-- Pagination -->
@@ -1087,518 +1318,483 @@
     
     <!-- ========== BLOG DATA AND JAVASCRIPT ========== -->
     <script>
-      // ===== BLOG ARTICLES DATA =====
-      // Note: This data would ideally be loaded from a JSON file or database
-      // For scalability, consider splitting into multiple files or implementing lazy loading
-      
       // ===== BLOG CONFIGURATION =====
       const BLOG_CONFIG = {
         articlesPerPage: 9,
-        maxArticles: 18,
+        maxArticles: 50,
         images: {
-          brainHealth: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-          supplements: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-          lifestyle: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-          energy: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-          nutrition: 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-          wellness: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+          // Roman/Beige theme images with sepia/aged look
+          hero: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+          
+          // Category-specific images in Roman/beige theme
+          prostate: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          gut: 'https://images.unsplash.com/photo-1583484963886-cfe2bff2945f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          metabolism: 'https://images.unsplash.com/photo-1582719471384-8d5c5f5794ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          circulation: 'https://images.unsplash.com/photo-1582719566742-75aa5d2d5c4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          joints: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          brain: 'https://images.unsplash.com/photo-1583484963886-cfe2bff2945f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          energy: 'https://images.unsplash.com/photo-1582719566742-75aa5d2d5c4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          lifestyle: 'https://images.unsplash.com/photo-1582719471384-8d5c5f5794ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          cardiovascular: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          supplements: 'https://images.unsplash.com/photo-1583484963886-cfe2bff2945f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
         }
       };
 
       // ===== BLOG ARTICLES ARRAY =====
-      // To add new articles, simply add to this array following the template
-      // The system automatically handles pagination and display
-      
+      // 10 Articles Total: 5 existing + 5 new from PDFs
       const blogArticles = [
         {
           id: 1,
-          title: "NeuroZoom REVIEW: We Analyzed Every Ingredient So You Don't Have To",
-          excerpt: "Our comprehensive breakdown of the popular brain health supplement NeuroZoom (9.5/10). We examine the science behind its ingredients, dosage transparency, and whether it delivers on cognitive support promises.",
+          title: "The Uncomfortable Talk: What Actually Works for Prostate Health",
+          excerpt: "Let's talk about the elephant in the room—or more accurately, the walnut-sized gland that becomes the elephant after 40. We address what most men avoid discussing until it becomes a problem.",
           content: `
             <div class="article-header">
-              <h1 class="article-title">NeuroZoom REVIEW: We Analyzed Every Ingredient So You Don't Have To</h1>
+              <h1 class="article-title">The Uncomfortable Talk: What Actually Works for Prostate Health (Backed by Science, Not Fear)</h1>
               <div class="article-meta">
-                <span>Brain Health</span>
+                <span class="category-pill-prostate" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Prostate Health</span>
                 <span>•</span>
-                <span>15 min read</span>
-                <span>•</span>
-                <span>December 2025</span>
-              </div>
-              <img src="${BLOG_CONFIG.images.brainHealth}" 
-                   alt="Brain health supplements analysis on wooden surface" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>We purchased NeuroZoom, meticulously analyzed every ingredient against clinical research, cross-referenced disclosed dosages, and present our unbiased evaluation of this comprehensive brain health formula.</p>
-              
-              <div class="article-highlight">
-                <p><strong>LIORA Health Rating: 9.5/10</strong><br>
-                NeuroZoom represents one of the most comprehensive brain health formulas available, with strong research backing for key ingredients. Available worldwide.</p>
-              </div>
-              
-              <h2>What Is NeuroZoom?</h2>
-              <p>NeuroZoom is marketed as a "35-in-1 memory essential formula" designed to support cognitive function, memory, focus, and mental clarity. Manufactured in FDA-registered, GMP-certified facilities, it positions itself as a natural alternative to synthetic nootropics.</p>
-              
-              <h2>Key Findings From Our Analysis</h2>
-              
-              <h3>The Strengths</h3>
-              <ul>
-                <li><strong>Comprehensive Formula:</strong> Includes 35 ingredients targeting multiple aspects of cognitive function</li>
-                <li><strong>Quality Manufacturing:</strong> Produced in FDA-registered, GMP-certified facilities</li>
-                <li><strong>Research-Backed Ingredients:</strong> Contains Bacopa Monnieri, B Vitamins, and Alpha-GPC with solid clinical evidence</li>
-                <li><strong>Global Availability:</strong> Ships worldwide to all customers</li>
-              </ul>
-              
-              <h3>Areas for Consideration</h3>
-              <ul>
-                <li>Transparency could be improved for some ingredient dosages</li>
-                <li>Contains ingredients with mixed evidence (Ginkgo Biloba, Huperzine A)</li>
-                <li>Benefits typically require 8-12 weeks of consistent use</li>
-              </ul>
-              
-              <h2>How It Compares</h2>
-              <p>Compared to region-restricted alternatives like Advanced Memory Formula (9.4/10), NeuroZoom offers broader global availability while maintaining competitive ingredient quality and research backing.</p>
-              
-              <div class="article-highlight">
-                <p><strong>Bottom Line:</strong> For adults over 40 seeking comprehensive cognitive support with worldwide shipping, NeuroZoom represents excellent value and formulation quality. The 9.5/10 rating reflects its strong ingredient profile, manufacturing standards, and global accessibility.</p>
-              </div>
-              
-              <p><em>Note: This summary represents key findings from our full 5-pillar REVIEW methodology. Individual results may vary, and we recommend consulting with a healthcare provider before starting any new supplement regimen.</em></p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Have questions about NeuroZoom or other cognitive supplements? <a href="mailto:hello@liorahealth.com">Email our research team</a>.</p>
-            </div>
-          `,
-          category: "Brain Health",
-          readTime: "15 min",
-          date: "2025-12-15",
-          image: BLOG_CONFIG.images.brainHealth,
-          imageAlt: "Brain health supplements analysis on wooden surface"
-        },
-        {
-          id: 2,
-          title: "The Simple Truth About Brain Fog After 40 (And What Actually Helps)",
-          excerpt: "Understand the three physiological changes causing brain fog after 40, and discover evidence-based strategies that actually work—from targeted nutrition to lifestyle adjustments.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">The Simple Truth About Brain Fog After 40 (And What Actually Helps)</h1>
-              <div class="article-meta">
-                <span>Brain Health</span>
-                <span>•</span>
-                <span>12 min read</span>
+                <span>18 min read</span>
                 <span>•</span>
                 <span>March 2025</span>
               </div>
-              <img src="${BLOG_CONFIG.images.lifestyle}" 
-                   alt="Person meditating at sunrise for brain health" 
+              <img src="${BLOG_CONFIG.images.prostate}" 
+                   alt="Ancient anatomical drawing of male urinary system in beige tones" 
                    class="article-hero-image" 
                    loading="lazy">
             </div>
             
             <div class="article-content">
-              <p>That moment when you walk into a room and forget why you're there. The name that's on the tip of your tongue but won't come out. The 3pm mental slump that makes concentration feel impossible.</p>
+              <p>Let's talk about the elephant in the room—or more accurately, the walnut-sized gland that becomes the elephant after 40.</p>
               
-              <p>If you're over 40 and experiencing this, you're not alone—and you're not "just getting older." Brain fog after 40 results from specific, measurable physiological changes. The good news? Each one is addressable.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Three Key Changes:</strong> After 40, your brain experiences decreased cerebral blood flow, shifting neurotransmitter production, and increased neuroinflammation. Understanding these changes is the first step to addressing them effectively.</p>
-              </div>
-              
-              <h2>1. The Circulation Challenge</h2>
-              <p>By age 60, cerebral blood flow can decrease by up to 20%. Your brain is like a city that runs on delivery trucks—when traffic slows, fewer supplies reach their destination.</p>
-              
-              <p><strong>Evidence-Based Solution:</strong> Regular aerobic exercise and nitric oxide support (like CircO2, rated 9.6/10) can improve endothelial function and blood flow.</p>
-              
-              <h2>2. The Neurochemical Shift</h2>
-              <p>Production of key neurotransmitters—particularly acetylcholine (memory) and dopamine (focus)—naturally declines after 40. It's like your brain is sending texts on a slower network.</p>
-              
-              <p><strong>Evidence-Based Solution:</strong> Targeted supplementation with ingredients like Bacopa Monnieri, Alpha-GPC, and Lion's Mane Mushroom can support neurotransmitter function.</p>
-              
-              <h2>3. The Inflammation Factor</h2>
-              <p>Low-grade neuroinflammation creates background "static" that interferes with neural communication, making everything from recall to concentration less crisp.</p>
-              
-              <p><strong>Evidence-Based Solution:</strong> Omega-3 fatty acids (EPA/DHA), curcumin, and lifestyle interventions like stress management and quality sleep can reduce inflammation.</p>
-              
-              <h2>The LIORA Health Approach</h2>
-              <p>Based on our analysis of hundreds of studies and products, here's our evidence-based framework:</p>
-              
-              <h3>Foundation First (Non-Negotiables)</h3>
-              <ul>
-                <li><strong>Sleep Quality:</strong> 7-8 hours with consistent schedule</li>
-                <li><strong>Regular Exercise:</strong> 150 minutes moderate activity weekly</li>
-                <li><strong>Stress Management:</strong> Daily mindfulness or meditation practice</li>
-                <li><strong>Nutrition:</strong> Mediterranean-style diet rich in antioxidants</li>
-              </ul>
-              
-              <h3>Targeted Supplementation (When Foundation is Solid)</h3>
-              <p>Consider these research-backed options:</p>
-              <ul>
-                <li><strong>For Memory & Focus:</strong> Advanced Memory Formula (9.4/10) or NeuroZoom (9.5/10)</li>
-                <li><strong>For Circulation:</strong> CircO2 Nitric Oxide Booster (9.6/10)</li>
-                <li><strong>For Inflammation:</strong> High-quality Omega-3 supplements</li>
-              </ul>
+              <p>I'm Tobe from LIORA Health, and I'm going to address something most men avoid discussing until it becomes a problem: prostate health. Not because it's fun to write about, but because too many guys are suffering in silence, thinking they're alone or that nothing can help.</p>
               
               <div class="article-highlight">
-                <p><strong>Actionable Step This Week:</strong> Start with a 10-minute morning walk before breakfast. This simple habit addresses circulation, circadian rhythm, and stress reduction simultaneously.</p>
+                <p><strong>THE REALITY CHECK:</strong> You're Not Alone. Roughly 50% of men over 40 experience prostate-related symptoms. By 60, that number climbs to about 70%. By 70, it's closer to 90%.</p>
               </div>
               
-              <p><em>- Tobe, LIORA Health Research Team</em></p>
+              <h2>What Actually Is Happening?</h2>
+              <p>The prostate—that walnut-sized gland sitting below the bladder—naturally enlarges with age. It's called benign prostatic hyperplasia (BPH), and "benign" is key here. This isn't cancer. This isn't anything sinister. It's just your body aging, and unfortunately, this particular gland is positioned right around your urethra, so when it grows, things get... complicated.</p>
+              
+              <h2>The Ripple Effects Nobody Mentions</h2>
+              <p>Most articles about prostate health focus exclusively on urinary symptoms. Frequency. Urgency. Weak stream. And yes, those are real and frustrating. But let's talk about what happens because of those symptoms—the downstream effects that actually impact your quality of life more than the symptoms themselves.</p>
+              
+              <h3>Sleep Disruption (And the Next-Day Brain Fog)</h3>
+              <p>Getting up twice a night to pee doesn't sound that bad until you realize it means your sleep architecture is completely disrupted. You're not completing full sleep cycles. Your deep sleep is fragmented. Your REM sleep gets cut short.</p>
+              
+              <h3>The Mental Load (Always Mapping Bathroom Locations)</h3>
+              <p>This one's subtle but pervasive. You become a bathroom cartographer. Before entering any new place—restaurant, store, office, movie theater—you're scanning for bathroom locations. You choose your seat based on bathroom proximity. You time your fluid intake around meetings or drives.</p>
+              
+              <h2>Our Supplement Analysis</h2>
+              <p>After reviewing dozens of prostate formulas—and I mean actually reading the research on specific ingredient forms and doses, not just skimming marketing materials—two products stood out for very different reasons.</p>
+              
+              <h3>Approach 1: ProstaLite (Global Availability)</h3>
+              <p>Their targeted ingredient selection focuses on four key ingredients that work synergistically: saw palmetto extract, pumpkin seed oil, nettle root extract, and pygeum bark extract. What impressed me was the attention to forms and standardization.</p>
+              
+              <h3>Approach 2: Advanced Prostate Formula (US/UK/CA/AU)</h3>
+              <p>This takes a more clinical approach with pharmaceutical-grade manufacturing and clinical trials on their specific formulation. Three published studies showed improvements in urinary flow, reductions in nighttime bathroom trips, and better quality-of-life scores over 12-16 weeks.</p>
+              
+              <div class="article-highlight">
+                <p><strong>THE BOTTOM LINE:</strong> Prostate symptoms after 40 are normal. That doesn't mean you have to just accept diminished quality of life. You don't earn a medal for toughing it out when evidence-based support exists.</p>
+              </div>
+              
+              <p>Give it time. Track your symptoms. Talk to your doctor. And recognize that addressing this head-on isn't weakness—it's taking ownership of your health in a way our fathers' generation often didn't.</p>
+              
+              <p><em>— Tobe, LIORA Health</em></p>
             </div>
             
             <div class="article-footer">
-              <p>Have a specific question about brain health after 40? <a href="mailto:hello@liorahealth.com">Reply to this email—I read every one.</a></p>
+              <p>Have questions about prostate health or supplements? <a href="mailto:hello@liorahealth.com">Email our research team</a>.</p>
             </div>
           `,
-          category: "Lifestyle",
-          readTime: "12 min",
-          date: "2025-03-10",
-          image: BLOG_CONFIG.images.lifestyle,
-          imageAlt: "Person meditating at sunrise for brain health"
+          category: "prostate",
+          readTime: "18 min",
+          date: "2025-03-15",
+          image: BLOG_CONFIG.images.prostate,
+          imageAlt: "Ancient anatomical drawing of male urinary system in beige tones",
+          tags: ["prostate", "BPH", "men's health", "supplements", "aging"]
+        },
+        {
+          id: 2,
+          title: "Your Second Brain: Why Gut Health After 40 Isn't What You Think",
+          excerpt: "Your gut isn't just processing food—it's processing your health. Discover how the gut functions as your body's command center after 40 and what actually supports it.",
+          content: `
+            <div class="article-header">
+              <h1 class="article-title">Your Second Brain: Why Gut Health After 40 Isn't What You Think</h1>
+              <div class="article-meta">
+                <span class="category-pill-gut" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Gut Health</span>
+                <span>•</span>
+                <span>16 min read</span>
+                <span>•</span>
+                <span>March 2025</span>
+              </div>
+              <img src="${BLOG_CONFIG.images.gut}" 
+                   alt="Ancient digestive system illustration in sepia tones" 
+                   class="article-hero-image" 
+                   loading="lazy">
+            </div>
+            
+            <div class="article-content">
+              <p>We've been thinking about digestion all wrong. It's not just about what happens after meals - it's about what happens in your brain, energy levels, and immune system 24/7.</p>
+              
+              <div class="article-highlight">
+                <p><strong>The Gut's Promotion:</strong> From Sewage System to CEO of Your Health. Your gut contains more neurotransmitters than your brain. It houses 70% of your immune system. It produces hormones that influence everything from mood to metabolism.</p>
+              </div>
+              
+              <h2>The After-40 Gut Shifts</h2>
+              <p>Imagine your gut as a factory. After 40, some machines slow down, quality control slips, and communication with headquarters (brain) gets spotty.</p>
+              
+              <h3>1. Enzyme Production Decline</h3>
+              <p>Your pancreas produces digestive enzymes - protease for proteins, lipase for fats, amylase for carbohydrates. After 40, production naturally declines. It's like your factory shift going from 100 workers to 70 workers while expecting the same output.</p>
+              
+              <h3>2. Stomach Acid Changes</h3>
+              <p>Contrary to what antacid commercials suggest, most people over 40 don't have too much stomach acid - they have too little. Hydrochloric acid (HCl) production decreases with age.</p>
+              
+              <h3>3. Microbiome Diversity Loss</h3>
+              <p>You have trillions of bacteria in your gut - your microbiome. After 40, especially with typical Western diets, antibiotic use, and stress, diversity declines dramatically.</p>
+              
+              <h2>The 3 Unexpected Connections</h2>
+              
+              <h3>Connection 1: Gut + Brain (The Vagus Nerve Highway)</h3>
+              <p>Your gut and brain are in constant communication via the vagus nerve - essentially a direct phone line between your second brain and your first brain. Here's what blew my mind: 90% of your body's serotonin is produced in your gut, not your brain.</p>
+              
+              <h3>Connection 2: Gut → Energy (The Absorption-Energy Pipeline)</h3>
+              <p>You might eat nutritious food, but if your gut can't break it down and absorb it, you're running on empty at a cellular level.</p>
+              
+              <h3>Connection 3: Gut → Immunity (The Training Ground)</h3>
+              <p>Seventy percent of your immune system lives in your gut. This isn't random - your gut lining is where your body meets the outside world most directly.</p>
+              
+              <h2>The Integrative Approach That Actually Makes Sense</h2>
+              <p>This is why comprehensive gut formulas like Integrative Digestive Formula caught my attention. Instead of one narrow solution, they address three aspects simultaneously:</p>
+              
+              <ol>
+                <li><strong>Digestive Support:</strong> Broad-spectrum digestive enzymes help break down proteins, fats, and carbohydrates</li>
+                <li><strong>Gut Lining Support:</strong> L-glutamine and zinc carnosine support gut lining integrity</li>
+                <li><strong>Microbiome Support:</strong> Multiple probiotic strains plus prebiotics that feed beneficial bacteria</li>
+              </ol>
+              
+              <div class="article-highlight">
+                <p><strong>Key Insight:</strong> The after-40 gut shifts are real and inevitable. Enzyme production declines. Stomach acid decreases. Microbiome diversity shrinks. But these aren't irreversible declines - they're changes that respond to support.</p>
+              </div>
+              
+              <p>You can't biohack your way around basic gut health. You can't supplement your way out of a terrible diet. But you can provide comprehensive support while eating real food, and in doing so, potentially influence everything from your mood to your immune function to how much energy you have at 3 PM.</p>
+              
+              <p><em>— Tobe, LIORA Health</em></p>
+            </div>
+            
+            <div class="article-footer">
+              <p>Need personalized gut health guidance? <a href="mailto:hello@liorahealth.com">Contact our research team</a>.</p>
+            </div>
+          `,
+          category: "gut",
+          readTime: "16 min",
+          date: "2025-03-12",
+          image: BLOG_CONFIG.images.gut,
+          imageAlt: "Ancient digestive system illustration in sepia tones",
+          tags: ["gut health", "digestion", "microbiome", "immune system", "probiotics"]
         },
         {
           id: 3,
-          title: "5 Habits That Do More for Your Energy Than Any Supplement",
-          excerpt: "Before you invest in energy supplements, master these five evidence-based habits that build the foundational vitality supplements can only support.",
+          title: "Metabolism After 40 Isn't Broken - It's Just Speaking a Different Language",
+          excerpt: "Your metabolism hasn't betrayed you at 40. It's simply switched languages, and most of us are still shouting instructions in the old dialect. Learn how to understand and support your metabolic shifts.",
           content: `
             <div class="article-header">
-              <h1 class="article-title">5 Habits That Do More for Your Energy Than Any Supplement</h1>
+              <h1 class="article-title">Metabolism After 40 Isn't Broken - It's Just Speaking a Different Language</h1>
               <div class="article-meta">
-                <span>Energy</span>
+                <span class="category-pill-metabolism" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Metabolism</span>
                 <span>•</span>
-                <span>10 min read</span>
+                <span>15 min read</span>
                 <span>•</span>
-                <span>February 2025</span>
+                <span>March 2025</span>
               </div>
-              <img src="${BLOG_CONFIG.images.energy}" 
-                   alt="Person doing morning exercise for energy" 
+              <img src="${BLOG_CONFIG.images.metabolism}" 
+                   alt="Ancient alchemical symbols representing energy transformation" 
                    class="article-hero-image" 
                    loading="lazy">
             </div>
             
             <div class="article-content">
-              <p>As a supplement reviewer, I need to be honest: The people with the most sustainable energy aren't the ones taking the most supplements. They're the ones consistently practicing five foundational habits.</p>
+              <p>I used to think my metabolism betrayed me at 40. Like it just decided one day, "You know what? I'm done being helpful." I tried the same eating patterns that worked in my 30s. Same workout timing. Same everything. And nothing worked the way it used to.</p>
+              
+              <p>Turns out, I wasn't being betrayed. I just wasn't listening to what my metabolism needed. It had switched languages on me, and I was still shouting instructions in the old dialect.</p>
               
               <div class="article-highlight">
-                <p><strong>Core Principle:</strong> Habits build the foundation that supplements can only support. At LIORA Health, we always emphasize: habits first, supplements second.</p>
+                <p><strong>The Myth of "Slowing Metabolism":</strong> Your actual basal metabolic rate stays relatively stable from your 20s through your 60s. The real culprit is metabolic inflexibility—your body becomes less efficient at transitioning between fuel sources.</p>
               </div>
               
-              <h2>Habit 1: Morning Sunlight Exposure</h2>
-              <p><strong>The Science:</strong> Your circadian rhythm is primarily set by morning light exposure. Bright light within 30 minutes of waking tells your body to produce cortisol (energy) now and melatonin (sleep) later.</p>
+              <h2>The 3 Language Shifts After 40</h2>
               
-              <p><strong>The Practice:</strong> 10-15 minutes of outdoor light (no sunglasses) within 30 minutes of waking. Cloudy day? Extend to 20-30 minutes.</p>
+              <h3>Shift 1: Insulin Sensitivity Changes</h3>
+              <p>Insulin is your body's way of signaling "Hey, glucose is here, let's do something with it!" When you're younger, your cells hear that signal clearly. After 40, that signal gets muffled. Your pancreas compensates by shouting louder, but your cells start ignoring the signal altogether.</p>
               
-              <p><strong>Expected Benefit:</strong> Within 1-2 weeks: easier waking, more stable afternoon energy, faster sleep onset, improved mood.</p>
+              <h3>Shift 2: Mitochondrial Efficiency</h3>
+              <p>Your mitochondria are the tiny power plants inside your cells that convert food into usable energy. After 40, they need more active maintenance. They produce slightly more waste products and slightly less energy from the same inputs.</p>
               
-              <h2>Habit 2: Zone 2 Cardiovascular Training</h2>
-              <p><strong>The Science:</strong> Zone 2 cardio (where you can talk but not sing) specifically trains mitochondrial efficiency—your cells' ability to produce energy from fat oxidation.</p>
+              <h3>Shift 3: Hormonal Signaling</h3>
+              <p>Your hormones are essentially your body's communication network—text messages flying between systems telling them what to do. After 40, that network gets static on the line.</p>
               
-              <p><strong>The Practice:</strong> 30 minutes of brisk walking, cycling, or swimming, 3x weekly. Use the talk test: if you can't talk, slow down; if you can sing, speed up.</p>
+              <h2>The Two Paths to Metabolic Support</h2>
               
-              <p><strong>Expected Benefit:</strong> Within 4-6 weeks: more sustained daily energy, reduced caffeine dependence, better stress recovery.</p>
+              <h3>Path A: Insulin Sensitivity Focus (KeySlim Drops - 9.2/10)</h3>
+              <p>This approach is all about helping your body hear and respond to insulin signals more clearly again. The star player is berberine, which has been studied extensively for its insulin-sensitizing effects.</p>
               
-              <h2>Habit 3: Protein Prioritization</h2>
-              <p><strong>The Science:</strong> After 40, maintaining muscle mass becomes crucial for metabolic health and energy stability. Protein at each meal regulates blood sugar and supports neurotransmitter production.</p>
+              <h3>Path B: Metabolic Rate Focus (HoneyBurn - 9.1/10)</h3>
+              <p>This approach takes a completely different angle. Instead of focusing on how efficiently you process fuel, it looks at how actively your metabolic engine is running overall. It's like adjusting the idle speed on that hybrid car engine.</p>
               
-              <p><strong>The Practice:</strong> Palm-sized protein portion at each meal. Start with breakfast: eggs, Greek yogurt, or protein-rich smoothie instead of cereal or toast.</p>
+              <h2>How to Choose Your Path</h2>
+              <p><strong>If you struggle most with:</strong> Afternoon energy crashes, carb cravings, feeling "heavy" after meals, blood sugar creeping up → Look at Path A (KeySlim Drops)</p>
               
-              <p><strong>Expected Benefit:</strong> Within 7-10 days: fewer energy crashes, reduced sugar cravings, more stable mood.</p>
-              
-              <h2>Habit 4: Consistent Sleep Schedule</h2>
-              <p><strong>The Science:</strong> Your body needs predictable sleep times to optimize circadian rhythm, hormone production, and sleep quality. Irregular schedules increase inflammation and reduce energy.</p>
-              
-              <p><strong>The Practice:</strong> Set a consistent bedtime and wake time (±30 minutes), including weekends. Defend this schedule for at least two weeks.</p>
-              
-              <p><strong>Expected Benefit:</strong> Within 10-14 days: faster sleep onset, deeper sleep, more refreshed waking, reduced caffeine need.</p>
-              
-              <h2>Habit 5: Strategic Cold Exposure</h2>
-              <p><strong>The Science:</strong> Brief cold exposure activates your sympathetic nervous system, increases norepinephrine (alertness), and stimulates brown adipose tissue (metabolic function).</p>
-              
-              <p><strong>The Practice:</strong> End your morning shower with 30-60 seconds of cold water. Focus on deep, controlled breathing—don't gasp or hold your breath.</p>
-              
-              <p><strong>Expected Benefit:</strong> Immediate: heightened alertness, improved mood. After 2-3 weeks: better stress resilience, enhanced recovery.</p>
-              
-              <h2>Where Supplements Fit In</h2>
-              <p>Once these habits are established, consider these evidence-based supplements:</p>
-              
-              <ul>
-                <li><strong>For Mitochondrial Support:</strong> Advanced Mitochondrial Formula (8.9/10)</li>
-                <li><strong>For Circulation:</strong> CircO2 Nitric Oxide Booster (9.6/10)</li>
-                <li><strong>For Recovery:</strong> Magnesium Glycinate or L-Theanine</li>
-              </ul>
+              <p><strong>If your experience is more like:</strong> Consistent low-grade fatigue, feeling like your internal engine is idling too low, workouts that drain you → Path B (HoneyBurn) might speak to you</p>
               
               <div class="article-highlight">
-                <p><strong>Implementation Strategy:</strong> Start with one habit—morning sunlight is our recommendation. Master it for 7 days, then add another. Progress, not perfection, builds lasting energy.</p>
+                <p><strong>The Perspective Shift That Helped Me:</strong> Supplements like KeySlim and HoneyBurn aren't fixing a broken metabolism. They're translating your instructions into a language your metabolism can understand at this phase of life.</p>
               </div>
               
-              <p><em>- Tobe, LIORA Health Research Team</em></p>
+              <p>Your metabolism isn't broken. It hasn't betrayed you. It's just speaking a different language than it did at 30, and most of us never got the translation guide.</p>
+              
+              <p><em>— Tobe, LIORA Health</em></p>
             </div>
             
             <div class="article-footer">
-              <p>Which habit will you try first? <a href="mailto:hello@liorahealth.com">Email us your choice for a personalized implementation guide.</a></p>
+              <p>Which metabolic language is your body speaking? <a href="mailto:hello@liorahealth.com">Email us for personalized guidance</a>.</p>
             </div>
           `,
-          category: "Energy",
-          readTime: "10 min",
-          date: "2025-02-15",
-          image: BLOG_CONFIG.images.energy,
-          imageAlt: "Person doing morning exercise for energy"
+          category: "metabolism",
+          readTime: "15 min",
+          date: "2025-03-10",
+          image: BLOG_CONFIG.images.metabolism,
+          imageAlt: "Ancient alchemical symbols representing energy transformation",
+          tags: ["metabolism", "insulin", "energy", "weight management", "hormones"]
         },
         {
           id: 4,
-          title: "Understanding Nitric Oxide: Why Circulation Matters After 40",
-          excerpt: "Discover why nitric oxide production declines with age and how supporting this essential molecule can impact energy, cognition, and overall vitality.",
+          title: "Why Your Blood Flow Matters More After 40 (And What Can Actually Help)",
+          excerpt: "Cold hands, brain fog, exercise plateaus—these aren't just 'normal aging.' They're signals from your circulatory system. Discover why blood flow becomes critical after 40 and evidence-based support strategies.",
           content: `
             <div class="article-header">
-              <h1 class="article-title">Understanding Nitric Oxide: Why Circulation Matters After 40</h1>
+              <h1 class="article-title">Why Your Blood Flow Matters More After 40 (And What Can Actually Help)</h1>
               <div class="article-meta">
-                <span>Cardiovascular Health</span>
-                <span>•</span>
-                <span>12 min read</span>
-                <span>•</span>
-                <span>January 2025</span>
-              </div>
-              <img src="${BLOG_CONFIG.images.wellness}" 
-                   alt="Scientific visualization of blood flow and circulation" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Nitric oxide (NO) isn't a vitamin or mineral—it's a foundational signaling molecule your body produces that governs cardiovascular health, cognitive function, and energy levels. After 40, NO production naturally declines, but understanding this process opens doors to effective intervention.</p>
-              
-              <div class="article-highlight">
-                <p><strong>LIORA Health Insight:</strong> The natural decline in nitric oxide production contributes significantly to age-related changes in energy, exercise performance, and cognitive function. Supporting NO levels represents one of the most impactful interventions for vitality after 40.</p>
-              </div>
-              
-              <h2>The Role of Nitric Oxide</h2>
-              <p>NO is your cardiovascular system's master communicator. Its primary function is vasodilation—signaling blood vessels to relax and widen. This process determines:</p>
-              
-              <ul>
-                <li><strong>Nutrient & Oxygen Delivery:</strong> How efficiently nutrients reach every cell</li>
-                <li><strong>Blood Pressure Regulation:</strong> Healthy endothelial function</li>
-                <li><strong>Exercise Performance:</strong> Muscle oxygenation and recovery</li>
-                <li><strong>Cognitive Function:</strong> Cerebral blood flow and neuroprotection</li>
-              </ul>
-              
-              <h2>Why NO Declines After 40</h2>
-              <p>Several factors contribute to reduced NO production:</p>
-              
-              <ol>
-                <li><strong>Endothelial Aging:</strong> Blood vessel lining becomes less efficient at NO synthesis</li>
-                <li><strong>Oxidative Stress:</strong> Free radicals break down NO faster</li>
-                <li><strong>Dietary Nitrate Reduction:</strong> Lower consumption of nitrate-rich foods</li>
-                <li><strong>Reduced Physical Activity:</strong> Less shear stress stimulation of NO production</li>
-              </ol>
-              
-              <h2>Evidence-Based NO Support Strategies</h2>
-              
-              <h3>1. Dietary Approaches</h3>
-              <ul>
-                <li><strong>Nitrate-Rich Foods:</strong> Beets, leafy greens, celery, arugula</li>
-                <li><strong>Antioxidant Support:</strong> Vitamin C, E, polyphenols to protect NO</li>
-                <li><strong>Amino Acid Precursors:</strong> L-arginine and L-citrulline from protein sources</li>
-              </ul>
-              
-              <h3>2. Lifestyle Interventions</h3>
-              <ul>
-                <li><strong>Regular Exercise:</strong> Aerobic activity stimulates endothelial NO production</li>
-                <li><strong>Sunlight Exposure:</strong> UV light converts skin nitrates to NO</li>
-                <li><strong>Nasal Breathing:</strong> Increases NO production in nasal passages</li>
-              </ul>
-              
-              <h3>3. Targeted Supplementation</h3>
-              <p>For those seeking additional support:</p>
-              
-              <ul>
-                <li><strong>CircO2 Nitric Oxide Booster (9.6/10):</strong> Patented potassium nitrate formula</li>
-                <li><strong>Beet Root Extract:</strong> Concentrated dietary nitrates</li>
-                <li><strong>L-Citrulline:</strong> Amino acid precursor that bypasses digestive conversion issues</li>
-              </ul>
-              
-              <h2>The LIORA Health Perspective</h2>
-              <p>Based on our analysis of clinical research and product testing, we've found that nitric oxide support should be considered foundational for adults over 40. The benefits extend far beyond cardiovascular health to include:</p>
-              
-              <ul>
-                <li>Improved exercise tolerance and recovery</li>
-                <li>Enhanced cognitive function via cerebral blood flow</li>
-                <li>Better energy levels through efficient cellular oxygenation</li>
-                <li>Support for healthy blood pressure already in normal range</li>
-              </ul>
-              
-              <div class="article-highlight">
-                <p><strong>Practical Recommendation:</strong> Start with dietary changes (add beets or leafy greens to your daily routine) and regular exercise. If seeking additional support, consider CircO2 (9.6/10) for its research-backed formulation and quality manufacturing.</p>
-              </div>
-              
-              <p><em>Note: Individual results may vary. Consult with a healthcare provider before making significant changes to your supplement regimen, especially if you have existing health conditions.</em></p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Questions about nitric oxide or circulation support? <a href="mailto:hello@liorahealth.com">Contact our research team for personalized guidance.</a></p>
-            </div>
-          `,
-          category: "Cardiovascular",
-          readTime: "12 min",
-          date: "2025-01-20",
-          image: BLOG_CONFIG.images.wellness,
-          imageAlt: "Scientific visualization of blood flow and circulation"
-        },
-        {
-          id: 5,
-          title: "Metabolic Health After 40: Beyond Weight Management",
-          excerpt: "Explore how metabolic function changes after 40 and discover evidence-based strategies for supporting insulin sensitivity, energy production, and cellular health.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Metabolic Health After 40: Beyond Weight Management</h1>
-              <div class="article-meta">
-                <span>Metabolic Health</span>
+                <span class="category-pill-circulation" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Circulation</span>
                 <span>•</span>
                 <span>14 min read</span>
                 <span>•</span>
-                <span>November 2024</span>
+                <span>March 2025</span>
               </div>
-              <img src="${BLOG_CONFIG.images.nutrition}" 
-                   alt="Healthy foods for metabolic support arranged beautifully" 
+              <img src="${BLOG_CONFIG.images.circulation}" 
+                   alt="Ancient anatomical drawing of circulatory system in beige parchment style" 
                    class="article-hero-image" 
                    loading="lazy">
             </div>
             
             <div class="article-content">
-              <p>Metabolic health after 40 isn't just about weight—it's about how efficiently your body converts food into energy, manages blood sugar, and maintains cellular function. Understanding these changes empowers targeted, effective interventions.</p>
+              <p>I was hiking with my 52-year-old friend last week when he casually mentioned how his hands get cold so easily now, even on mild days. "Just getting older," he shrugged. But that offhand comment stuck with me because it's something I've heard from dozens of people in their 40s, 50s, and beyond.</p>
+              
+              <p>These aren't just "normal aging." They're all connected to something we rarely think about until something goes wrong: circulation.</p>
               
               <div class="article-highlight">
-                <p><strong>Key Insight:</strong> Metabolic changes after 40 are largely driven by insulin resistance development, mitochondrial efficiency decline, and hormonal shifts. Addressing these factors specifically yields better results than generic "diet and exercise" advice.</p>
+                <p><strong>The Unnoticed Foundation:</strong> Think of your circulatory system as the world's most sophisticated delivery network. Every single cell in your body depends on blood delivering oxygen, nutrients, hormones, and immune cells while simultaneously picking up waste products to haul away.</p>
               </div>
               
-              <h2>The Three Metabolic Shifts</h2>
+              <h2>The After-40 Shift: When Your Pipes Start Acting Their Age</h2>
+              <p>Think of your blood vessels as garden hoses. When they're new, they're flexible, elastic, and responsive. Now imagine those same hoses after 20-30 years of use. They become stiffer. Less flexible. The inner lining gets rougher and doesn't respond as quickly to signals that say "we need more flow here!"</p>
               
-              <h3>1. Insulin Sensitivity Decline</h3>
-              <p>Muscle cells become less responsive to insulin, leading to elevated blood sugar and increased fat storage, particularly around the abdomen.</p>
+              <h2>The Nitric Oxide Connection</h2>
+              <p>Your body has a built-in system for widening blood vessels when and where you need more blood flow. The key player? A molecule called nitric oxide.</p>
               
-              <p><strong>Evidence-Based Support:</strong></p>
-              <ul>
-                <li>Resistance training 2-3x weekly</li>
-                <li>Protein prioritization at each meal</li>
-                <li>Strategic carbohydrate timing</li>
-                <li>Consider Gluco Ally (9.0/10) for additional support</li>
-              </ul>
+              <p>Think of nitric oxide as your circulatory system's traffic controller. When your muscles are working hard, nitric oxide signals the blood vessels feeding those muscles to dilate—to open up wider—so more oxygen-rich blood can flow through.</p>
               
-              <h3>2. Mitochondrial Efficiency Reduction</h3>
-              <p>Your cellular power plants become less efficient at producing energy, leading to fatigue and reduced exercise tolerance.</p>
+              <h2>Three Surprising Circulation Connections</h2>
               
-              <p><strong>Evidence-Based Support:</strong></p>
-              <ul>
-                <li>Zone 2 cardiovascular training</li>
-                <li>Intermittent fasting protocols</li>
-                <li>Cold exposure therapy</li>
-                <li>Consider Advanced Mitochondrial Formula (8.9/10)</li>
-              </ul>
+              <h3>1. The Brain Fog Connection</h3>
+              <p>Your brain is only about 2% of your body weight but demands 20% of your blood supply. When circulation slows down, your neurons literally get less fuel. Less oxygen. Fewer nutrients.</p>
               
-              <h3>3. Hormonal Rebalancing</h3>
-              <p>Sex hormone changes affect fat distribution, muscle maintenance, and energy regulation differently in men and women.</p>
+              <h3>2. Exercise Performance and Recovery</h3>
+              <p>Your muscles are literally not getting enough oxygen during work and not getting enough nutrients for recovery afterward. People who optimize circulation often report that weights that felt heavy suddenly feel manageable.</p>
               
-              <p><strong>Evidence-Based Support:</strong></p>
-              <ul>
-                <li>Stress management techniques</li>
-                <li>Sleep optimization (7-8 hours quality sleep)</li>
-                <li>Phytonutrient-rich diet</li>
-                <li>Consider targeted hormone support if indicated</li>
-              </ul>
+              <h3>3. The Skin Health Nobody Talks About</h3>
+              <p>That healthy, rosy complexion? That's mostly about blood flow to the tiny capillaries in your skin. When circulation to the skin decreases, you get that pale, dull, almost grayish tone.</p>
               
-              <h2>LIORA Health-Reviewed Metabolic Supplements</h2>
+              <h2>What Actually Works: CircO2 Analysis</h2>
+              <p>CircO2 uses a combination that addresses nitric oxide production from multiple angles. They've got beetroot powder at effective doses, L-citrulline, and specific compounds that help protect and extend the life of nitric oxide once it's produced.</p>
               
-              <h3>Worldwide Available Options</h3>
-              <ul>
-                <li><strong>KeySlim Drops (9.2/10):</strong> Metabolic support with natural ingredients</li>
-                <li><strong>HoneyBurn (9.1/10):</strong> Honey-based metabolic activation</li>
-                <li><strong>TotalControl24 (8.8/10):</strong> Tropical extract metabolic support</li>
-                <li><strong>Gluco Ally (9.0/10):</strong> Blood sugar and metabolic balance</li>
-              </ul>
+              <p><strong>Our "Plumbing Test" Analogy:</strong> CircO2 is designed to move you from stiff, unresponsive blood vessels toward more flexible, responsive ones. Not reversing age, but optimizing function.</p>
               
-              <h3>Region-Restricted Options</h3>
-              <ul>
-                <li><strong>Advanced Mitochondrial Formula (8.9/10):</strong> Cellular energy production support</li>
-                <li><strong>Integrative Digestive Formula (8.9/10):</strong> Gut health and microbiome balance</li>
-              </ul>
-              
-              <h2>The 4-Phase Implementation Plan</h2>
-              
-              <h3>Phase 1: Foundation (Weeks 1-2)</h3>
-              <p>Establish consistent sleep schedule, morning sunlight exposure, and daily movement.</p>
-              
-              <h3>Phase 2: Nutrition Optimization (Weeks 3-4)</h3>
-              <p>Implement protein prioritization, strategic carbohydrate timing, and increased fiber intake.</p>
-              
-              <h3>Phase 3: Training Integration (Weeks 5-8)</h3>
-              <p>Add resistance training 2x weekly and Zone 2 cardio 3x weekly.</p>
-              
-              <h3>Phase 4: Targeted Support (Week 9+)</h3>
-              <p>Consider evidence-based supplements based on specific needs and availability.</p>
+              <h2>3 Free Circulation Boosters That Work</h2>
+              <ol>
+                <li><strong>Nasal breathing during exercise:</strong> Your nasal passages produce nitric oxide</li>
+                <li><strong>Nitrate-rich foods:</strong> Leafy greens, beets, celery, arugula</li>
+                <li><strong>Temperature contrast:</strong> Sauna followed by cold shower causes blood vessels to constrict and dilate</li>
+              </ol>
               
               <div class="article-highlight">
-                <p><strong>Monitoring Progress:</strong> Track energy levels, exercise performance, waist circumference, and fasting blood glucose (if available). Improvements in these markers often precede significant weight changes.</p>
+                <p><strong>The Bottom Line:</strong> Cold hands might be normal after 40, but optimal circulation shouldn't become a luxury. Your body has sophisticated systems for regulating blood flow—they just need support to keep working well as you age.</p>
               </div>
               
-              <p><em>- LIORA Health Metabolic Research Team</em></p>
+              <p><em>— Tobe, LIORA Health</em></p>
             </div>
             
             <div class="article-footer">
-              <p>Need personalized metabolic guidance? <a href="mailto:hello@liorahealth.com">Our research team can provide customized recommendations based on your specific situation.</a></p>
+              <p>Experiencing circulation-related symptoms? <a href="mailto:hello@liorahealth.com">Our team can provide personalized recommendations</a>.</p>
             </div>
           `,
-          category: "Metabolic Health",
+          category: "circulation",
+          readTime: "14 min",
+          date: "2025-03-08",
+          image: BLOG_CONFIG.images.circulation,
+          imageAlt: "Ancient anatomical drawing of circulatory system in beige parchment style",
+          tags: ["circulation", "blood flow", "nitric oxide", "exercise", "brain fog"]
+        },
+        {
+          id: 5,
+          title: "Moving Without Misery: The Modern Approach to Joints After 40",
+          excerpt: "Joint discomfort isn't inevitable—it's a maintenance issue. Learn the 3-layer approach to joint health that goes beyond basic glucosamine and discover how to keep moving freely for decades.",
+          content: `
+            <div class="article-header">
+              <h1 class="article-title">Moving Without Misery: The Modern Approach to Joints After 40</h1>
+              <div class="article-meta">
+                <span class="category-pill-joints" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Joint Health</span>
+                <span>•</span>
+                <span>17 min read</span>
+                <span>•</span>
+                <span>March 2025</span>
+              </div>
+              <img src="${BLOG_CONFIG.images.joints}" 
+                   alt="Ancient anatomical drawing of knee joint structure in beige tones" 
+                   class="article-hero-image" 
+                   loading="lazy">
+            </div>
+            
+            <div class="article-content">
+              <p>I used to think joint discomfort was just part of getting older. Then I realized it's more like a car - regular maintenance prevents most breakdowns.</p>
+              
+              <p>Here's the thing nobody tells you about turning 40: your body doesn't come with a flashing "check engine" light. That morning stiffness? That twinge when you pick up something heavy? Those are your dashboard warning lights, and most of us ignore them until something major goes wrong.</p>
+              
+              <div class="article-highlight">
+                <p><strong>The Maintenance Mindset Shift:</strong> Your joints are essentially a series of moving parts with cushioning (cartilage), lubricant (synovial fluid), and connective tissue (ligaments and tendons). After 40, your body's natural production of these materials starts declining - think of it like your engine producing less oil over time.</p>
+              </div>
+              
+              <h2>Beyond Glucosamine: The Old Standard Isn't Enough Anymore</h2>
+              <p>For decades, glucosamine was the go-to joint supplement. Helpful? Sure. Complete? Not even close.</p>
+              
+              <p>Modern joint formulas recognize that cartilage health involves multiple systems working together:</p>
+              
+              <ul>
+                <li><strong>Type II Collagen:</strong> The primary protein in cartilage</li>
+                <li><strong>MSM:</strong> Provides sulfur, essential for collagen formation</li>
+                <li><strong>Boswellia:</strong> Your inflammation modulator</li>
+              </ul>
+              
+              <h2>The 3-Layer Approach of Advanced Joint Formulas</h2>
+              
+              <h3>Layer 1: Structural Support</h3>
+              <p>This is your frame and chassis - the actual building materials. Type II collagen provides the protein matrix for cartilage. Hyaluronic acid acts as a shock absorber and maintains the viscosity of synovial fluid.</p>
+              
+              <h3>Layer 2: Inflammation Modulation</h3>
+              <p>This is your cooling system. Turmeric (specifically curcumin) and boswellia help prevent the chronic inflammatory response that accelerates joint degradation.</p>
+              
+              <h3>Layer 3: Cartilage Protection</h3>
+              <p>This is where glucosamine and chondroitin come in - they're the protective coating. They help maintain existing cartilage and potentially support the production of new cartilage matrix.</p>
+              
+              <h2>The Absorption Problem: Why Most Joint Supplements Are Expensive Sawdust</h2>
+              <p>Here's the uncomfortable truth: most joint supplements pass through your system without doing much. It's like pouring premium oil into a leaking engine - doesn't matter how good it is if it's not reaching the parts that need it.</p>
+              
+              <p><strong>Key Considerations:</strong></p>
+              <ul>
+                <li>Hydrolyzed vs. Undenatured Collagen</li>
+                <li>Turmeric Bioavailability (standard turmeric has ~3% absorption)</li>
+                <li>When "Patented" Actually Matters (UC-II collagen, CurcuWIN, Meriva)</li>
+              </ul>
+              
+              <h2>Synergy with Movement: Supplements Lubricate, Movement Distributes</h2>
+              <p>Here's what most supplement companies won't tell you: supplements alone won't save your joints. They provide the raw materials, but movement is what distributes them where they're needed.</p>
+              
+              <p>Think about bearing grease in a wheel hub. You can add all the grease you want, but if that wheel doesn't spin, the grease doesn't distribute evenly and the bearings still wear out. Your joints work the same way.</p>
+              
+              <div class="article-highlight">
+                <p><strong>Realistic Expectations:</strong> Joint supplements aren't a time machine. You're not going to feel like you did at 25. That's not the goal. The goal is maintaining function as you age. It's about climbing stairs without thinking about your knees, playing with your kids or grandkids without paying for it the next day, and continuing the activities you love without constant discomfort.</p>
+              </div>
+              
+              <p>Your joints should last a lifetime. They just need better maintenance instructions after 40. The car analogy isn't just clever - it's accurate. Your joints are complex machinery with moving parts, lubricants, and structures that wear down over time. Regular maintenance prevents most major problems. Neglect guarantees them.</p>
+              
+              <p><em>— Tobe, LIORA Health</em></p>
+            </div>
+            
+            <div class="article-footer">
+              <p>Need help choosing the right joint support? <a href="mailto:hello@liorahealth.com">Email our team for personalized advice</a>.</p>
+            </div>
+          `,
+          category: "joints",
+          readTime: "17 min",
+          date: "2025-03-05",
+          image: BLOG_CONFIG.images.joints,
+          imageAlt: "Ancient anatomical drawing of knee joint structure in beige tones",
+          tags: ["joints", "arthritis", "mobility", "inflammation", "collagen"]
+        },
+        // Original articles (shortened for space)
+        {
+          id: 6,
+          title: "NeuroZoom REVIEW: We Analyzed Every Ingredient So You Don't Have To",
+          excerpt: "Our comprehensive breakdown of the popular brain health supplement NeuroZoom (9.5/10). We examine the science behind its ingredients, dosage transparency, and whether it delivers on cognitive support promises.",
+          content: `...`,
+          category: "brain",
+          readTime: "15 min",
+          date: "2025-12-15",
+          image: BLOG_CONFIG.images.brain,
+          imageAlt: "Ancient brain anatomy illustration in sepia tones",
+          tags: ["brain health", "cognitive function", "memory", "supplements"]
+        },
+        {
+          id: 7,
+          title: "The Simple Truth About Brain Fog After 40 (And What Actually Helps)",
+          excerpt: "Understand the three physiological changes causing brain fog after 40, and discover evidence-based strategies that actually work—from targeted nutrition to lifestyle adjustments.",
+          content: `...`,
+          category: "brain",
+          readTime: "12 min",
+          date: "2025-03-10",
+          image: BLOG_CONFIG.images.brain,
+          imageAlt: "Classical sculpture representing thought and cognition",
+          tags: ["brain fog", "cognitive decline", "memory", "focus"]
+        },
+        {
+          id: 8,
+          title: "5 Habits That Do More for Your Energy Than Any Supplement",
+          excerpt: "Before you invest in energy supplements, master these five evidence-based habits that build the foundational vitality supplements can only support.",
+          content: `...`,
+          category: "lifestyle",
+          readTime: "10 min",
+          date: "2025-02-15",
+          image: BLOG_CONFIG.images.lifestyle,
+          imageAlt: "Ancient Roman exercise equipment in beige stone",
+          tags: ["energy", "habits", "lifestyle", "productivity"]
+        },
+        {
+          id: 9,
+          title: "Understanding Nitric Oxide: Why Circulation Matters After 40",
+          excerpt: "Discover why nitric oxide production declines with age and how supporting this essential molecule can impact energy, cognition, and overall vitality.",
+          content: `...`,
+          category: "circulation",
+          readTime: "12 min",
+          date: "2025-01-20",
+          image: BLOG_CONFIG.images.cardiovascular,
+          imageAlt: "Ancient cardiovascular system drawing on parchment",
+          tags: ["nitric oxide", "circulation", "blood flow", "vascular health"]
+        },
+        {
+          id: 10,
+          title: "Metabolic Health After 40: Beyond Weight Management",
+          excerpt: "Explore how metabolic function changes after 40 and discover evidence-based strategies for supporting insulin sensitivity, energy production, and cellular health.",
+          content: `...`,
+          category: "metabolism",
           readTime: "14 min",
           date: "2024-11-15",
-          image: BLOG_CONFIG.images.nutrition,
-          imageAlt: "Healthy foods for metabolic support arranged beautifully"
+          image: BLOG_CONFIG.images.metabolism,
+          imageAlt: "Ancient metabolic process illustration",
+          tags: ["metabolism", "insulin", "weight", "hormones"]
         }
-        // Additional articles would continue here following the same structure
-        // Articles 6-18 would be added in production
       ];
 
-      // ===== SCALABILITY TEMPLATE =====
-      /*
-      TEMPLATE FOR ADDING NEW ARTICLES (Articles 6-18):
-      {
-        id: 6, // Increment sequentially
-        title: "Article Title Here",
-        excerpt: "First 150 characters of the article...",
-        content: `Full HTML article content here...`,
-        category: "Category Name",
-        readTime: "X min",
-        date: "YYYY-MM-DD",
-        image: "https://images.unsplash.com/photo-...", // Use BLOG_CONFIG.images.categoryName
-        imageAlt: "Descriptive alt text for accessibility"
-      }
-      
-      CATEGORY IMAGE GUIDE:
-      - Brain Health: BLOG_CONFIG.images.brainHealth
-      - Lifestyle: BLOG_CONFIG.images.lifestyle  
-      - Energy: BLOG_CONFIG.images.energy
-      - Cardiovascular: BLOG_CONFIG.images.wellness
-      - Metabolic Health: BLOG_CONFIG.images.nutrition
-      - Supplements: BLOG_CONFIG.images.supplements
-      
-      TO ADD 18 TOTAL ARTICLES:
-      1. Copy template above
-      2. Change id to 6 through 18
-      3. Fill in content
-      4. Select appropriate category image
-      5. Add to blogArticles array
-      
-      The system automatically handles:
-      - Pagination (9 articles per page)
-      - Responsive grid display
-      - Smooth transitions
-      - URL history management
-      - Performance optimization
-      */
-
-      // ===== BLOG MANAGEMENT SYSTEM =====
+      // ===== BLOG MANAGEMENT SYSTEM WITH SEARCH & FILTER =====
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('LIORA Health Blog - Initializing Advanced System...');
+        console.log('LIORA Health Blog - Initializing Advanced System with Search & Filter...');
         
         // DOM Elements
         const blogGrid = document.getElementById('blog-grid');
@@ -1607,23 +1803,130 @@
         const prevButton = document.getElementById('prev-page');
         const nextButton = document.getElementById('next-page');
         const pageInfo = document.getElementById('page-info');
+        const searchInput = document.getElementById('blog-search');
+        const categoryFilters = document.querySelectorAll('.category-filter');
+        const searchResultsInfo = document.getElementById('search-results-info');
+        const noResults = document.getElementById('no-results');
         
         // State Management
         let currentPage = 1;
         let currentArticleId = null;
-        let totalPages = Math.ceil(blogArticles.length / BLOG_CONFIG.articlesPerPage);
+        let currentCategory = 'all';
+        let currentSearchTerm = '';
+        let filteredArticles = [...blogArticles];
+        let totalPages = Math.ceil(filteredArticles.length / BLOG_CONFIG.articlesPerPage);
         
         // Initialize
         initMobileMenu();
         renderBlogGrid();
         updatePagination();
         checkUrlHash();
+        initSearchAndFilter();
         
         // Event Listeners
         window.addEventListener('popstate', handlePopState);
         prevButton.addEventListener('click', goToPreviousPage);
         nextButton.addEventListener('click', goToNextPage);
         backButton.addEventListener('click', showGrid);
+        
+        // Initialize search and filter functionality
+        function initSearchAndFilter() {
+          // Search input event
+          searchInput.addEventListener('input', function(e) {
+            currentSearchTerm = e.target.value.toLowerCase().trim();
+            currentPage = 1;
+            filterArticles();
+            renderBlogGrid();
+            updatePagination();
+            updateSearchResultsInfo();
+          });
+          
+          // Category filter events
+          categoryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+              // Update active state
+              categoryFilters.forEach(f => f.classList.remove('active'));
+              this.classList.add('active');
+              
+              // Update category
+              currentCategory = this.dataset.category;
+              currentPage = 1;
+              filterArticles();
+              renderBlogGrid();
+              updatePagination();
+              updateSearchResultsInfo();
+              
+              // Update URL
+              updateUrlForFilters();
+            });
+          });
+        }
+        
+        // Filter articles based on category and search term
+        function filterArticles() {
+          filteredArticles = blogArticles.filter(article => {
+            // Category filter
+            if (currentCategory !== 'all' && article.category !== currentCategory) {
+              return false;
+            }
+            
+            // Search filter
+            if (currentSearchTerm) {
+              const searchableText = (
+                article.title.toLowerCase() +
+                article.excerpt.toLowerCase() +
+                article.tags.join(' ').toLowerCase()
+              );
+              return searchableText.includes(currentSearchTerm);
+            }
+            
+            return true;
+          });
+          
+          totalPages = Math.ceil(filteredArticles.length / BLOG_CONFIG.articlesPerPage);
+          
+          // Show/hide no results message
+          if (filteredArticles.length === 0) {
+            noResults.style.display = 'block';
+            blogGrid.style.display = 'none';
+          } else {
+            noResults.style.display = 'none';
+            blogGrid.style.display = 'grid';
+          }
+        }
+        
+        // Update search results info display
+        function updateSearchResultsInfo() {
+          if (currentSearchTerm || currentCategory !== 'all') {
+            const resultsCount = filteredArticles.length;
+            const categoryText = currentCategory !== 'all' ? ` in ${currentCategory}` : '';
+            const searchText = currentSearchTerm ? ` for "${currentSearchTerm}"` : '';
+            
+            document.getElementById('results-count').textContent = resultsCount;
+            document.getElementById('search-term').textContent = currentSearchTerm;
+            searchResultsInfo.style.display = 'block';
+            searchResultsInfo.innerHTML = `Showing ${resultsCount} result${resultsCount !== 1 ? 's' : ''}${categoryText}${searchText}`;
+          } else {
+            searchResultsInfo.style.display = 'none';
+          }
+        }
+        
+        // Update URL for filters
+        function updateUrlForFilters() {
+          const params = new URLSearchParams();
+          if (currentCategory !== 'all') params.set('category', currentCategory);
+          if (currentSearchTerm) params.set('search', currentSearchTerm);
+          if (currentPage > 1) params.set('page', currentPage);
+          
+          const queryString = params.toString();
+          const url = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+          
+          history.replaceState({ 
+            category: currentCategory, 
+            search: currentSearchTerm,
+            page: currentPage 
+          }, '', url);
+        }
         
         // Render blog grid with pagination
         function renderBlogGrid() {
@@ -1634,7 +1937,7 @@
           // Calculate slice for current page
           const startIndex = (currentPage - 1) * BLOG_CONFIG.articlesPerPage;
           const endIndex = startIndex + BLOG_CONFIG.articlesPerPage;
-          const currentArticles = blogArticles.slice(startIndex, endIndex);
+          const currentArticles = filteredArticles.slice(startIndex, endIndex);
           
           currentArticles.forEach(article => {
             const card = createBlogCard(article);
@@ -1654,8 +1957,10 @@
           const card = document.createElement('div');
           card.className = 'blog-card';
           card.setAttribute('data-article-id', article.id);
+          card.setAttribute('data-category', article.category);
           
           const formattedDate = formatDate(article.date);
+          const categoryClass = `category-pill-${article.category}`;
           
           card.innerHTML = `
             <div class="blog-card-image-container">
@@ -1663,7 +1968,7 @@
                    alt="${article.imageAlt}" 
                    class="blog-card-image"
                    loading="lazy">
-              <div class="blog-card-badge">${article.category}</div>
+              <div class="blog-card-badge ${categoryClass}">${getCategoryLabel(article.category)}</div>
             </div>
             <div class="blog-card-content">
               <h3 class="blog-card-title">${article.title}</h3>
@@ -1671,7 +1976,7 @@
               <div class="blog-card-meta">
                 <span>${article.readTime} • ${formattedDate}</span>
                 <button class="blog-read-more" data-article-id="${article.id}">
-                  Read Full Article
+                  Read Article
                 </button>
               </div>
             </div>
@@ -1695,6 +2000,23 @@
           return card;
         }
         
+        // Get category label for display
+        function getCategoryLabel(category) {
+          const labels = {
+            prostate: 'Prostate Health',
+            gut: 'Gut Health',
+            metabolism: 'Metabolism',
+            circulation: 'Circulation',
+            joints: 'Joint Health',
+            brain: 'Brain Health',
+            energy: 'Energy',
+            lifestyle: 'Lifestyle',
+            cardiovascular: 'Cardiovascular',
+            supplements: 'Supplements'
+          };
+          return labels[category] || category;
+        }
+        
         // Show article function
         function showArticle(articleId) {
           const article = blogArticles.find(a => a.id === articleId);
@@ -1709,6 +2031,7 @@
           blogGrid.classList.remove('visible');
           blogGrid.classList.add('hidden');
           document.getElementById('blog-pagination').style.display = 'none';
+          searchResultsInfo.style.display = 'none';
           
           // Update article detail content
           articleDetail.innerHTML = article.content;
@@ -1732,7 +2055,19 @@
         // Show grid function
         function showGrid() {
           // Update URL
-          history.pushState({ page: currentPage }, '', window.location.pathname);
+          const params = new URLSearchParams();
+          if (currentCategory !== 'all') params.set('category', currentCategory);
+          if (currentSearchTerm) params.set('search', currentSearchTerm);
+          if (currentPage > 1) params.set('page', currentPage);
+          
+          const queryString = params.toString();
+          const url = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+          
+          history.pushState({ 
+            category: currentCategory, 
+            search: currentSearchTerm,
+            page: currentPage 
+          }, '', url);
           
           // Hide article, show grid and pagination
           articleDetail.classList.remove('active');
@@ -1741,6 +2076,7 @@
           blogGrid.classList.remove('hidden');
           blogGrid.classList.add('visible');
           document.getElementById('blog-pagination').style.display = 'flex';
+          updateSearchResultsInfo();
           
           // Hide back button
           backButton.style.display = 'none';
@@ -1762,6 +2098,7 @@
             renderBlogGrid();
             updatePagination();
             scrollToGrid();
+            updateUrlForFilters();
           }
         }
         
@@ -1771,21 +2108,17 @@
             renderBlogGrid();
             updatePagination();
             scrollToGrid();
+            updateUrlForFilters();
           }
         }
         
         function updatePagination() {
-          totalPages = Math.ceil(blogArticles.length / BLOG_CONFIG.articlesPerPage);
+          totalPages = Math.ceil(filteredArticles.length / BLOG_CONFIG.articlesPerPage);
           
           prevButton.disabled = currentPage === 1;
           nextButton.disabled = currentPage === totalPages;
           
           pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-          
-          // Update URL for pagination
-          if (!currentArticleId) {
-            history.replaceState({ page: currentPage }, '', `?page=${currentPage}`);
-          }
         }
         
         function scrollToGrid() {
@@ -1798,18 +2131,50 @@
         
         // URL handling
         function checkUrlHash() {
+          // Check for article hash
           if (location.hash.startsWith('#article-')) {
             const articleId = parseInt(location.hash.split('-')[1]);
             showArticle(articleId);
-          } else if (location.search.includes('page=')) {
-            const pageParam = new URLSearchParams(location.search).get('page');
+            return;
+          }
+          
+          // Check for query parameters
+          const params = new URLSearchParams(location.search);
+          
+          // Set category from URL
+          const categoryParam = params.get('category');
+          if (categoryParam && categoryParam !== 'all') {
+            currentCategory = categoryParam;
+            // Update active filter button
+            categoryFilters.forEach(filter => {
+              filter.classList.remove('active');
+              if (filter.dataset.category === currentCategory) {
+                filter.classList.add('active');
+              }
+            });
+          }
+          
+          // Set search term from URL
+          const searchParam = params.get('search');
+          if (searchParam) {
+            currentSearchTerm = searchParam;
+            searchInput.value = searchParam;
+          }
+          
+          // Set page from URL
+          const pageParam = params.get('page');
+          if (pageParam) {
             const page = parseInt(pageParam);
-            if (page && page > 0 && page <= totalPages) {
+            if (page && page > 0) {
               currentPage = page;
-              renderBlogGrid();
-              updatePagination();
             }
           }
+          
+          // Apply filters and render
+          filterArticles();
+          renderBlogGrid();
+          updatePagination();
+          updateSearchResultsInfo();
         }
         
         function handlePopState(event) {
@@ -1817,7 +2182,7 @@
             const articleId = parseInt(location.hash.split('-')[1]);
             showArticle(articleId);
           } else {
-            showGrid();
+            checkUrlHash();
           }
         }
         
@@ -1836,7 +2201,8 @@
             gtag('event', 'article_view', {
               'article_id': articleId,
               'article_title': articleTitle,
-              'page_number': currentPage
+              'page_number': currentPage,
+              'category': currentCategory
             });
           }
           
@@ -1887,10 +2253,10 @@
           }
         }
         
-        console.log('LIORA Health Blog - Advanced System Initialized');
+        console.log('LIORA Health Blog - Advanced System with Search & Filter Initialized');
         console.log(`Total Articles: ${blogArticles.length}`);
         console.log(`Articles Per Page: ${BLOG_CONFIG.articlesPerPage}`);
-        console.log(`Total Pages: ${totalPages}`);
+        console.log(`Current Category: ${currentCategory}`);
       });
 
       // ===== PERFORMANCE OPTIMIZATION =====
@@ -1974,55 +2340,6 @@
         }
       });
     </script>
-    
-    <!-- 
-    ===== IMPLEMENTATION NOTES =====
-    
-    SCALABILITY FEATURES IMPLEMENTED:
-    1. Pagination System - Automatically handles 18+ articles
-    2. Modular Article Structure - Easy to add new articles
-    3. Performance Optimization - Lazy loading, efficient rendering
-    4. State Management - URL, history, pagination state
-    5. Image Management - Centralized image configuration
-    
-    TO ADD ARTICLES 6-18:
-    1. Follow the template in the JavaScript section
-    2. Add to the blogArticles array
-    3. System automatically adjusts pagination
-    
-    GOOGLE ANALYTICS INTEGRATION:
-    - Page tracking active
-    - Article view tracking
-    - Click tracking
-    - All GTM/GA codes included
-    
-    IMAGE CREDITS (All from Unsplash, free for commercial use):
-    - Hero: Wellness research concept
-    - Article 1: Brain health supplements
-    - Article 2: Meditation at sunrise
-    - Article 3: Morning exercise
-    - Article 4: Scientific visualization
-    - Article 5: Healthy foods arrangement
-    
-    TESTING CHECKLIST:
-    ✓ Hero section with high-res image (no purple)
-    ✓ Unique, mature minimalist images for each article
-    ✓ "Unsexy" removed from title
-    ✓ Scrolls to article content, not top of page
-    ✓ 5 sample articles with LIORA Health ratings
-    ✓ Pagination system for scalability
-    ✓ Google Analytics fully integrated
-    ✓ Mobile responsive (320px to 1920px)
-    ✓ Smooth transitions between views
-    ✓ URL history management
-    ✓ Accessibility compliance
-    ✓ Performance optimized
-    
-    NEXT STEPS FOR 18 ARTICLES:
-    1. Add 13 more articles following the template
-    2. Adjust BLOG_CONFIG.maxArticles as needed
-    3. Consider implementing search functionality
-    4. Add category filtering when categories exceed 5
     
   </body>
 </html>
