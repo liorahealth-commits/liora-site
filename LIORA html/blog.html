@@ -111,23 +111,23 @@
       
       /* Blog Hero - COMPLETELY REDESIGNED */
       .blog-hero {
-        position: relative;
-        height: 70vh;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        overflow: hidden;
-        margin-bottom: 3rem;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                    url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 2rem;
-      }
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem;
+}
       
       .blog-hero-content {
         position: relative;
@@ -448,76 +448,138 @@
         width: 20px;
         height: 20px;
       }
-      
-      /* Article Content */
-      .article-header {
-        margin-bottom: 3rem;
-      }
-      
-      .article-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-        font-family: 'Playfair Display', serif;
-        line-height: 1.2;
-      }
-      
-      .article-meta {
-        display: flex;
-        gap: 1.5rem;
-        color: var(--text-medium);
-        font-size: 0.95rem;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      
-      .article-hero-image {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      }
-      
-      .article-content {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: var(--text-medium);
-      }
-      
-      .article-content h2 {
-        font-size: 1.75rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin: 2.5rem 0 1rem;
-        font-family: 'Playfair Display', serif;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid #000000;
-      }
-      
-      .article-content h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin: 2rem 0 1rem;
-      }
-      
-      .article-content p {
-        margin-bottom: 1.5rem;
-      }
-      
-      .article-content ul,
-      .article-content ol {
-        margin-bottom: 1.5rem;
-        padding-left: 1.5rem;
-      }
-      
-      .article-content li {
-        margin-bottom: 0.5rem;
-      }
+      /* Article Content - Improved Layout */
+.article-content {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: var(--text-medium);
+  font-family: 'Lato', sans-serif;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 3rem 0 1.5rem;
+  font-family: 'Playfair Display', serif;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.article-content h2:before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.article-content h3 {
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 2.5rem 0 1.25rem;
+  font-family: 'Playfair Display', serif;
+  padding-left: 1rem;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.article-content h4 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 2rem 0 1rem;
+}
+
+.article-content p {
+  margin-bottom: 1.75rem;
+  text-align: justify;
+  letter-spacing: 0.01em;
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.article-content ul li:before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 1.2em;
+}
+
+.article-content ol {
+  counter-reset: item;
+}
+
+.article-content ol li {
+  counter-increment: item;
+}
+
+.article-content ol li:before {
+  content: counter(item) ".";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 2em;
+  margin-left: -2em;
+}
+
+.article-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.01) 100%);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  font-family: 'Playfair Display', serif;
+}
+
+.article-content blockquote p {
+  margin: 0;
+}
+
+.article-content strong {
+  color: var(--text-dark);
+  font-weight: 700;
+  background: linear-gradient(120deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.article-content em {
+  color: var(--text-medium);
+  font-style: italic;
+}
+
+.article-content a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
+  text-decoration-thickness: 2px;
+  transition: all 0.3s ease;
+}
+
+.article-content a:hover {
+  color: var(--secondary-color);
+  text-decoration-color: var(--primary-color);
+}
       
       .article-content strong {
         color: var(--text-dark);
@@ -530,13 +592,20 @@
       }
       
       .article-highlight {
-        background: linear-gradient(120deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.01) 100%);
-        border-left: 4px solid #000000;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        border-radius: 0 8px 8px 0;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+  border-left: 6px solid var(--primary-color);
+  padding: 2rem;
+  margin: 3rem 0;
+  border-radius: 0 12px 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.article-highlight p:last-child {
+  margin-bottom: 0;
+}
       
       .article-footer {
         margin-top: 3rem;
@@ -654,7 +723,58 @@
           padding: 0.5rem 1.25rem;
           font-size: 0.85rem;
         }
-      }
+
+        .article-content {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+  
+  .article-content h2 {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1.25rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+  
+  .article-content blockquote {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+  
+  .article-highlight {
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ... existing code ... */
+  
+  .article-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.3rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.5rem;
+  }
+}
       
       @media (max-width: 480px) {
         .blog-hero {
@@ -804,22 +924,22 @@
         color: #92400E;
       }
       
-      /* Category pill colors - Updated for black theme */
-      .category-pill-prostate { background: #e6e6e6; color: #000000; }
-      .category-pill-gut { background: #d9d9d9; color: #000000; }
-      .category-pill-metabolism { background: #cccccc; color: #000000; }
-      .category-pill-circulation { background: #bfbfbf; color: #000000; }
-      .category-pill-joints { background: #b3b3b3; color: #000000; }
-      .category-pill-brain { background: #a6a6a6; color: #000000; }
-      .category-pill-energy { background: #999999; color: #000000; }
-      .category-pill-sleep { background: #8c8c8c; color: #ffffff; }
-      .category-pill-hormones { background: #808080; color: #ffffff; }
-      .category-pill-supplements { background: #737373; color: #ffffff; }
-      .category-pill-inflammation { background: #666666; color: #ffffff; }
-      .category-pill-muscle { background: #595959; color: #ffffff; }
-      .category-pill-collagen { background: #4d4d4d; color: #ffffff; }
-      .category-pill-oral { background: #404040; color: #ffffff; }
-      .category-pill-blood-sugar { background: #333333; color: #ffffff; }
+      /* Category pill colors - Vibrant and distinct */
+.category-pill-prostate { background: #4A90E2; color: #ffffff; }
+.category-pill-gut { background: #50E3C2; color: #000000; }
+.category-pill-metabolism { background: #B8E986; color: #000000; }
+.category-pill-circulation { background: #F5A623; color: #000000; }
+.category-pill-joints { background: #BD10E0; color: #ffffff; }
+.category-pill-brain { background: #9013FE; color: #ffffff; }
+.category-pill-energy { background: #FF4081; color: #ffffff; }
+.category-pill-sleep { background: #536DFE; color: #ffffff; }
+.category-pill-hormones { background: #FF6B6B; color: #ffffff; }
+.category-pill-supplements { background: #00BCD4; color: #000000; }
+.category-pill-inflammation { background: #FF9800; color: #000000; }
+.category-pill-muscle { background: #8BC34A; color: #000000; }
+.category-pill-collagen { background: #E040FB; color: #ffffff; }
+.category-pill-oral { background: #009688; color: #ffffff; }
+.category-pill-blood-sugar { background: #FF5722; color: #ffffff; }
     </style>
     
     <!-- Google Tag Manager -->
@@ -2540,28 +2660,27 @@
         }
         
         // Show article function
-        function showArticle(articleId) {
-          const article = blogArticles.find(a => a.id === articleId);
-          if (!article) return;
-          
-          currentArticleId = articleId;
-          
-          // Hide grid, show article
-          blogGrid.classList.remove('visible');
-          blogGrid.classList.add('hidden');
-          searchResultsInfo.style.display = 'none';
-          
-          // Update article detail content with back button at bottom
-          const bottomBackButton = `
-            <div style="margin-top: 3rem; text-align: center;">
-              <button class="back-button bottom" id="bottom-back-button">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
-                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Back to All Articles
-              </button>
-            </div>
-          `;
+function showArticle(articleId) {
+  const article = blogArticles.find(a => a.id === articleId);
+  if (!article) return;
+  
+  currentArticleId = articleId;
+  
+  // Hide grid, show article
+  blogGrid.style.display = 'none';
+  searchResultsInfo.style.display = 'none';
+  
+  // Update article detail content with back button at bottom
+  const bottomBackButton = `
+    <div style="margin-top: 3rem; text-align: center;">
+      <button class="back-button bottom" id="bottom-back-button" onclick="showGrid()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
+          <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to All Articles
+      </button>
+    </div>
+  `;
           
           // Update all author names to "LIORA Health Research Team"
           let articleContent = article.content;
@@ -2596,27 +2715,24 @@
         }
         
         // Show grid function (accessible globally for onclick)
-        window.showGrid = function() {
-          // Hide article, show grid
-          articleDetail.classList.remove('active');
-          articleDetail.classList.add('hidden');
-          
-          blogGrid.classList.remove('hidden');
-          blogGrid.classList.add('visible');
-          updateSearchResultsInfo();
-          
-          // Hide back button
-          backButton.style.display = 'none';
-          
-          // Scroll to grid
-          const gridTop = blogGrid.offsetTop;
-          window.scrollTo({
-            top: gridTop - 120,
-            behavior: 'smooth'
-          });
-          
-          currentArticleId = null;
-        }
+window.showGrid = function() {
+  // Hide article, show grid
+  articleDetail.style.display = 'none';
+  blogGrid.style.display = 'grid';
+  updateSearchResultsInfo();
+  
+  // Hide back button
+  backButton.style.display = 'none';
+  
+  // Scroll to grid
+  const gridTop = blogGrid.offsetTop;
+  window.scrollTo({
+    top: gridTop - 120,
+    behavior: 'smooth'
+  });
+  
+  currentArticleId = null;
+}
         
         // Utility functions
         function formatDate(dateString) {
