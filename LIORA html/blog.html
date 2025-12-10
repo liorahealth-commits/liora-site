@@ -2590,9 +2590,6 @@
         // Initialize
         initMobileMenu();
         renderBlogGrid();
-        // Ensure grid is visible on load
-blogGrid.style.display = 'grid';
-articleDetail.style.display = 'none';
         initSearchAndFilter();
         
         // Event Listeners
@@ -2605,9 +2602,6 @@ articleDetail.style.display = 'none';
             currentSearchTerm = e.target.value.toLowerCase().trim();
             filterArticles();
             renderBlogGrid();
-            // Ensure grid is visible on load
-blogGrid.style.display = 'grid';
-articleDetail.style.display = 'none';
             updateSearchResultsInfo();
           });
           
@@ -2622,9 +2616,6 @@ articleDetail.style.display = 'none';
               currentCategory = this.dataset.category;
               filterArticles();
               renderBlogGrid();
-              // Ensure grid is visible on load
-blogGrid.style.display = 'grid';
-articleDetail.style.display = 'none';
               updateSearchResultsInfo();
             });
           });
