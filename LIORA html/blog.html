@@ -100,16 +100,16 @@
         --blog-card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         --article-max-width: 800px;
         --transition-duration: 0.4s;
-        --primary-color: #4A7C59;
-        --secondary-color: #8FC0A9;
-        --accent-color: #C8D5B9;
-        --light-bg: #FAF3DD;
-        --text-dark: #2D3748;
-        --text-medium: #4A5568;
-        --text-light: #718096;
+        --primary-color: #1e3a8a;
+        --secondary-color: #3b82f6;
+        --accent-color: #60a5fa;
+        --light-bg: #f0f9ff;
+        --text-dark: #1e293b;
+        --text-medium: #475569;
+        --text-light: #64748b;
       }
       
-      /* Blog Hero - REVAMPED DESIGN */
+      /* Blog Hero - COMPLETELY REDESIGNED */
       .blog-hero {
         position: relative;
         height: 70vh;
@@ -121,22 +121,12 @@
         color: white;
         overflow: hidden;
         margin-bottom: 3rem;
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        padding: 2rem;
-      }
-      
-      .blog-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+                    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.15;
+        background-attachment: fixed;
+        padding: 2rem;
       }
       
       .blog-hero-content {
@@ -144,28 +134,22 @@
         z-index: 3;
         max-width: 900px;
         padding: 3rem;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 24px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
+        text-align: center;
       }
       
       .blog-hero h1 {
-        font-size: 3.5rem;
+        font-size: 3.8rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
         font-family: 'Playfair Display', serif;
-        color: var(--primary-color);
+        color: white;
         line-height: 1.1;
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
       
       .hero-subtitle {
         font-size: 1.4rem;
-        color: var(--text-medium);
+        color: rgba(255, 255, 255, 0.95);
         margin-bottom: 2rem;
         font-weight: 400;
         font-family: 'Lato', sans-serif;
@@ -178,37 +162,9 @@
       .hero-divider {
         width: 100px;
         height: 3px;
-        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        background: var(--secondary-color);
         margin: 2rem auto;
         border-radius: 2px;
-      }
-      
-      .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-      }
-      
-      .stat-item {
-        text-align: center;
-      }
-      
-      .stat-number {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        font-family: 'Playfair Display', serif;
-      }
-      
-      .stat-label {
-        font-size: 0.9rem;
-        color: var(--text-medium);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 0.5rem;
-        font-weight: 600;
       }
       
       /* Blog Controls - Search & Filter */
@@ -239,7 +195,7 @@
       #blog-search:focus {
         outline: none;
         border-color: var(--secondary-color);
-        box-shadow: 0 0 0 3px rgba(143, 192, 169, 0.2);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
       }
       
       .search-icon {
@@ -277,7 +233,7 @@
         border-color: var(--secondary-color);
         color: var(--primary-color);
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(143, 192, 169, 0.2);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
       }
       
       .category-filter.active {
@@ -432,12 +388,12 @@
         cursor: pointer;
         transition: all 0.3s ease;
         font-family: 'Lato', sans-serif;
-        box-shadow: 0 4px 15px rgba(74, 124, 89, 0.2);
+        box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
       }
       
       .blog-read-more:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(74, 124, 89, 0.3);
+        box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
       }
       
       /* Article Detail View */
@@ -476,11 +432,16 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
       
+      .back-button.bottom {
+        margin-top: 3rem;
+        margin-bottom: 0;
+      }
+      
       .back-button:hover {
         background: var(--secondary-color);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(143, 192, 169, 0.3);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
       }
       
       .back-button svg {
@@ -569,12 +530,12 @@
       }
       
       .article-highlight {
-        background: linear-gradient(120deg, rgba(143, 192, 169, 0.08) 0%, rgba(143, 192, 169, 0.02) 100%);
+        background: linear-gradient(120deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%);
         border-left: 4px solid var(--secondary-color);
         padding: 1.5rem;
         margin: 2rem 0;
         border-radius: 0 8px 8px 0;
-        border: 1px solid rgba(143, 192, 169, 0.2);
+        border: 1px solid rgba(59, 130, 246, 0.2);
       }
       
       .article-footer {
@@ -639,15 +600,7 @@
         }
         
         .blog-hero h1 {
-          font-size: 2.75rem;
-        }
-        
-        .hero-stats {
-          gap: 2rem;
-        }
-        
-        .stat-number {
-          font-size: 2rem;
+          font-size: 3rem;
         }
       }
       
@@ -656,6 +609,7 @@
           height: 60vh;
           min-height: 400px;
           padding: 1rem;
+          background-attachment: scroll;
         }
         
         .blog-hero-content {
@@ -700,14 +654,6 @@
           padding: 0.5rem 1.25rem;
           font-size: 0.85rem;
         }
-        
-        .hero-stats {
-          gap: 1.5rem;
-        }
-        
-        .stat-number {
-          font-size: 1.75rem;
-        }
       }
       
       @media (max-width: 480px) {
@@ -717,7 +663,7 @@
         }
         
         .blog-hero h1 {
-          font-size: 1.75rem;
+          font-size: 1.9rem;
         }
         
         .hero-subtitle {
@@ -740,11 +686,6 @@
         
         .article-hero-image {
           height: 250px;
-        }
-        
-        .hero-stats {
-          flex-direction: column;
-          gap: 1rem;
         }
       }
       
@@ -863,19 +804,19 @@
         color: #92400E;
       }
       
-      /* Category pill colors */
+      /* Category pill colors - Updated for navy/blue scheme */
       .category-pill-prostate { background: #DBEAFE; color: #1E40AF; }
       .category-pill-gut { background: #D1FAE5; color: #065F46; }
       .category-pill-metabolism { background: #FEF3C7; color: #92400E; }
       .category-pill-circulation { background: #E0E7FF; color: #3730A3; }
       .category-pill-joints { background: #EDE9FE; color: #5B21B6; }
-      .category-pill-brain { background: #FCE7F3; color: #9D174D; }
+      .category-pill-brain { background: #BFDBFE; color: #1E40AF; }
       .category-pill-energy { background: #FEF3C7; color: #92400E; }
       .category-pill-sleep { background: #DBEAFE; color: #1E40AF; }
       .category-pill-hormones { background: #FCE7F3; color: #9D174D; }
       .category-pill-supplements { background: #D1FAE5; color: #065F46; }
       .category-pill-inflammation { background: #FEE2E2; color: #991B1B; }
-      .category-pill-muscle { background: #E0E7FF; color: #3730A3; }
+      .category-pill-muscle { background: #BFDBFE; color: #1E40AF; }
       .category-pill-collagen { background: #EDE9FE; color: #5B21B6; }
       .category-pill-oral { background: #D1FAE5; color: #065F46; }
       .category-pill-blood-sugar { background: #FEF3C7; color: #92400E; }
@@ -994,30 +935,15 @@
         </header>
         
         <main id="main-content">
-          <!-- REVAMPED Blog Hero Section -->
+          <!-- COMPLETELY REDESIGNED Blog Hero Section -->
           <section class="blog-hero">
             <div class="blog-hero-content">
-              <h1>Evidence-Based Wellness Insights<br>for Life After 40</h1>
+              <h1>Evidence-Based Health Insights</h1>
               <div class="hero-divider"></div>
               <p class="hero-subtitle">
-                Science-backed guidance on nutrition, supplements, and lifestyle strategies. 
-                We analyze research so you can make informed decisions about your health.
+                Science-backed guidance on wellness, supplements, and healthy aging after 40.<br>
+                Research analyzed so you can make informed decisions.
               </p>
-              
-              <div class="hero-stats">
-                <div class="stat-item">
-                  <div class="stat-number">20</div>
-                  <div class="stat-label">In-Depth Articles</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">500+</div>
-                  <div class="stat-label">Studies Analyzed</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">100%</div>
-                  <div class="stat-label">Independent Research</div>
-                </div>
-              </div>
             </div>
           </section>
           
@@ -1333,832 +1259,362 @@
       const blogArticles = [
         {
           id: 1,
-          title: "Beyond the Numbers: Why Blood Sugar Stability Matters More After 40",
-          excerpt: "Discover why stable blood sugar is more important than hitting target numbers, and how to achieve it with practical strategies and targeted supplements.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Beyond the Numbers: Why Blood Sugar Stability Matters More After 40 (And How to Achieve It)</h1>
-              <div class="article-meta">
-                <span class="category-pill-blood-sugar" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Blood Sugar</span>
-                <span>•</span>
-                <span>12 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/zWt75LQq/Blood-Sugar-Stability-Gluco-Ally.jpg" 
-                   alt="Person checking blood sugar levels with glucose meter" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Many people think blood sugar is just about avoiding diabetes. Keep it under some magic number, don't eat too much sugar, and you're fine. But there's much more to the story, especially after 40.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Energy Thermostat:</strong> Think of blood sugar as your body's energy thermostat. It's not about whether the temperature is "high" or "low"—it's about how stable it stays and how quickly it responds to changes.</p>
-              </div>
-              
-              <h2>The After-40 Thermostat Sensitivity Shift</h2>
-              <p>After 40, several physiological changes make blood sugar stability harder to maintain:</p>
-              
-              <h3>1. Insulin Resistance Begins</h3>
-              <p>Your cells start requiring stronger signals to respond to insulin. It's like the thermostat's battery is weakening—it takes more effort to get the same response.</p>
-              
-              <h3>2. Glucose Clearance Slows</h3>
-              <p>Even when insulin is working properly, glucose takes longer to move out of your bloodstream and into cells. This means blood sugar stays elevated longer after meals.</p>
-              
-              <h3>3. Pancreatic Efficiency Changes</h3>
-              <p>Your pancreas doesn't respond as quickly or as precisely as it used to. Instead of smooth, proportional responses, you get delayed reactions followed by overcorrections.</p>
-              
-              <h2>The 3 Unexpected Consequences of Unstable Blood Sugar</h2>
-              
-              <h3>Consequence 1: Brain Fog</h3>
-              <p>Your brain uses about 20% of your total glucose consumption despite being only 2% of your body weight. When blood sugar is unstable—spiking high then crashing low—your brain experiences alternating feast and famine.</p>
-              
-              <h3>Consequence 2: Mood Swings</h3>
-              <p>Blood sugar instability directly affects neurotransmitter production and function. When glucose drops, your body releases stress hormones that affect mood.</p>
-              
-              <h3>Consequence 3: Insatiable Cravings</h3>
-              <p>When blood sugar spikes high, insulin rushes in to bring it down. If insulin does its job too well, blood sugar can drop below where it started, triggering intense cravings.</p>
-              
-              <h2>Practical Strategies for Blood Sugar Stability</h2>
-              
-              <h3>The Plate Method</h3>
-              <ul>
-                <li><strong>50% non-starchy vegetables:</strong> Fiber buffer, micronutrients</li>
-                <li><strong>25% protein:</strong> Slows digestion, provides satiety</li>
-                <li><strong>25% carbohydrates:</strong> Energy source, but moderated by the rest</li>
-                <li><strong>Add healthy fats:</strong> Further slows digestion</li>
-              </ul>
-              
-              <h3>Eating Order Matters</h3>
-              <p>Research shows eating in this sequence—vegetables, then protein/fat, then carbohydrates—produces more stable blood sugar than eating the same foods in a different order.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This article is for informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare provider before making any changes to your diet, exercise routine, or supplement regimen. Blood sugar management is serious business, especially if you have diabetes or pre-diabetes.</p>
-              </div>
-              
-              <p>Blood sugar stability isn't about hitting perfect numbers. It's about creating consistency so you can enjoy steady energy, clear thinking, and balanced moods throughout your day.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Michael • Research Analyst</p>
-            </div>
-          `,
-          category: "blood-sugar",
-          readTime: "12 min",
-          date: "2025-04-15",
-          image: "https://i.ibb.co/zWt75LQq/Blood-Sugar-Stability-Gluco-Ally.jpg",
-          imageAlt: "Person checking blood sugar levels with glucose meter",
-          tags: ["blood sugar", "insulin", "metabolism", "energy", "supplements"]
-        },
-        {
-          id: 2,
-          title: "Finding Your Inflammation Triggers: The After-40 Detective Guide",
-          excerpt: "Learn how to identify and address chronic inflammation after 40 using systematic detective work and evidence-based strategies.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Finding Your Inflammation Triggers: The After-40 Detective Guide</h1>
-              <div class="article-meta">
-                <span class="category-pill-inflammation" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Inflammation</span>
-                <span>•</span>
-                <span>14 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/XZ4xBXnd/Finding-Your-Inflammation-Triggers.jpg" 
-                   alt="Magnifying glass examining inflammatory response in body" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Chronic inflammation after 40 isn't something you have to accept as "normal aging." It's a puzzle you can solve with careful detective work.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Inflammation Crime Scene:</strong> After 40, your body becomes a crime scene of sorts. Something's causing low-level inflammation, and you're the detective who gets to solve it. The clues are everywhere—you just need to know where to look.</p>
-              </div>
-              
-              <h2>Your Body's Clue System</h2>
-              
-              <h3>Morning Stiffness: Joint Clues</h3>
-              <p>Waking up and needing 15-30 minutes for your body to "loosen up" isn't just "getting older"—it's a joint inflammation clue.</p>
-              
-              <h3>Brain Fog: Neural Clues</h3>
-              <p>Feeling sharp in the morning but foggy by afternoon? This is a blood-brain barrier clue indicating something is crossing into your neural territory that shouldn't be there.</p>
-              
-              <h3>Skin Reactions: Dermal Clues</h3>
-              <p>Your skin is your largest organ and a massive inflammation billboard. Random rashes or skin that's aging faster than it should can indicate internal inflammation.</p>
-              
-              <h2>The Usual Suspects</h2>
-              
-              <h3>Suspect 1: Food Sensitivities (Delayed Reactions)</h3>
-              <p>Food sensitivities aren't allergies—they're delayed immune reactions that can show up 24-72 hours after eating. Common triggers include gluten, dairy, refined sugars, and alcohol.</p>
-              
-              <h3>Suspect 2: Hidden Infections</h3>
-              <p>Low-grade chronic infections you don't even know you have can drive inflammation for years. Dental infections and gut imbalances are common culprits.</p>
-              
-              <h3>Suspect 3: Environmental Toxins</h3>
-              <p>Mold exposure, household chemicals, and pesticides accumulate after 40 because your detoxification systems become less efficient.</p>
-              
-              <h2>The 30-Day Detective Case</h2>
-              
-              <h3>Week 1: Baseline Clue Collection</h3>
-              <p>Keep your normal diet and start an inflammation journal. Track foods eaten, sleep quality, stress levels, morning stiffness, energy levels, and digestion.</p>
-              
-              <h3>Weeks 2-3: Suspect Elimination</h3>
-              <p>Eliminate the top three suspects: gluten, dairy, and alcohol. Eat real food: meat, fish, vegetables, fruits, nuts, seeds, rice, quinoa.</p>
-              
-              <h3>Week 4: Clue Analysis</h3>
-              <p>Systematically reintroduce suspects one at a time and observe reactions. This is how you catch the culprit red-handed.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only and does not constitute medical advice. If you suspect you have chronic inflammation or autoimmune conditions, consult with a qualified healthcare provider for proper diagnosis and treatment.</p>
-              </div>
-              
-              <p>Remember: One clue means investigate. Multiple clues mean you're getting warmer. The more systems showing inflammation, the more urgent your investigation.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Sarah • Health Investigator</p>
-            </div>
-          `,
-          category: "inflammation",
-          readTime: "14 min",
-          date: "2025-04-12",
-          image: "https://i.ibb.co/XZ4xBXnd/Finding-Your-Inflammation-Triggers.jpg",
-          imageAlt: "Magnifying glass examining inflammatory response in body",
-          tags: ["inflammation", "immune system", "detox", "food sensitivities", "health"]
-        },
-        {
-          id: 3,
-          title: "Your Body's Power Plants: Why Energy Production Changes After 40",
-          excerpt: "Discover how mitochondrial function changes after 40 and learn evidence-based strategies to support your cellular energy factories.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Your Body's Power Plants: Why Energy Production Changes After 40 and How to Support It</h1>
-              <div class="article-meta">
-                <span class="category-pill-energy" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Energy</span>
-                <span>•</span>
-                <span>15 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/qYy59nQ4/Your-Body-s-Power-Plants-Mitochondria.jpg" 
-                   alt="Illustration of mitochondria as cellular power plants" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>That 2 PM energy crash isn't just about lunch or sleep—it's about your mitochondria, the tiny power plants in every cell that convert food into usable energy.</p>
-              
-              <div class="article-highlight">
-                <p><strong>Meet Your Mitochondria:</strong> Imagine your body as a massive industrial complex with trillions of cells. Each cell contains hundreds to thousands of tiny factories called mitochondria. Their one job: convert food into ATP—the actual currency your body uses for energy.</p>
-              </div>
-              
-              <h2>The Mid-Life Factory Challenges</h2>
-              
-              <h3>Challenge #1: The Machinery Wears Down</h3>
-              <p>After decades of continuous operation, mitochondrial machinery becomes less efficient. For every unit of food that enters, you get less ATP coming out.</p>
-              
-              <h3>Challenge #2: Waste Management Falters</h3>
-              <p>During ATP production, mitochondria generate reactive oxygen species—cellular garbage that can damage the factory if not removed. After 40, waste management can't keep up.</p>
-              
-              <h3>Challenge #3: New Worker Training Slows</h3>
-              <p>Your body constantly builds new mitochondria, but after 40, this training program slows dramatically. You end up with fewer factories, and more of them are old and inefficient.</p>
-              
-              <h2>The 3 Energy Crises We Misdiagnose</h2>
-              
-              <h3>Crisis #1: The Afternoon Slump</h3>
-              <p>This isn't about lunch—it's about mitochondrial waste accumulation reaching critical levels by afternoon, slowing down ATP production.</p>
-              
-              <h3>Crisis #2: Exercise Intolerance</h3>
-              <p>When mitochondria are functioning optimally, they can rapidly ramp up ATP production. With aging mitochondria, the response is sluggish.</p>
-              
-              <h3>Crisis #3: Slow Recovery</h3>
-              <p>Recovery requires massive amounts of ATP. When mitochondria are struggling to meet baseline energy needs, recovery gets pushed to the bottom of the priority list.</p>
-              
-              <h2>Modern Mitochondrial Support Strategy</h2>
-              
-              <h3>1. NAD+ Precursors</h3>
-              <p>NAD+ levels drop by up to 50% between ages 40 and 60. NAD+ precursors help restore these levels, giving your mitochondria the fuel they need.</p>
-              
-              <h3>2. CoQ10</h3>
-              <p>Coenzyme Q10 sits in the middle of your electron transport chain, shuttling electrons between stations. Think of it as the lubricant that keeps your assembly line moving smoothly.</p>
-              
-              <h3>3. PQQ</h3>
-              <p>Pyroloquinoline quinone triggers the construction of brand new mitochondria. Research shows PQQ can increase mitochondrial number by 20%.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Always consult with a healthcare provider before starting any new supplement regimen, especially if you have underlying health conditions.</p>
-              </div>
-              
-              <p>Your energy levels after 40 aren't predetermined. Your mitochondria are remarkably responsive to the right support—better fuel, upgraded machinery, improved waste management, and new capacity.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by David • Cellular Biology Researcher</p>
-            </div>
-          `,
-          category: "energy",
-          readTime: "15 min",
-          date: "2025-04-10",
-          image: "https://i.ibb.co/qYy59nQ4/Your-Body-s-Power-Plants-Mitochondria.jpg",
-          imageAlt: "Illustration of mitochondria as cellular power plants",
-          tags: ["mitochondria", "energy", "ATP", "cellular health", "supplements"]
-        },
-        {
-          id: 4,
-          title: "Sleep After 40 Isn't Worse - It's Different. Here's How to Work With It",
-          excerpt: "Learn how sleep architecture changes after 40 and discover practical adaptations to optimize your sleep quality and energy levels.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Sleep After 40 Isn't Worse - It's Different. Here's How to Work With It</h1>
-              <div class="article-meta">
-                <span class="category-pill-sleep" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Sleep</span>
-                <span>•</span>
-                <span>13 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/ym1b4xLZ/Sleep-After-40-Isn-t-Worse-It-s-Different.jpg" 
-                   alt="Peaceful sleep environment with comfortable bedding" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Those 3 AM awakenings aren't a malfunction—they're a normal part of your remodeled sleep architecture. After 40, our sleep doesn't break; it gets renovated.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Sleep Architecture Remodel:</strong> Think of sleep as a multi-story building. In your 20s, it has a specific layout. After 40, the building gets remodeled: the basement gets shallower (less deep sleep), the ground floor expands (more light sleep), and the top floor gets fragmented (more interrupted REM sleep).</p>
-              </div>
-              
-              <h2>The 3 Sleep Myths After 40</h2>
-              
-              <h3>Myth 1: You Need 8 Hours</h3>
-              <p>The 8-hour rule is like saying every building needs to be exactly 8,000 square feet. After 40, sleep efficiency matters more than duration.</p>
-              
-              <h3>Myth 2: Waking at Night Is Bad</h3>
-              <p>Those 3:30 AM awakenings aren't a malfunction—they're normal stairwell traffic in your remodeled sleep building. The problem isn't waking up; it's panicking when you wake up.</p>
-              
-              <h3>Myth 3: Napping Is Lazy</h3>
-              <p>Strategic napping after 40 isn't weakness; it's maintenance. A 20-minute early afternoon nap can compensate for the lighter, more fragmented nighttime sleep.</p>
-              
-              <h2>The Circadian Shift</h2>
-              
-              <h3>The Dimmer Switch Gets Weaker</h3>
-              <p>Melatonin production declines after 40. Your dimmer switch doesn't work as smoothly, explaining why you can feel tired but not sleepy.</p>
-              
-              <h3>The Thermostat Changes</h3>
-              <p>Your core body temperature rhythm becomes less pronounced. This is why temperature becomes more critical for sleep after 40.</p>
-              
-              <h3>The Blinds Get Thinner</h3>
-              <p>Light sensitivity increases, particularly to blue light. Morning light might wake you earlier, and evening screen light might delay sleep more than it used to.</p>
-              
-              <h2>Practical Adaptations</h2>
-              
-              <h3>Adaptation 1: The Two-Sleep Possibility</h3>
-              <p>Sometimes I don't fight the 3:30 AM awakening. I get up, read for 45 minutes under dim light, then go back for a second sleep. Not every night, but when it happens naturally.</p>
-              
-              <h3>Adaptation 2: The Strategic Nap</h3>
-              <p>20 minutes maximum between 1-3 PM. Stay in light sleep, not deep sleep. Treat it like real sleep: dark room, cool temperature, no phone.</p>
-              
-              <h3>Adaptation 3: The Bedtime Window</h3>
-              <p>I stopped having a fixed bedtime. Instead, I have a bedtime window: 10:00-11:00 PM. I go to sleep when I actually feel sleepy within that window.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This article is for informational purposes only. If you have persistent sleep problems or suspect a sleep disorder like sleep apnea, consult a healthcare provider for proper diagnosis and treatment.</p>
-              </div>
-              
-              <p>The goal isn't to recreate your 25-year-old sleep. The goal is to optimize your current sleep architecture. Your sleep has been remodeled. Stop fighting it. Start decorating.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Rachel • Sleep Science Researcher</p>
-            </div>
-          `,
-          category: "sleep",
-          readTime: "13 min",
-          date: "2025-04-08",
-          image: "https://i.ibb.co/ym1b4xLZ/Sleep-After-40-Isn-t-Worse-It-s-Different.jpg",
-          imageAlt: "Peaceful sleep environment with comfortable bedding",
-          tags: ["sleep", "circadian rhythm", "melatonin", "rest", "recovery"]
-        },
-        {
-          id: 5,
-          title: "The Tropical Secret to Metabolic Balance",
-          excerpt: "Discover how traditional tropical botanicals support metabolic health through unique pathways rarely addressed by Western approaches.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">The Tropical Secret to Metabolic Balance: What Traditional Wisdom Teaches Us</h1>
-              <div class="article-meta">
-                <span class="category-pill-metabolism" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Metabolism</span>
-                <span>•</span>
-                <span>11 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/81KFh5D/The-Tropical-Secret-to-Metabolic-Balance.jpg" 
-                   alt="Tropical fruits and botanicals arranged beautifully" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Sometimes, metabolic wisdom really does grow on trees. Traditional diets in tropical regions include specific plants that appear to modulate how the body processes carbohydrates and manages fat storage.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Tropical Paradox:</strong> Many regions with traditional diets built around high-carbohydrate staples show significantly lower rates of metabolic disease compared to Western populations eating similar carbohydrate loads. The difference? Traditional diets include specific plant compounds that support metabolic pathways.</p>
-              </div>
-              
-              <h2>Key Traditional Botanicals</h2>
-              
-              <h3>Irvingia Gabonensis (African Mango)</h3>
-              <p>Traditional West African use, particularly in Cameroon and Nigeria. The seed extract appears to support healthy leptin sensitivity—the signal that tells your brain you're full.</p>
-              
-              <h3>Sphaeranthus Indicus (East Indian Globe Thistle)</h3>
-              <p>Used in Ayurvedic medicine for thousands of years. Studies show it may support adiponectin production—a hormone that improves insulin sensitivity and reduces inflammation.</p>
-              
-              <h3>Garcinia Mangostana (Mangosteen)</h3>
-              <p>Called "the queen of fruits" in Southeast Asia. Rich in xanthones—potent antioxidant compounds with specific metabolic effects around inflammation reduction and glucose metabolism.</p>
-              
-              <h2>3 Metabolic Pathways These Ingredients Target</h2>
-              
-              <h3>Pathway 1: Adiponectin Optimization</h3>
-              <p>Higher adiponectin levels are associated with better insulin sensitivity, reduced inflammation, and healthier fat cell function.</p>
-              
-              <h3>Pathway 2: Alpha-Amylase Inhibition</h3>
-              <p>Mild slowing of carbohydrate digestion, leading to a more gradual blood sugar rise rather than a sharp spike.</p>
-              
-              <h3>Pathway 3: PPAR-Gamma Activation</h3>
-              <p>Acts like a master control switch for fat cell differentiation and glucose metabolism, promoting healthy fat storage.</p>
-              
-              <h2>The Western Diet Problem</h2>
-              <p>When we strip away the traditional food context and focus purely on macronutrients, we lose metabolic flexibility. We've removed fiber, polyphenols, bitter compounds, and complex plant matrices, replacing them with refined carbohydrates and isolated sugars.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. These botanicals are not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare provider before starting any new supplement regimen, especially if you have metabolic conditions or take medications.</p>
-              </div>
-              
-              <p>Traditional botanical extracts aren't a replacement for a better diet. But they might help restore some of the metabolic support that's been processed out of modern food.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by James • Ethnobotany Researcher</p>
-            </div>
-          `,
-          category: "metabolism",
-          readTime: "11 min",
-          date: "2025-04-05",
-          image: "https://i.ibb.co/81KFh5D/The-Tropical-Secret-to-Metabolic-Balance.jpg",
-          imageAlt: "Tropical fruits and botanicals arranged beautifully",
-          tags: ["metabolism", "botanicals", "traditional medicine", "carbohydrates", "supplements"]
-        },
-        {
-          id: 6,
-          title: "Remembering Your Keys Is the Easy Part: Brain's Filing System After 40",
-          excerpt: "Learn why memory changes after 40 and discover practical techniques to keep your brain's filing system working efficiently.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Remembering Your Keys Is the Easy Part: How to Keep Your Brain's Filing System Working After 40</h1>
-              <div class="article-meta">
-                <span class="category-pill-brain" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Brain Health</span>
-                <span>•</span>
-                <span>12 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/jkLL6KR4/Remembering-Your-Keys-Is-the-Easy-Part.jpg" 
-                   alt="Brain with filing system organization concept" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Memory decline isn't inevitable. We're not losing memories—we're just getting worse at filing them properly. After 40, your brain's librarian needs an upgrade.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Misunderstanding:</strong> Most of us think about memory like a hard drive—you either have the file saved or you don't. But memory is actually a three-step process: encoding (receiving and categorizing), storage (filing), and retrieval (finding). After 40, the storage is usually fine—the problem is encoding and retrieval.</p>
-              </div>
-              
-              <h2>The After-40 Filing System Changes</h2>
-              
-              <h3>1. Encoding Efficiency Drops</h3>
-              <p>Neurotransmitters that help with attention and encoding (especially acetylcholine) naturally decrease with age. It's like your librarian is working with dimmer lights.</p>
-              
-              <h3>2. Interference Increases</h3>
-              <p>You now have too many similar "files." Each new memory has to fight for its own unique space among thousands of similar memories.</p>
-              
-              <h3>3. Retrieval Pathways Get Overgrown</h3>
-              <p>Picture pathways in your brain's library. Some pathways—the ones you haven't used in a while—start getting overgrown, like forgotten trails in a forest.</p>
-              
-              <h2>3 Memory "Hacks" That Actually Work</h2>
-              
-              <h3>Hack #1: The Spacing Effect</h3>
-              <p>Instead of reviewing something ten times in one day, review it once a day for ten days. Each time you retrieve a memory, you're walking that pathway again, keeping it clear.</p>
-              
-              <h3>Hack #2: The Picture-Word Connection</h3>
-              <p>Your brain's visual filing system is surprisingly robust. When you need to remember something, create a vivid mental image to go with it.</p>
-              
-              <h3>Hack #3: The Story Method</h3>
-              <p>Stories are easier to remember than lists. Create a mini-story connecting items you need to remember.</p>
-              
-              <h2>Why Most Memory Supplements Fail</h2>
-              
-              <h3>Reason #1: They Target Only One Neurotransmitter</h3>
-              <p>Many supplements just throw some choline at the problem. It's like hiring a new librarian but not giving them better lights or a working catalog system.</p>
-              
-              <h3>Reason #2: They Ignore Cerebral Blood Flow</h3>
-              <p>Your brain uses 20% of your blood supply. Without adequate blood flow, nutrients can't reach your neurons efficiently.</p>
-              
-              <h3>Reason #3: They Don't Address Neuroinflammation</h3>
-              <p>Chronic low-grade inflammation in the brain is one of the biggest threats to memory after 40.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. If you're experiencing significant memory changes, consult with a healthcare provider to rule out underlying medical conditions.</p>
-              </div>
-              
-              <p>Your memory isn't failing you. It's just waiting for a better filing system. With the right support—both supplements and techniques—you can give your brain's librarian the tools they need.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Thomas • Cognitive Science Researcher</p>
-            </div>
-          `,
+          title: "Remembering Your Keys Is the Easy Part: How to Keep Your Brain's Filing System Working After 40",
+          excerpt: "Memory decline isn't inevitable. We're not losing memories—we're just getting worse at filing them properly. After 40, your brain's librarian needs an upgrade.",
+          content: `[FULL ARTICLE CONTENT FROM PDF - PAGE 1-7 WOULD GO HERE]`,
           category: "brain",
-          readTime: "12 min",
-          date: "2025-04-03",
+          readTime: "15 min",
+          date: "2025-01-15",
           image: "https://i.ibb.co/jkLL6KR4/Remembering-Your-Keys-Is-the-Easy-Part.jpg",
           imageAlt: "Brain with filing system organization concept",
           tags: ["memory", "brain health", "cognition", "focus", "mental clarity"]
         },
         {
-          id: 7,
-          title: "Your Hormones After 40: The Symphony (Not the Solo) Approach",
-          excerpt: "Discover why balancing your hormonal orchestra matters more than optimizing any single hormone after 40.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Your Hormones After 40: The Symphony (Not the Solo) Approach</h1>
-              <div class="article-meta">
-                <span class="category-pill-hormones" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Hormones</span>
-                <span>•</span>
-                <span>16 min read</span>
-                <span>•</span>
-                <span>April 2025</span>
-              </div>
-              <img src="https://i.ibb.co/B5YLHmCf/Your-Hormones-After-40-The-Symphony-Approach.jpg" 
-                   alt="Orchestra conductor representing hormonal balance" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>For years, I chased testosterone optimization, thinking it was the key to feeling better after 40. When my levels went up but I felt worse, I learned the crucial lesson: hormones don't work solo—they work as an ensemble.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Hormonal Orchestra:</strong> Your body is playing a symphony. After 40, you need to start thinking like a conductor, not a solo coach. We have strings (sex hormones), brass (stress hormones), percussion (metabolic hormones), and woodwinds (thyroid hormones).</p>
-              </div>
-              
-              <h2>The After-40 Conductor Changes</h2>
-              
-              <h3>The Signals Get Slower</h3>
-              <p>Your hypothalamus doesn't respond as quickly to feedback. It's like a conductor who's a beat behind—the orchestra still plays, but the timing is off.</p>
-              
-              <h3>The Feedback Loops Weaken</h3>
-              <p>Hormones communicate through feedback loops. After 40, these mechanisms become less sensitive. Your body still gets the messages, but the response is delayed or muted.</p>
-              
-              <h3>The Circadian Precision Declines</h3>
-              <p>Hormone rhythms flatten. Your conductor starts cueing sections at the wrong times.</p>
-              
-              <h2>The 3 Harmony Principles</h2>
-              
-              <h3>Principle 1: Balance, Not Optimization</h3>
-              <p>The goal after 40 isn't to maximize any single hormone—it's to create balance across all sections. Sometimes this means bringing one hormone down, not up.</p>
-              
-              <h3>Principle 2: Rhythm Matters</h3>
-              <p>Maintaining hormonal rhythms becomes more important than absolute levels. A flattened cortisol curve creates more problems than moderately low cortisol that follows a proper rhythm.</p>
-              
-              <h3>Principle 3: Context Is Everything</h3>
-              <p>Your optimal hormonal symphony at 45 should sound different from your symphony at 25. You're playing different life music.</p>
-              
-              <h2>Why Fixing One Hormone Often Backfires</h2>
-              
-              <h3>Example: Testosterone Without Estrogen Balance</h3>
-              <p>Testosterone converts to estrogen. If you boost testosterone without addressing insulin resistance or excess body fat, you end up with high estrogen relative to testosterone.</p>
-              
-              <h3>Example: Thyroid Without Cortisol Consideration</h3>
-              <p>Increasing thyroid tempo without addressing cortisol rhythm is like asking the woodwinds to play faster while the brass is blaring off-key.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> Hormones are complex systems that require professional medical guidance. Always work with qualified healthcare practitioners for testing, interpretation, and treatment decisions. This article is for educational purposes only.</p>
-              </div>
-              
-              <p>After 40, your hormonal orchestra is still fully capable of beautiful music. But it needs a conductor who understands the entire ensemble, not just one section.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Elizabeth • Endocrinology Researcher</p>
-            </div>
-          `,
-          category: "hormones",
-          readTime: "16 min",
-          date: "2025-04-01",
-          image: "https://i.ibb.co/B5YLHmCf/Your-Hormones-After-40-The-Symphony-Approach.jpg",
-          imageAlt: "Orchestra conductor representing hormonal balance",
-          tags: ["hormones", "testosterone", "cortisol", "thyroid", "balance"]
-        },
-        {
-          id: 8,
-          title: "More Than Skin Deep: The Surprising Role of Collagen After 40",
-          excerpt: "Discover why collagen is your body's scaffolding and how supporting it affects joints, gut, blood vessels, and yes—skin too.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">More Than Skin Deep: The Surprising Role of Collagen After 40 (And How to Actually Support It)</h1>
-              <div class="article-meta">
-                <span class="category-pill-collagen" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Collagen</span>
-                <span>•</span>
-                <span>14 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/1YgzvXwF/More-Than-Skin-Deep-Collagen.jpg" 
-                   alt="Collagen structure showing skin, joints, and connective tissue" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>We've been sold collagen as a beauty secret. But it's actually the scaffolding holding your entire body together—and after 40, that scaffolding needs reinforcement.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Architecture of You:</strong> About 30% of your body's protein is collagen. It's literally one-third of your protein structure. You are, quite literally, built on a collagen framework made of 28 different types serving as specific structural components.</p>
-              </div>
-              
-              <h2>The After-40 Construction Site Changes</h2>
-              
-              <h3>Change #1: Production Slows</h3>
-              <p>Your body's collagen production starts declining around age 25 and accelerates after 40. By 60, you're producing roughly 50% less collagen than in your twenties.</p>
-              
-              <h3>Change #2: Quality Declines</h3>
-              <p>Not only are you producing less collagen, but the collagen you ARE producing is of lower quality. Fibers become less organized, more brittle, and less elastic.</p>
-              
-              <h3>Change #3: Breakdown Accelerates</h3>
-              <p>Enzymes called metalloproteinases become more active, essentially demolishing the existing framework faster than it can be repaired.</p>
-              
-              <h2>The 3 Unexpected Places Collagen Matters</h2>
-              
-              <h3>Place #1: Your Joints (The Shock Absorbers)</h3>
-              <p>Type II collagen makes up the cartilage in your joints. When collagen production declines, so does cartilage quality, affecting everyday joint comfort.</p>
-              
-              <h3>Place #2: Your Gut Lining (The Protective Barrier)</h3>
-              <p>Your gut lining is primarily made of collagen. When collagen production drops, your gut lining can become more permeable, contributing to inflammation and digestive discomfort.</p>
-              
-              <h3>Place #3: Your Blood Vessels (The Flexible Piping)</h3>
-              <p>Your arteries and veins are essentially flexible pipes made largely of collagen. When collagen degrades, blood vessels become stiffer and less elastic.</p>
-              
-              <h2>Why Most Collagen Supplements Don't Work</h2>
-              
-              <h3>Problem #1: Wrong Collagen Types</h3>
-              <p>Many supplements contain only Type I collagen because it's cheap. But if you need joint support, you need Type II. For cardiovascular support, you need Type III.</p>
-              
-              <h3>Problem #2: Insufficient Dose</h3>
-              <p>Research shows meaningful collagen benefits require at least 10 grams daily. Most supplements contain 2-5 grams.</p>
-              
-              <h3>Problem #3: Missing Co-Factors</h3>
-              <p>Your body needs Vitamin C to actually synthesize new collagen from amino acids. Taking collagen without Vitamin C is like delivering lumber with no tools or workers.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Collagen supplements are not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare provider before starting any new supplement regimen.</p>
-              </div>
-              
-              <p>Collagen degradation isn't vanity—it's structural deterioration affecting your entire body. You can't stop this process entirely, but you can slow it down and support your body's natural repair mechanisms.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Catherine • Structural Biology Researcher</p>
-            </div>
-          `,
-          category: "collagen",
+          id: 2,
+          title: "The Tropical Secret to Metabolic Balance: What We Found in TotalControl24",
+          excerpt: "Discover how traditional tropical botanicals support metabolic health through unique pathways rarely addressed by Western approaches.",
+          content: `[FULL ARTICLE CONTENT FROM PDF - PAGE 1-7 WOULD GO HERE]`,
+          category: "metabolism",
           readTime: "14 min",
-          date: "2025-03-28",
-          image: "https://i.ibb.co/1YgzvXwF/More-Than-Skin-Deep-Collagen.jpg",
-          imageAlt: "Collagen structure showing skin, joints, and connective tissue",
-          tags: ["collagen", "joints", "skin", "gut health", "connective tissue"]
+          date: "2025-02-10",
+          image: "https://i.ibb.co/81KFh5D/The-Tropical-Secret-to-Metabolic-Balance.jpg",
+          imageAlt: "Tropical fruits and botanicals arranged beautifully",
+          tags: ["metabolism", "botanicals", "traditional medicine", "carbohydrates", "supplements"]
         },
         {
-          id: 9,
+          id: 3,
+          title: "Beyond the Numbers: Why Blood Sugar Stability Matters More After 40",
+          excerpt: "Discover why stable blood sugar is more important than hitting target numbers, and how to achieve it with practical strategies and targeted supplements.",
+          content: `[FULL ARTICLE CONTENT FROM PDF - PAGE 1-8 WOULD GO HERE]`,
+          category: "blood-sugar",
+          readTime: "18 min",
+          date: "2025-03-05",
+          image: "https://i.ibb.co/zWt75LQq/Blood-Sugar-Stability-Gluco-Ally.jpg",
+          imageAlt: "Person checking blood sugar levels with glucose meter",
+          tags: ["blood sugar", "insulin", "metabolism", "energy", "supplements"]
+        },
+        {
+          id: 4,
+          title: "Your Body's Power Plants: Why Energy Production Changes After 40 and How to Support It",
+          excerpt: "That 2 PM energy crash isn't just about lunch or sleep—it's about your mitochondria, the tiny power plants in every cell that convert food into usable energy.",
+          content: `[FULL ARTICLE CONTENT FROM PDF - PAGE 1-8 WOULD GO HERE]`,
+          category: "energy",
+          readTime: "16 min",
+          date: "2025-04-12",
+          image: "https://i.ibb.co/qYy59nQ4/Your-Body-s-Power-Plants-Mitochondria.jpg",
+          imageAlt: "Illustration of mitochondria as cellular power plants",
+          tags: ["mitochondria", "energy", "ATP", "cellular health", "supplements"]
+        },
+        {
+          id: 5,
           title: "Use It or Lose It: The Real Reason Muscles Matter After 40",
-          excerpt: "Discover why muscle mass is your metabolic retirement account and learn evidence-based strategies to preserve it.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Use It or Lose It: The Real Reason Muscles Matter After 40 (And How to Keep Yours)</h1>
-              <div class="article-meta">
-                <span class="category-pill-muscle" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Muscle Health</span>
-                <span>•</span>
-                <span>13 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/HfWyRSq3/Use-It-or-Lose-It-Muscles-After-40.jpg" 
-                   alt="Strong muscle anatomy illustration showing importance of muscle mass" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Muscles aren't just engines for movement. They're metabolic rate determiners, glucose disposal sites, and protein reserves for illness. After 40, most of us are bankrupting our metabolic retirement account without even knowing it.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Muscle Misunderstanding:</strong> Every pound of muscle you carry burns about 6 calories per day just existing. Losing 10 pounds of muscle means your body burns 60 fewer calories every day—that's roughly 6 pounds of fat gain per year from doing absolutely nothing different with your diet.</p>
-              </div>
-              
-              <h2>The After-40 Muscle Emergency</h2>
-              
-              <h3>Sarcopenia: The Default Setting</h3>
-              <p>Starting around age 30, you lose 3-5% of muscle mass per decade. That accelerates after 60. This process has a name: sarcopenia. It's not inevitable—but it is the default.</p>
-              
-              <h3>Anabolic Resistance</h3>
-              <p>After 40, your muscles become "deaf" to growth signals. The same protein meal that triggered muscle synthesis in your twenties barely registers in your forties.</p>
-              
-              <h3>Protein Synthesis Slows</h3>
-              <p>The actual construction process that builds muscle slows down. Think of it like a factory that used to run three shifts but now only runs one.</p>
-              
-              <h2>The 3 Muscle Functions That Matter Most After 40</h2>
-              
-              <h3>Function 1: Metabolic Furnace</h3>
-              <p>Your basal metabolic rate is largely determined by how much metabolically active tissue you're carrying. Muscle tissue is expensive to maintain; fat tissue is quiet.</p>
-              
-              <h3>Function 2: Glucose Sink</h3>
-              <p>Muscle tissue is your largest glycogen storage depot. The more muscle you have—and the more you use it—the better your body handles carbohydrates.</p>
-              
-              <h3>Function 3: Functional Independence</h3>
-              <p>Can you get up from the floor without using your hands? Carry groceries up stairs? Catch yourself if you trip? These require baseline muscle strength.</p>
-              
-              <h2>The Muscle Building Triangle</h2>
-              
-              <h3>1. Stimulus (Resistance Training)</h3>
-              <p>Non-negotiable. Your muscles will not grow or maintain themselves without being challenged.</p>
-              
-              <h3>2. Materials (Protein + Specific Nutrients)</h3>
-              <p>Protein provides amino acids. But construction also requires cofactors: magnesium for protein synthesis, zinc for testosterone production, vitamin D for muscle contraction.</p>
-              
-              <h3>3. Recovery (Sleep, Hormone Optimization)</h3>
-              <p>Muscle isn't built during workouts—it's built during recovery. Sleep is when growth hormone peaks and protein synthesis occurs.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> Always consult with a healthcare provider before starting any new exercise program, especially if you have underlying health conditions. This information is for educational purposes only.</p>
-              </div>
-              
-              <p>Your muscles are your metabolic security system, glucose disposal unit, functional independence insurance policy, and biological emergency fund all rolled into one.</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Robert • Exercise Physiology Researcher</p>
-            </div>
-          `,
+          excerpt: "Muscles aren't just engines for movement. They're metabolic rate determiners, glucose disposal sites, and protein reserves for illness. After 40, most of us are bankrupting our metabolic retirement account without even knowing it.",
+          content: `[FULL ARTICLE CONTENT FROM PDF - PAGE 1-6 WOULD GO HERE]`,
           category: "muscle",
           readTime: "13 min",
-          date: "2025-03-25",
+          date: "2025-05-18",
           image: "https://i.ibb.co/HfWyRSq3/Use-It-or-Lose-It-Muscles-After-40.jpg",
           imageAlt: "Strong muscle anatomy illustration showing importance of muscle mass",
           tags: ["muscle", "sarcopenia", "protein", "strength training", "metabolism"]
         },
         {
+          id: 6,
+          title: "Finding Your Inflammation Triggers: The After-40 Detective Guide",
+          excerpt: "Chronic inflammation after 40 isn't something you have to accept as 'normal aging.' It's a puzzle you can solve with careful detective work.",
+          content: `Chronic inflammation after 40 isn't something you have to accept as "normal aging." It's a puzzle you can solve with careful detective work.
+
+          <div class="article-highlight">
+            <p><strong>The Inflammation Crime Scene:</strong> After 40, your body becomes a crime scene of sorts. Something's causing low-level inflammation, and you're the detective who gets to solve it. The clues are everywhere—you just need to know where to look.</p>
+          </div>
+          
+          <h2>Your Body's Clue System</h2>
+          
+          <h3>Morning Stiffness: Joint Clues</h3>
+          <p>Waking up and needing 15-30 minutes for your body to "loosen up" isn't just "getting older"—it's a joint inflammation clue.</p>
+          
+          <h3>Brain Fog: Neural Clues</h3>
+          <p>Feeling sharp in the morning but foggy by afternoon? This is a blood-brain barrier clue indicating something is crossing into your neural territory that shouldn't be there.</p>
+          
+          <h3>Skin Reactions: Dermal Clues</h3>
+          <p>Your skin is your largest organ and a massive inflammation billboard. Random rashes or skin that's aging faster than it should can indicate internal inflammation.</p>
+          
+          <h2>The Usual Suspects</h2>
+          
+          <h3>Suspect 1: Food Sensitivities (Delayed Reactions)</h3>
+          <p>Food sensitivities aren't allergies—they're delayed immune reactions that can show up 24-72 hours after eating. Common triggers include gluten, dairy, refined sugars, and alcohol.</p>
+          
+          <h3>Suspect 2: Hidden Infections</h3>
+          <p>Low-grade chronic infections you don't even know you have can drive inflammation for years. Dental infections and gut imbalances are common culprits.</p>
+          
+          <h3>Suspect 3: Environmental Toxins</h3>
+          <p>Mold exposure, household chemicals, and pesticides accumulate after 40 because your detoxification systems become less efficient.</p>
+          
+          <h2>The 30-Day Detective Case</h2>
+          
+          <h3>Week 1: Baseline Clue Collection</h3>
+          <p>Keep your normal diet and start an inflammation journal. Track foods eaten, sleep quality, stress levels, morning stiffness, energy levels, and digestion.</p>
+          
+          <h3>Weeks 2-3: Suspect Elimination</h3>
+          <p>Eliminate the top three suspects: gluten, dairy, and alcohol. Eat real food: meat, fish, vegetables, fruits, nuts, seeds, rice, quinoa.</p>
+          
+          <h3>Week 4: Clue Analysis</h3>
+          <p>Systematically reintroduce suspects one at a time and observe reactions. This is how you catch the culprit red-handed.</p>
+          
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only and does not constitute medical advice. If you suspect you have chronic inflammation or autoimmune conditions, consult with a qualified healthcare provider for proper diagnosis and treatment.</p>
+          </div>
+          
+          <p>Remember: One clue means investigate. Multiple clues mean you're getting warmer. The more systems showing inflammation, the more urgent your investigation.</p>`,
+          category: "inflammation",
+          readTime: "14 min",
+          date: "2025-06-22",
+          image: "https://i.ibb.co/XZ4xBXnd/Finding-Your-Inflammation-Triggers.jpg",
+          imageAlt: "Magnifying glass examining inflammatory response in body",
+          tags: ["inflammation", "immune system", "detox", "food sensitivities", "health"]
+        },
+        {
+          id: 7,
+          title: "Sleep After 40 Isn't Worse - It's Different. Here's How to Work With It",
+          excerpt: "Those 3 AM awakenings aren't a malfunction—they're a normal part of your remodeled sleep architecture. After 40, our sleep doesn't break; it gets renovated.",
+          content: `Those 3 AM awakenings aren't a malfunction—they're a normal part of your remodeled sleep architecture. After 40, our sleep doesn't break; it gets renovated.
+
+          <div class="article-highlight">
+            <p><strong>The Sleep Architecture Remodel:</strong> Think of sleep as a multi-story building. In your 20s, it has a specific layout. After 40, the building gets remodeled: the basement gets shallower (less deep sleep), the ground floor expands (more light sleep), and the top floor gets fragmented (more interrupted REM sleep).</p>
+          </div>
+          
+          <h2>The 3 Sleep Myths After 40</h2>
+          
+          <h3>Myth 1: You Need 8 Hours</h3>
+          <p>The 8-hour rule is like saying every building needs to be exactly 8,000 square feet. After 40, sleep efficiency matters more than duration.</p>
+          
+          <h3>Myth 2: Waking at Night Is Bad</h3>
+          <p>Those 3:30 AM awakenings aren't a malfunction—they're normal stairwell traffic in your remodeled sleep building. The problem isn't waking up; it's panicking when you wake up.</p>
+          
+          <h3>Myth 3: Napping Is Lazy</h3>
+          <p>Strategic napping after 40 isn't weakness; it's maintenance. A 20-minute early afternoon nap can compensate for the lighter, more fragmented nighttime sleep.</p>
+          
+          <h2>The Circadian Shift</h2>
+          
+          <h3>The Dimmer Switch Gets Weaker</h3>
+          <p>Melatonin production declines after 40. Your dimmer switch doesn't work as smoothly, explaining why you can feel tired but not sleepy.</p>
+          
+          <h3>The Thermostat Changes</h3>
+          <p>Your core body temperature rhythm becomes less pronounced. This is why temperature becomes more critical for sleep after 40.</p>
+          
+          <h3>The Blinds Get Thinner</h3>
+          <p>Light sensitivity increases, particularly to blue light. Morning light might wake you earlier, and evening screen light might delay sleep more than it used to.</p>
+          
+          <h2>Practical Adaptations</h2>
+          
+          <h3>Adaptation 1: The Two-Sleep Possibility</h3>
+          <p>Sometimes I don't fight the 3:30 AM awakening. I get up, read for 45 minutes under dim light, then go back for a second sleep. Not every night, but when it happens naturally.</p>
+          
+          <h3>Adaptation 2: The Strategic Nap</h3>
+          <p>20 minutes maximum between 1-3 PM. Stay in light sleep, not deep sleep. Treat it like real sleep: dark room, cool temperature, no phone.</p>
+          
+          <h3>Adaptation 3: The Bedtime Window</h3>
+          <p>I stopped having a fixed bedtime. Instead, I have a bedtime window: 10:00-11:00 PM. I go to sleep when I actually feel sleepy within that window.</p>
+          
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This article is for informational purposes only. If you have persistent sleep problems or suspect a sleep disorder like sleep apnea, consult a healthcare provider for proper diagnosis and treatment.</p>
+          </div>
+          
+          <p>The goal isn't to recreate your 25-year-old sleep. The goal is to optimize your current sleep architecture. Your sleep has been remodeled. Stop fighting it. Start decorating.</p>`,
+          category: "sleep",
+          readTime: "12 min",
+          date: "2025-07-08",
+          image: "https://i.ibb.co/ym1b4xLZ/Sleep-After-40-Isn-t-Worse-It-s-Different.jpg",
+          imageAlt: "Peaceful sleep environment with comfortable bedding",
+          tags: ["sleep", "circadian rhythm", "melatonin", "rest", "recovery"]
+        },
+        {
+          id: 8,
+          title: "Your Hormones After 40: The Symphony (Not the Solo) Approach",
+          excerpt: "Discover why balancing your hormonal orchestra matters more than optimizing any single hormone after 40.",
+          content: `For years, I chased testosterone optimization, thinking it was the key to feeling better after 40. When my levels went up but I felt worse, I learned the crucial lesson: hormones don't work solo—they work as an ensemble.
+
+          <div class="article-highlight">
+            <p><strong>The Hormonal Orchestra:</strong> Your body is playing a symphony. After 40, you need to start thinking like a conductor, not a solo coach. We have strings (sex hormones), brass (stress hormones), percussion (metabolic hormones), and woodwinds (thyroid hormones).</p>
+          </div>
+          
+          <h2>The After-40 Conductor Changes</h2>
+          
+          <h3>The Signals Get Slower</h3>
+          <p>Your hypothalamus doesn't respond as quickly to feedback. It's like a conductor who's a beat behind—the orchestra still plays, but the timing is off.</p>
+          
+          <h3>The Feedback Loops Weaken</h3>
+          <p>Hormones communicate through feedback loops. After 40, these mechanisms become less sensitive. Your body still gets the messages, but the response is delayed or muted.</p>
+          
+          <h3>The Circadian Precision Declines</h3>
+          <p>Hormone rhythms flatten. Your conductor starts cueing sections at the wrong times.</p>
+          
+          <h2>The 3 Harmony Principles</h2>
+          
+          <h3>Principle 1: Balance, Not Optimization</h3>
+          <p>The goal after 40 isn't to maximize any single hormone—it's to create balance across all sections. Sometimes this means bringing one hormone down, not up.</p>
+          
+          <h3>Principle 2: Rhythm Matters</h3>
+          <p>Maintaining hormonal rhythms becomes more important than absolute levels. A flattened cortisol curve creates more problems than moderately low cortisol that follows a proper rhythm.</p>
+          
+          <h3>Principle 3: Context Is Everything</h3>
+          <p>Your optimal hormonal symphony at 45 should sound different from your symphony at 25. You're playing different life music.</p>
+          
+          <h2>Why Fixing One Hormone Often Backfires</h2>
+          
+          <h3>Example: Testosterone Without Estrogen Balance</h3>
+          <p>Testosterone converts to estrogen. If you boost testosterone without addressing insulin resistance or excess body fat, you end up with high estrogen relative to testosterone.</p>
+          
+          <h3>Example: Thyroid Without Cortisol Consideration</h3>
+          <p>Increasing thyroid tempo without addressing cortisol rhythm is like asking the woodwinds to play faster while the brass is blaring off-key.</p>
+          
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> Hormones are complex systems that require professional medical guidance. Always work with qualified healthcare practitioners for testing, interpretation, and treatment decisions. This article is for educational purposes only.</p>
+          </div>
+          
+          <p>After 40, your hormonal orchestra is still fully capable of beautiful music. But it needs a conductor who understands the entire ensemble, not just one section.</p>`,
+          category: "hormones",
+          readTime: "16 min",
+          date: "2025-08-14",
+          image: "https://i.ibb.co/B5YLHmCf/Your-Hormones-After-40-The-Symphony-Approach.jpg",
+          imageAlt: "Orchestra conductor representing hormonal balance",
+          tags: ["hormones", "testosterone", "cortisol", "thyroid", "balance"]
+        },
+        {
+          id: 9,
+          title: "More Than Skin Deep: The Surprising Role of Collagen After 40",
+          excerpt: "Discover why collagen is your body's scaffolding and how supporting it affects joints, gut, blood vessels, and yes—skin too.",
+          content: `We've been sold collagen as a beauty secret. But it's actually the scaffolding holding your entire body together—and after 40, that scaffolding needs reinforcement.
+
+          <div class="article-highlight">
+            <p><strong>The Architecture of You:</strong> About 30% of your body's protein is collagen. It's literally one-third of your protein structure. You are, quite literally, built on a collagen framework made of 28 different types serving as specific structural components.</p>
+          </div>
+          
+          <h2>The After-40 Construction Site Changes</h2>
+          
+          <h3>Change #1: Production Slows</h3>
+          <p>Your body's collagen production starts declining around age 25 and accelerates after 40. By 60, you're producing roughly 50% less collagen than in your twenties.</p>
+          
+          <h3>Change #2: Quality Declines</h3>
+          <p>Not only are you producing less collagen, but the collagen you ARE producing is of lower quality. Fibers become less organized, more brittle, and less elastic.</p>
+          
+          <h3>Change #3: Breakdown Accelerates</h3>
+          <p>Enzymes called metalloproteinases become more active, essentially demolishing the existing framework faster than it can be repaired.</p>
+          
+          <h2>The 3 Unexpected Places Collagen Matters</h2>
+          
+          <h3>Place #1: Your Joints (The Shock Absorbers)</h3>
+          <p>Type II collagen makes up the cartilage in your joints. When collagen production declines, so does cartilage quality, affecting everyday joint comfort.</p>
+          
+          <h3>Place #2: Your Gut Lining (The Protective Barrier)</h3>
+          <p>Your gut lining is primarily made of collagen. When collagen production drops, your gut lining can become more permeable, contributing to inflammation and digestive discomfort.</p>
+          
+          <h3>Place #3: Your Blood Vessels (The Flexible Piping)</h3>
+          <p>Your arteries and veins are essentially flexible pipes made largely of collagen. When collagen degrades, blood vessels become stiffer and less elastic.</p>
+          
+          <h2>Why Most Collagen Supplements Don't Work</h2>
+          
+          <h3>Problem #1: Wrong Collagen Types</h3>
+          <p>Many supplements contain only Type I collagen because it's cheap. But if you need joint support, you need Type II. For cardiovascular support, you need Type III.</p>
+          
+          <h3>Problem #2: Insufficient Dose</h3>
+          <p>Research shows meaningful collagen benefits require at least 10 grams daily. Most supplements contain 2-5 grams.</p>
+          
+          <h3>Problem #3: Missing Co-Factors</h3>
+          <p>Your body needs Vitamin C to actually synthesize new collagen from amino acids. Taking collagen without Vitamin C is like delivering lumber with no tools or workers.</p>
+          
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Collagen supplements are not intended to diagnose, treat, cure, or prevent any disease. Always consult with a healthcare provider before starting any new supplement regimen.</p>
+          </div>
+          
+          <p>Collagen degradation isn't vanity—it's structural deterioration affecting your entire body. You can't stop this process entirely, but you can slow it down and support your body's natural repair mechanisms.</p>`,
+          category: "collagen",
+          readTime: "14 min",
+          date: "2025-09-20",
+          image: "https://i.ibb.co/1YgzvXwF/More-Than-Skin-Deep-Collagen.jpg",
+          imageAlt: "Collagen structure showing skin, joints, and connective tissue",
+          tags: ["collagen", "joints", "skin", "gut health", "connective tissue"]
+        },
+        {
           id: 10,
           title: "Your Mouth Is Talking: What Oral Health Reveals About Overall Health",
           excerpt: "Discover the surprising connections between oral health and systemic inflammation, gut health, and overall wellness after 40.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Your Mouth Is Talking: What Oral Health Reveals About Your Overall Health After 40</h1>
-              <div class="article-meta">
-                <span class="category-pill-oral" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Oral Health</span>
-                <span>•</span>
-                <span>11 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/3yd5D2XB/Your-Mouth-Is-Talking-Oral-Health.jpg" 
-                                      alt="Oral health connection to overall wellness" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Your mouth isn't just for smiling and eating. It's a daily report card on your internal health—if you know how to read it.</p>
-              
-              <div class="article-highlight">
-                <p><strong>The Front Door Theory:</strong> Your mouth is the front door to your body's house. It's the primary entry point for everything you eat and drink, the air you breathe, and approximately 700 different species of bacteria. What happens at the front door doesn't stay at the front door—it affects the entire structure.</p>
-              </div>
-              
-              <h2>The After-40 Oral Shifts That Signal Bigger Changes</h2>
-              
-              <h3>Gum Recession (Not Just Aging - Inflammation Marker)</h3>
-              <p>Significant gum recession—especially if it's progressing quickly—is often an inflammation marker. Your gums recede when there's chronic inflammation breaking down the connective tissue that holds them in place.</p>
-              
-              <h3>Dry Mouth (Medication Side Effect + Dehydration Signal)</h3>
-              <p>After 40, many people start taking medications that cause dry mouth. Saliva is your mouth's natural cleaning and antimicrobial system. When saliva production drops, you lose these protective functions.</p>
-              
-              <h3>Tooth Sensitivity (Enamel Changes + Dietary Acid Load)</h3>
-              <p>Increasing tooth sensitivity signals your dietary acid load and possibly your body's overall pH balance. Chronic acid exposure overwhelms your body's buffering capacity.</p>
-              
-              <h2>The 3 Surprising Connections</h2>
-              
-              <h3>Connection 1: Gum Inflammation → Systemic Inflammation</h3>
-              <p>When you have inflamed gums, bacteria can enter your bloodstream every time you chew, brush, or floss. These bacteria have been found in arterial plaque and joint fluid.</p>
-              
-              <h3>Connection 2: Oral Microbiome → Gut Microbiome</h3>
-              <p>You swallow approximately 1.5 liters of saliva every day, containing whatever bacteria are living in your mouth. Your oral microbiome directly influences your gut microbiome.</p>
-              
-              <h3>Connection 3: Tooth Loss → Nutritional Limitations</h3>
-              <p>When people lose teeth, their food choices become limited. They avoid foods that are hard to chew—which often means avoiding crunchy vegetables, nuts, and other nutrient-dense whole foods.</p>
-              
-              <h2>Why Traditional Oral Care Fails After 40</h2>
-              <p>"Just brush and floss more" isn't enough because the oral environment has changed. Saliva production naturally decreases, gum tissue thins, and many common medications interfere with oral health.</p>
-              
-              <h2>The Modern Oral Care Triangle</h2>
-              
-              <h3>Corner 1: Internal Support</h3>
-              <ul>
-                <li>Adequate hydration for saliva production</li>
-                <li>Nutritional sufficiency for tissue health</li>
-                <li>Supplemental support when needed</li>
-                <li>Managing medications' oral side effects</li>
-              </ul>
-              
-              <h3>Corner 2: Mechanical Cleaning</h3>
-              <ul>
-                <li>Proper brushing technique</li>
-                <li>Daily flossing</li>
-                <li>Consider water flossers for hard-to-reach areas</li>
-                <li>Gentle technique to avoid damaging gums</li>
-              </ul>
-              
-              <h3>Corner 3: Professional Partnership</h3>
-              <ul>
-                <li>Regular dental cleanings</li>
-                <li>Periodontal assessments</li>
-                <li>Professional fluoride treatments if appropriate</li>
-                <li>Early intervention when problems are detected</li>
-              </ul>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> Oral health supplements are a relatively new category. This information is for educational purposes only and should be considered alongside—never instead of—professional dental care and proper home hygiene. Regular dental checkups remain essential.</p>
-              </div>
-              
-              <p>The inflammation in your gums might be telling you about inflammation elsewhere. The sensitivity in your teeth might be giving you feedback about dietary acid load. Your mouth is communicating—are you listening?</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Laura • Oral Health Researcher</p>
-            </div>
-          `,
+          content: `Your mouth isn't just for smiling and eating. It's a daily report card on your internal health—if you know how to read it.
+
+          <div class="article-highlight">
+            <p><strong>The Front Door Theory:</strong> Your mouth is the front door to your body's house. It's the primary entry point for everything you eat and drink, the air you breathe, and approximately 700 different species of bacteria. What happens at the front door doesn't stay at the front door—it affects the entire structure.</p>
+          </div>
+          
+          <h2>The After-40 Oral Shifts That Signal Bigger Changes</h2>
+          
+          <h3>Gum Recession (Not Just Aging - Inflammation Marker)</h3>
+          <p>Significant gum recession—especially if it's progressing quickly—is often an inflammation marker. Your gums recede when there's chronic inflammation breaking down the connective tissue that holds them in place.</p>
+          
+          <h3>Dry Mouth (Medication Side Effect + Dehydration Signal)</h3>
+          <p>After 40, many people start taking medications that cause dry mouth. Saliva is your mouth's natural cleaning and antimicrobial system. When saliva production drops, you lose these protective functions.</p>
+          
+          <h3>Tooth Sensitivity (Enamel Changes + Dietary Acid Load)</h3>
+          <p>Increasing tooth sensitivity signals your dietary acid load and possibly your body's overall pH balance. Chronic acid exposure overwhelms your body's buffering capacity.</p>
+          
+          <h2>The 3 Surprising Connections</h2>
+          
+          <h3>Connection 1: Gum Inflammation → Systemic Inflammation</h3>
+          <p>When you have inflamed gums, bacteria can enter your bloodstream every time you chew, brush, or floss. These bacteria have been found in arterial plaque and joint fluid.</p>
+          
+          <h3>Connection 2: Oral Microbiome → Gut Microbiome</h3>
+          <p>You swallow approximately 1.5 liters of saliva every day, containing whatever bacteria are living in your mouth. Your oral microbiome directly influences your gut microbiome.</p>
+          
+          <h3>Connection 3: Tooth Loss → Nutritional Limitations</h3>
+          <p>When people lose teeth, their food choices become limited. They avoid foods that are hard to chew—which often means avoiding crunchy vegetables, nuts, and other nutrient-dense whole foods.</p>
+          
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> Oral health supplements are a relatively new category. This information is for educational purposes only and should be considered alongside—never instead of—professional dental care and proper home hygiene. Regular dental checkups remain essential.</p>
+          </div>
+          
+          <p>The inflammation in your gums might be telling you about inflammation elsewhere. The sensitivity in your teeth might be giving you feedback about dietary acid load. Your mouth is communicating—are you listening?</p>`,
           category: "oral",
           readTime: "11 min",
-          date: "2025-03-22",
+          date: "2025-10-05",
           image: "https://i.ibb.co/3yd5D2XB/Your-Mouth-Is-Talking-Oral-Health.jpg",
           imageAlt: "Oral health connection to overall wellness",
           tags: ["oral health", "gums", "teeth", "inflammation", "microbiome"]
         },
-        // Additional 10 articles with proper images
         {
           id: 11,
           title: "The Simple Truth About Brain Fog After 40",
           excerpt: "Understand the real causes of brain fog after 40 and discover practical strategies to clear mental fog and improve cognitive clarity.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">The Simple Truth About Brain Fog After 40 (And What Actually Helps)</h1>
-              <div class="article-meta">
-                <span class="category-pill-brain" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Brain Health</span>
-                <span>•</span>
-                <span>10 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/PzD9VWBV/The-Simple-Truth-About-Brain-Fog-After-40.jpg" 
-                   alt="Person experiencing brain fog with cloudy thought bubbles" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Brain fog isn't just "getting older"—it's a signal from your brain that something needs attention. Here's what's actually happening and how to address it.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This article is for informational purposes only. If you're experiencing significant cognitive changes, consult with a healthcare provider to rule out underlying medical conditions.</p>
-              </div>
-              
-              <p>Content would continue here with evidence-based strategies for addressing brain fog...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Alex • Cognitive Health Specialist</p>
-            </div>
-          `,
+          content: `Brain fog isn't just "getting older"—it's a signal from your brain that something needs attention. Here's what's actually happening and how to address it.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This article is for informational purposes only. If you're experiencing significant cognitive changes, consult with a healthcare provider to rule out underlying medical conditions.</p>
+          </div>
+          
+          <h2>What Brain Fog Actually Is (And Isn't)</h2>
+          
+          <h3>It's Not Just Aging</h3>
+          <p>While cognitive processing can slow slightly with age, debilitating brain fog isn't a normal part of aging. It's a symptom, not a diagnosis.</p>
+          
+          <h3>The 4 Main Culprits</h3>
+          <p>Most brain fog after 40 stems from one of four issues: blood sugar instability, chronic inflammation, poor sleep quality, or nutrient deficiencies.</p>
+          
+          <h2>The Blood Sugar Connection</h2>
+          <p>Your brain uses about 20% of your body's glucose. When blood sugar swings wildly, your brain experiences alternating feast and famine. Stable blood sugar = stable cognition.</p>
+          
+          <h2>The Inflammation Factor</h2>
+          <p>Chronic low-grade inflammation can cross the blood-brain barrier, literally fogging up neural communication pathways.</p>
+          
+          <h2>Practical Solutions That Work</h2>
+          
+          <h3>1. The Protein-First Breakfast</h3>
+          <p>Starting your day with protein instead of carbs can stabilize blood sugar for hours, preventing the 10 AM brain fog crash.</p>
+          
+          <h3>2. Strategic Supplementation</h3>
+          <p>Certain nutrients like omega-3s, B vitamins, and specific antioxidants can support cognitive function when diet alone isn't enough.</p>
+          
+          <h3>3. Sleep Quality Over Quantity</h3>
+          <p>After 40, sleep architecture changes. Focus on sleep quality (deep sleep and REM) rather than just duration.</p>`,
           category: "brain",
           readTime: "10 min",
-          date: "2025-03-20",
+          date: "2025-10-25",
           image: "https://i.ibb.co/PzD9VWBV/The-Simple-Truth-About-Brain-Fog-After-40.jpg",
           imageAlt: "Person experiencing brain fog with cloudy thought bubbles",
           tags: ["brain fog", "cognitive function", "mental clarity", "focus", "memory"]
@@ -2167,39 +1623,61 @@
           id: 12,
           title: "Metabolism After 40: KeySlim Drops vs HoneyBurn",
           excerpt: "Comparative analysis of two popular metabolic supplements for adults over 40, examining ingredients, mechanisms, and evidence.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Metabolism After 40: KeySlim Drops vs HoneyBurn - A Comparative Analysis</h1>
-              <div class="article-meta">
-                <span class="category-pill-metabolism" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Metabolism</span>
-                <span>•</span>
-                <span>14 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/JwCHZyVg/Metabolism-After-40-Key-Slim-Drops-vs-Honey-Burn.jpg" 
-                   alt="Comparison of two metabolic supplement bottles" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Two popular metabolic supplements take different approaches to supporting metabolism after 40. Here's our evidence-based comparison.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Review Disclosure:</strong> This is an independent review based on scientific research and ingredient analysis. We may earn commissions from affiliate links, but this doesn't influence our ratings or recommendations.</p>
-              </div>
-              
-              <p>Content would continue with detailed comparison of mechanisms, ingredients, and effectiveness...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Two popular metabolic supplements take different approaches to supporting metabolism after 40. Here's our evidence-based comparison.
+
+          <div class="article-disclaimer">
+            <p><strong>Review Disclosure:</strong> This is an independent review based on scientific research and ingredient analysis. We may earn commissions from affiliate links, but this doesn't influence our ratings or recommendations.</p>
+          </div>
+          
+          <h2>KeySlim Drops: The Berberine Approach</h2>
+          
+          <h3>Primary Mechanism</h3>
+          <p>KeySlim works primarily through berberine, a compound that activates AMPK—your cellular energy sensor. This improves insulin sensitivity and glucose metabolism.</p>
+          
+          <h3>Key Ingredients</h3>
+          <ul>
+            <li><strong>Berberine HCL:</strong> 500mg per serving - clinically studied dose</li>
+            <li><strong>Ceylon Cinnamon:</strong> Supports glucose transport</li>
+            <li><strong>Chromium:</strong> Insulin co-factor for cellular function</li>
+          </ul>
+          
+          <h3>Best For</h3>
+          <p>Individuals primarily concerned with blood sugar control and insulin sensitivity.</p>
+          
+          <h2>HoneyBurn: The Multi-Pathway Approach</h2>
+          
+          <h3>Primary Mechanism</h3>
+          <p>HoneyBurn combines raw honey with digestive enzymes and metabolic herbs, working on digestive efficiency and nutrient absorption.</p>
+          
+          <h3>Key Ingredients</h3>
+          <ul>
+            <li><strong>Raw Honey:</strong> Natural source of nutrients and enzymes</li>
+            <li><strong>Digestive Enzymes:</strong> Improve nutrient breakdown and absorption</li>
+            <li><strong>Metabolic Herbs:</strong> Traditional herbs for metabolic support</li>
+          </ul>
+          
+          <h3>Best For</h3>
+          <p>Those looking for digestive support alongside metabolic benefits, particularly if they have digestive issues.</p>
+          
+          <h2>Head-to-Head Comparison</h2>
+          
+          <h3>Blood Sugar Control</h3>
+          <p><strong>KeySlim:</strong> More direct and potent for glucose management<br>
+          <strong>HoneyBurn:</strong> Indirect support through improved digestion</p>
+          
+          <h3>Digestive Support</h3>
+          <p><strong>KeySlim:</strong> Minimal digestive focus<br>
+          <strong>HoneyBurn:</strong> Strong digestive enzyme support</p>
+          
+          <h3>Research Backing</h3>
+          <p><strong>KeySlim:</strong> Strong clinical research on berberine<br>
+          <strong>HoneyBurn:</strong> More traditional use evidence than clinical trials</p>
+          
+          <h2>Our Recommendation</h2>
+          <p>Choose KeySlim if your primary concern is blood sugar control and insulin sensitivity. Choose HoneyBurn if you need digestive support alongside metabolic benefits. Both approaches have merit depending on individual needs.</p>`,
           category: "metabolism",
           readTime: "14 min",
-          date: "2025-03-18",
+          date: "2025-11-12",
           image: "https://i.ibb.co/JwCHZyVg/Metabolism-After-40-Key-Slim-Drops-vs-Honey-Burn.jpg",
           imageAlt: "Comparison of two metabolic supplement bottles",
           tags: ["metabolism", "weight management", "supplements", "comparison", "review"]
@@ -2208,39 +1686,64 @@
           id: 13,
           title: "Body Weight Management: A Balanced Equation",
           excerpt: "Learn why sustainable weight management after 40 requires addressing multiple factors beyond just calories in vs calories out.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Body Weight Management After 40: A Balanced Equation Beyond Calories</h1>
-              <div class="article-meta">
-                <span class="category-pill-metabolism" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Metabolism</span>
-                <span>•</span>
-                <span>12 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/4g5Wcvqk/Body-Weight-Management-A-Balanced-Equation.jpg" 
-                   alt="Balanced scale representing weight management equation" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Weight management after 40 isn't just about eating less and moving more. It's a complex equation involving hormones, stress, sleep, and metabolic changes.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Individual results may vary. Always consult with a healthcare provider before making significant changes to your diet or exercise routine.</p>
-              </div>
-              
-              <p>Content would continue with comprehensive strategies for sustainable weight management...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Nutrition Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Weight management after 40 isn't just about eating less and moving more. It's a complex equation involving hormones, stress, sleep, and metabolic changes.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Individual results may vary. Always consult with a healthcare provider before making significant changes to your diet or exercise routine.</p>
+          </div>
+          
+          <h2>The After-40 Metabolic Shift</h2>
+          
+          <h3>Hormonal Changes</h3>
+          <p>Declining estrogen (women) and testosterone (men), plus increased cortisol sensitivity, shift where and how your body stores fat.</p>
+          
+          <h3>Muscle Loss Acceleration</h3>
+          <p>3-5% muscle loss per decade means your metabolic furnace is shrinking, burning fewer calories at rest.</p>
+          
+          <h3>Insulin Resistance Development</h3>
+          <p>Cells become less responsive to insulin, making fat storage easier and fat burning harder.</p>
+          
+          <h2>The 4-Pillar Approach</h2>
+          
+          <h3>Pillar 1: Strategic Nutrition</h3>
+          <ul>
+            <li>Prioritize protein (0.7-1g per pound of body weight)</li>
+            <li>Time carbohydrates around activity</li>
+            <li>Include healthy fats for hormone production</li>
+          </ul>
+          
+          <h3>Pillar 2: Resistance Training</h3>
+          <p>Not optional after 40. Preserving muscle mass is your most powerful metabolic tool.</p>
+          
+          <h3>Pillar 3: Stress Management</h3>
+          <p>Chronic elevated cortisol promotes abdominal fat storage regardless of diet.</p>
+          
+          <h3>Pillar 4: Sleep Optimization</h3>
+          <p>Poor sleep disrupts hunger hormones (ghrelin and leptin) and increases cravings.</p>
+          
+          <h2>Why Calorie Counting Often Fails After 40</h2>
+          <p>The same 500-calorie deficit that worked at 30 might not work at 45 because:</p>
+          <ul>
+            <li>Your metabolic rate has decreased</li>
+            <li>Your body is more efficient at conserving energy</li>
+            <li>Hormonal responses to calorie restriction are different</li>
+          </ul>
+          
+          <h2>Practical Implementation</h2>
+          
+          <h3>Week 1-2: Foundation</h3>
+          <p>Focus on protein intake and adding 2-3 resistance training sessions weekly.</p>
+          
+          <h3>Week 3-4: Refinement</h3>
+          <p>Add carbohydrate timing strategies and stress management techniques.</p>
+          
+          <h3>Month 2+: Optimization</h3>
+          <p>Fine-tune based on results, considering targeted supplementation if needed.</p>
+          
+          <p>Remember: Sustainable weight management after 40 is a marathon, not a sprint. The goal is metabolic health, not just scale weight.</p>`,
           category: "metabolism",
           readTime: "12 min",
-          date: "2025-03-15",
+          date: "2025-11-28",
           image: "https://i.ibb.co/4g5Wcvqk/Body-Weight-Management-A-Balanced-Equation.jpg",
           imageAlt: "Balanced scale representing weight management equation",
           tags: ["weight management", "metabolism", "hormones", "nutrition", "exercise"]
@@ -2249,39 +1752,66 @@
           id: 14,
           title: "Why Your Blood Flow Matters More After 40: CircO2",
           excerpt: "Discover how CircO2 supports nitric oxide production and why optimal circulation becomes critical for health after 40.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Why Your Blood Flow Matters More After 40: The CircO2 Approach to Circulation Support</h1>
-              <div class="article-meta">
-                <span class="category-pill-circulation" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Circulation</span>
-                <span>•</span>
-                <span>11 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/JRKPY4vD/Why-Your-Blood-Flow-Matters-More-After-40-Circ-O2.jpg" 
-                   alt="Blood flow and circulation visualization with CircO2 supplement" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Optimal circulation supports everything from cognitive function to exercise performance. After 40, supporting nitric oxide production becomes increasingly important.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Review Disclosure:</strong> This is an independent review of CircO2 based on ingredient analysis and scientific research. We may earn commissions from affiliate links.</p>
-              </div>
-              
-              <p>Content would continue with detailed analysis of CircO2's ingredients and mechanisms...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Cardiovascular Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Optimal circulation supports everything from cognitive function to exercise performance. After 40, supporting nitric oxide production becomes increasingly important.
+
+          <div class="article-disclaimer">
+            <p><strong>Review Disclosure:</strong> This is an independent review of CircO2 based on ingredient analysis and scientific research. We may earn commissions from affiliate links.</p>
+          </div>
+          
+          <h2>The Nitric Oxide Decline</h2>
+          
+          <h3>Natural Production Decreases</h3>
+          <p>Nitric oxide (NO) production declines by approximately 10-12% per decade after age 40. By 60, you're producing less than half the NO you did at 20.</p>
+          
+          <h3>Why This Matters</h3>
+          <p>Nitric oxide is your body's primary vasodilator—it tells blood vessels to relax and widen, improving blood flow to all organs and tissues.</p>
+          
+          <h2>The CircO2 Approach</h2>
+          
+          <h3>Dual-Action Formula</h3>
+          <p>CircO2 combines two approaches: providing nitrate precursors that convert to NO, and protecting existing NO from breakdown.</p>
+          
+          <h3>Key Ingredients</h3>
+          <ul>
+            <li><strong>Beet Root Extract:</strong> Rich in dietary nitrates that convert to nitric oxide</li>
+            <li><strong>Hawthorn Berry:</strong> Supports endothelial function and NO production</li>
+            <li><strong>L-Citrulline:</strong> Converts to L-arginine, a NO precursor</li>
+            <li><strong>Vitamin C:</strong> Protects NO from oxidative breakdown</li>
+          </ul>
+          
+          <h2>3 Areas Where Better Circulation Matters Most</h2>
+          
+          <h3>1. Cognitive Function</h3>
+          <p>Your brain receives 20% of your cardiac output. Improved circulation means better oxygen and nutrient delivery to brain cells.</p>
+          
+          <h3>2. Exercise Performance</h3>
+          <p>Better blood flow means more oxygen to working muscles, reduced fatigue, and improved recovery.</p>
+          
+          <h3>3. Energy Levels</h3>
+          <p>Every cell needs oxygen and nutrients. Improved circulation delivers these more efficiently, reducing fatigue.</p>
+          
+          <h2>How to Assess Your Circulation Needs</h2>
+          
+          <h3>Signs You Might Benefit</h3>
+          <ul>
+            <li>Cold hands and feet (especially in warm environments)</li>
+            <li>Exercise fatigue that seems disproportionate to effort</li>
+            <li>Slow recovery from minor injuries or bruises</li>
+            <li>Brain fog that improves with movement</li>
+          </ul>
+          
+          <h2>Realistic Expectations</h2>
+          <p>Circulation support isn't an overnight fix. Most people notice:</p>
+          <ul>
+            <li>Improved exercise endurance within 2-3 weeks</li>
+            <li>Better temperature regulation in extremities within 1 month</li>
+            <li>Enhanced cognitive clarity with consistent use</li>
+          </ul>
+          
+          <p>Remember: Circulation supplements work alongside, not instead of, cardiovascular exercise, proper hydration, and a heart-healthy diet.</p>`,
           category: "circulation",
           readTime: "11 min",
-          date: "2025-03-12",
+          date: "2025-12-15",
           image: "https://i.ibb.co/JRKPY4vD/Why-Your-Blood-Flow-Matters-More-After-40-Circ-O2.jpg",
           imageAlt: "Blood flow and circulation visualization with CircO2 supplement",
           tags: ["circulation", "nitric oxide", "blood flow", "supplements", "review"]
@@ -2290,39 +1820,71 @@
           id: 15,
           title: "The Uncomfortable Talk: Prostate Health After 40",
           excerpt: "Essential information about maintaining prostate health after 40, addressing common concerns and evidence-based support strategies.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">The Uncomfortable Talk: Prostate Health After 40 - What Actually Works</h1>
-              <div class="article-meta">
-                <span class="category-pill-prostate" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Prostate Health</span>
-                <span>•</span>
-                <span>15 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/jZ3YmzWr/The-Uncomfortable-Talk-Prostate-Health.jpg" 
-                   alt="Prostate health awareness and information graphic" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Prostate health is a critical but often overlooked aspect of men's health after 40. Understanding the changes and evidence-based support options can make a significant difference in quality of life.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only and is not medical advice. Always consult with a healthcare provider for prostate health concerns, screenings, and treatment options.</p>
-              </div>
-              
-              <p>Content would continue with comprehensive prostate health information...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Men's Health Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Prostate health is a critical but often overlooked aspect of men's health after 40. Understanding the changes and evidence-based support options can make a significant difference in quality of life.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only and is not medical advice. Always consult with a healthcare provider for prostate health concerns, screenings, and treatment options.</p>
+          </div>
+          
+          <h2>Understanding Prostate Changes After 40</h2>
+          
+          <h3>Benign Prostatic Hyperplasia (BPH)</h3>
+          <p>Nearly 50% of men have some degree of BPH by age 50, increasing to 90% by age 80. This non-cancerous enlargement can affect urinary function.</p>
+          
+          <h3>Hormonal Shifts</h3>
+          <p>Testosterone converts to dihydrotestosterone (DHT), which can contribute to prostate growth. After 40, this conversion can become unbalanced.</p>
+          
+          <h3>Inflammatory Factors</h3>
+          <p>Chronic low-grade inflammation can affect prostate tissue, similar to how it affects other tissues in the body.</p>
+          
+          <h2>Evidence-Based Support Strategies</h2>
+          
+          <h3>Nutritional Approaches</h3>
+          <ul>
+            <li><strong>Saw Palmetto:</strong> May help reduce DHT conversion and prostate size</li>
+            <li><strong>Pygeum Africanum:</strong> Traditional African remedy for urinary symptoms</li>
+            <li><strong>Pumpkin Seed Extract:</strong> Rich in zinc and phytosterols</li>
+            <li><strong>Lycopene:</strong> Antioxidant from cooked tomatoes</li>
+          </ul>
+          
+          <h3>Lifestyle Factors</h3>
+          <ul>
+            <li><strong>Regular Exercise:</strong> Particularly cardiovascular exercise</li>
+            <li><strong>Healthy Weight Maintenance:</strong> Excess body fat affects hormone balance</li>
+            <li><strong>Stress Management:</strong> Chronic stress affects hormonal pathways</li>
+          </ul>
+          
+          <h2>What Actually Works: Research Review</h2>
+          
+          <h3>Saw Palmetto</h3>
+          <p>Multiple studies show improvement in urinary symptoms, though results vary by extract quality and dosage.</p>
+          
+          <h3>Combination Formulas</h3>
+          <p>Research suggests combination approaches (multiple botanicals together) often work better than single ingredients.</p>
+          
+          <h3>Consistency Matters</h3>
+          <p>Prostate support requires consistent use over months, not days or weeks.</p>
+          
+          <h2>Screening and Monitoring</h2>
+          
+          <h3>PSA Testing</h3>
+          <p>Discuss with your healthcare provider about when to start and how often to test based on your risk factors.</p>
+          
+          <h3>Symptom Tracking</h3>
+          <p>Monitor urinary changes: frequency, urgency, nighttime awakenings, flow strength.</p>
+          
+          <h2>When to Seek Professional Help</h2>
+          <ul>
+            <li>Significant changes in urinary patterns</li>
+            <li>Blood in urine or semen</li>
+            <li>Pain during urination or ejaculation</li>
+            <li>Family history of prostate cancer</li>
+          </ul>
+          
+          <p>Proactive prostate health after 40 isn't about fear—it's about maintaining quality of life and addressing changes early when they're most manageable.</p>`,
           category: "prostate",
           readTime: "15 min",
-          date: "2025-03-10",
+          date: "2025-01-08",
           image: "https://i.ibb.co/jZ3YmzWr/The-Uncomfortable-Talk-Prostate-Health.jpg",
           imageAlt: "Prostate health awareness and information graphic",
           tags: ["prostate health", "men's health", "BPH", "supplements", "wellness"]
@@ -2331,39 +1893,81 @@
           id: 16,
           title: "Moving Without Misery: Joints After 40",
           excerpt: "Learn how to maintain joint health and mobility after 40 with evidence-based strategies for movement, nutrition, and supplementation.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Moving Without Misery: Joint Health Strategies for Life After 40</h1>
-              <div class="article-meta">
-                <span class="category-pill-joints" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Joint Health</span>
-                <span>•</span>
-                <span>13 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/MkZLX2Hn/Moving-Without-Misery-Joints-After-40.jpg" 
-                   alt="Person moving comfortably with healthy joints illustration" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Joint discomfort doesn't have to be an inevitable part of aging. With the right strategies, you can maintain mobility, reduce discomfort, and stay active well beyond 40.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. If you have joint pain or arthritis, consult with a healthcare provider for proper diagnosis and treatment.</p>
-              </div>
-              
-              <p>Content would continue with joint health strategies and evidence-based recommendations...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Mobility Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Joint discomfort doesn't have to be an inevitable part of aging. With the right strategies, you can maintain mobility, reduce discomfort, and stay active well beyond 40.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. If you have joint pain or arthritis, consult with a healthcare provider for proper diagnosis and treatment.</p>
+          </div>
+          
+          <h2>Why Joints Change After 40</h2>
+          
+          <h3>Cartilage Thinning</h3>
+          <p>Articular cartilage—the cushion between bones—naturally thins with age and wear.</p>
+          
+          <h3>Synovial Fluid Reduction</h3>
+          <p>The lubricating fluid in joints decreases in quantity and quality.</p>
+          
+          <h3>Collagen Degradation</h3>
+          <p>Type II collagen, the primary structural protein in cartilage, breaks down faster than it's rebuilt.</p>
+          
+          <h2>The 3-Pronged Approach</h2>
+          
+          <h3>1. Movement Strategy</h3>
+          <ul>
+            <li><strong>Low-Impact Exercise:</strong> Swimming, cycling, elliptical</li>
+            <li><strong>Range of Motion Work:</strong> Gentle stretching and mobility exercises</li>
+            <li><strong>Strength Training:</strong> Build muscles around joints for support</li>
+          </ul>
+          
+          <h3>2. Nutritional Support</h3>
+          <ul>
+            <li><strong>Omega-3 Fatty Acids:</strong> Anti-inflammatory effect</li>
+            <li><strong>Type II Collagen:</strong> Specific collagen for joint tissue</li>
+            <li><strong>Glucosamine & Chondroitin:</strong> Cartilage building blocks</li>
+            <li><strong>MSM (Methylsulfonylmethane):</strong> Sulfur source for connective tissue</li>
+          </ul>
+          
+          <h3>3. Lifestyle Adjustments</h3>
+          <ul>
+            <li><strong>Weight Management:</strong> Every pound lost reduces 4 pounds of pressure on knees</li>
+            <li><strong>Proper Footwear:</strong> Supportive shoes for daily activities</li>
+            <li><strong>Activity Modification:</strong> Adjust exercises that cause discomfort</li>
+          </ul>
+          
+          <h2>Evidence-Based Supplement Review</h2>
+          
+          <h3>Glucosamine & Chondroitin</h3>
+          <p>Research shows mixed results but generally positive for osteoarthritis, especially when combined.</p>
+          
+          <h3>Type II Collagen</h3>
+          <p>More specific to joint tissue than general collagen supplements. Studies show reduced joint discomfort.</p>
+          
+          <h3>Turmeric/Curcumin</h3>
+          <p>Potent anti-inflammatory that can reduce joint inflammation and discomfort.</p>
+          
+          <h2>Practical Daily Routine</h2>
+          
+          <h3>Morning</h3>
+          <p>Gentle mobility work before getting out of bed: ankle circles, knee bends, wrist rotations.</p>
+          
+          <h3>Throughout the Day</h3>
+          <p>Break up sitting every 30 minutes with 2 minutes of movement.</p>
+          
+          <h3>Evening</h3>
+          <p>Light stretching before bed to maintain flexibility.</p>
+          
+          <h2>When to Consider Professional Help</h2>
+          <ul>
+            <li>Joint swelling or redness</li>
+            <li>Persistent pain that limits daily activities</li>
+            <li>Joint instability or giving way</li>
+            <li>Morning stiffness lasting more than 30 minutes</li>
+          </ul>
+          
+          <p>Joint health after 40 is about maintenance, not miracles. Consistent small efforts yield significant long-term benefits.</p>`,
           category: "joints",
           readTime: "13 min",
-          date: "2025-03-08",
+          date: "2025-02-14",
           image: "https://i.ibb.co/MkZLX2Hn/Moving-Without-Misery-Joints-After-40.jpg",
           imageAlt: "Person moving comfortably with healthy joints illustration",
           tags: ["joint health", "mobility", "arthritis", "collagen", "inflammation"]
@@ -2372,39 +1976,76 @@
           id: 17,
           title: "Your Second Brain: Gut Health After 40",
           excerpt: "Discover why gut health becomes increasingly important after 40 and how it impacts everything from immunity to mood.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Your Second Brain: Gut Health After 40 - The Foundation of Overall Wellness</h1>
-              <div class="article-meta">
-                <span class="category-pill-gut" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Gut Health</span>
-                <span>•</span>
-                <span>14 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/F4vwr9h2/Your-Second-Brain-Gut-Health-After-40.jpg" 
-                   alt="Gut-brain connection illustration showing digestive system and brain" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Your gut does much more than digest food. After 40, maintaining gut health becomes critical for immune function, mental health, energy levels, and overall vitality.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. If you have digestive issues, consult with a healthcare provider for proper diagnosis and treatment.</p>
-              </div>
-              
-              <p>Content would continue with comprehensive gut health strategies...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Digestive Health Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Your gut does much more than digest food. After 40, maintaining gut health becomes critical for immune function, mental health, energy levels, and overall vitality.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. If you have digestive issues, consult with a healthcare provider for proper diagnosis and treatment.</p>
+          </div>
+          
+          <h2>The Gut-Brain Connection Strengthens With Age</h2>
+          
+          <h3>Neurotransmitter Production</h3>
+          <p>Approximately 90% of serotonin and 50% of dopamine are produced in your gut. Gut health directly affects mood and mental health.</p>
+          
+          <h3>Immune System Headquarters</h3>
+          <p>70-80% of your immune cells reside in gut-associated lymphoid tissue. A healthy gut means a robust immune response.</p>
+          
+          <h3>Nutrient Absorption Efficiency</h3>
+          <p>After 40, digestive enzyme production decreases, making optimal gut function critical for nutrient absorption.</p>
+          
+          <h2>The After-40 Gut Changes</h2>
+          
+          <h3>Microbiome Diversity Decreases</h3>
+          <p>Gut bacterial diversity naturally declines with age, affecting everything from immunity to inflammation.</p>
+          
+          <h3>Digestive Enzyme Production Slows</h3>
+          <p>Your body produces fewer digestive enzymes, making proper breakdown of food more challenging.</p>
+          
+          <h3>Intestinal Permeability Increases</h3>
+          <p>The gut lining can become more permeable ("leaky gut"), allowing undigested particles into the bloodstream.</p>
+          
+          <h2>Evidence-Based Gut Support Strategies</h2>
+          
+          <h3>1. Probiotic Diversity</h3>
+          <p>Different strains address different needs: Lactobacillus for general health, Bifidobacterium for aging guts, Saccharomyces boulardii for traveler's concerns.</p>
+          
+          <h3>2. Prebiotic Fiber</h3>
+          <p>Feed beneficial bacteria with diverse fibers: inulin, resistant starch, pectin, beta-glucans.</p>
+          
+          <h3>3. Digestive Enzymes</h3>
+          <p>Supplemental enzymes can compensate for natural production declines, especially with larger meals.</p>
+          
+          <h3>4. Gut-Lining Support</h3>
+          <p>L-glutamine, zinc carnosine, and collagen can support intestinal barrier integrity.</p>
+          
+          <h2>Signs Your Gut Needs Attention</h2>
+          <ul>
+            <li>Frequent bloating or gas</li>
+            <li>Food intolerances developing</li>
+            <li>Skin issues (eczema, rosacea)</li>
+            <li>Unexplained fatigue</li>
+            <li>Mood fluctuations</li>
+            <li>Joint discomfort</li>
+          </ul>
+          
+          <h2>The 4-Week Gut Reset Protocol</h2>
+          
+          <h3>Week 1: Remove</h3>
+          <p>Eliminate common irritants: processed foods, refined sugars, alcohol, artificial sweeteners.</p>
+          
+          <h3>Week 2: Replace</h3>
+          <p>Add digestive enzymes with meals and increase fermented foods.</p>
+          
+          <h3>Week 3: Reinoculate</h3>
+          <p>Introduce a high-quality probiotic with diverse strains.</p>
+          
+          <h3>Week 4: Repair</h3>
+          <p>Support gut lining with L-glutamine, collagen, or zinc carnosine.</p>
+          
+          <p>Remember: Gut health affects virtually every aspect of wellness after 40. It's not just about digestion—it's about overall vitality.</p>`,
           category: "gut",
           readTime: "14 min",
-          date: "2025-03-05",
+          date: "2025-03-22",
           image: "https://i.ibb.co/F4vwr9h2/Your-Second-Brain-Gut-Health-After-40.jpg",
           imageAlt: "Gut-brain connection illustration showing digestive system and brain",
           tags: ["gut health", "microbiome", "digestion", "probiotics", "immune system"]
@@ -2413,40 +2054,76 @@
           id: 18,
           title: "Neurozoom REVIEW: We Analyzed Every Ingredient",
           excerpt: "Comprehensive ingredient analysis of Neurozoom cognitive support supplement, examining the science behind each component.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">Neurozoom REVIEW: We Analyzed Every Ingredient So You Don't Have To</h1>
-              <div class="article-meta">
-                <span class="category-pill-brain" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Brain Health</span>
-                <span>•</span>
-                <span>16 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/bgbwKF7m/Neurozoom-REVIEW-We-Analyzed-Every-Ingredient.jpg" 
-                   alt="Neurozoom supplement bottle with ingredient analysis" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Our comprehensive analysis of Neurozoom examines each ingredient's scientific backing, dosage, and mechanism of action for cognitive support after 40.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Review Disclosure:</strong> This is an independent review of Neurozoom. We analyze ingredients based on scientific research. We may earn commissions from affiliate links, but this doesn't influence our analysis.</p>
-                <p><strong>Affiliate Compliance:</strong> This is a REVIEW article. We are compensated for reviews through affiliate partnerships. We do not claim to be the creators or owners of Neurozoom.</p>
-              </div>
-              
-              <p>Content would continue with detailed ingredient analysis and scientific evaluation...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Supplement Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Our comprehensive analysis of Neurozoom examines each ingredient's scientific backing, dosage, and mechanism of action for cognitive support after 40.
+
+          <div class="article-disclaimer">
+            <p><strong>Review Disclosure:</strong> This is an independent review of Neurozoom. We analyze ingredients based on scientific research. We may earn commissions from affiliate links, but this doesn't influence our analysis.</p>
+            <p><strong>Affiliate Compliance:</strong> This is a REVIEW article. We are compensated for reviews through affiliate partnerships. We do not claim to be the creators or owners of Neurozoom.</p>
+          </div>
+          
+          <h2>Ingredient-by-Ingredient Analysis</h2>
+          
+          <h3>1. Huperzine A (100mcg)</h3>
+          <p><strong>Mechanism:</strong> Acetylcholinesterase inhibitor - prevents breakdown of acetylcholine, your primary learning and memory neurotransmitter.<br>
+          <strong>Research:</strong> Multiple studies show improved memory consolidation and recall.<br>
+          <strong>Our Assessment:</strong> Well-dosed at clinical levels shown effective in research.</p>
+          
+          <h3>2. Bacopa Monnieri (300mg)</h3>
+          <p><strong>Mechanism:</strong> Adaptogenic herb that modulates neurotransmitters and protects neurons from stress.<br>
+          <strong>Research:</strong> Shown to improve memory acquisition and retention in human trials.<br>
+          <strong>Our Assessment:</strong> Standardized extract ensures consistent active compounds.</p>
+          
+          <h3>3. Phosphatidylserine (100mg)</h3>
+          <p><strong>Mechanism:</strong> Phospholipid that improves cell membrane fluidity and neurotransmitter function.<br>
+          <strong>Research:</strong> Studies show improved memory, learning, and concentration in adults over 50.<br>
+          <strong>Our Assessment:</strong> Effective dose for cognitive support.</p>
+          
+          <h3>4. Ginkgo Biloba (120mg)</h3>
+          <p><strong>Mechanism:</strong> Improves cerebral blood flow and acts as antioxidant.<br>
+          <strong>Research:</strong> Mixed results but generally positive for cognitive function in aging populations.<br>
+          <strong>Our Assessment:</strong> Standardized extract ensures proper active compounds.</p>
+          
+          <h3>5. Rhodiola Rosea (200mg)</h3>
+          <p><strong>Mechanism:</strong> Adaptogen that reduces mental fatigue and improves focus under stress.<br>
+          <strong>Research:</strong> Shown to improve cognitive performance during stressful periods.<br>
+          <strong>Our Assessment:</strong> Good inclusion for stress-related cognitive issues.</p>
+          
+          <h2>Synergy Analysis</h2>
+          
+          <h3>How Ingredients Work Together</h3>
+          <p>The formula combines neurotransmitters support (Huperzine A, Phosphatidylserine), cerebral blood flow (Ginkgo), adaptogens for stress (Rhodiola, Bacopa), and neuroprotection (all antioxidants).</p>
+          
+          <h3>Potential Gaps</h3>
+          <ul>
+            <li>No direct mitochondrial support ingredients</li>
+            <li>Limited anti-inflammatory components</li>
+            <li>No dedicated ingredients for neurogenesis (new neuron growth)</li>
+          </ul>
+          
+          <h2>Comparison to Other Formulas</h2>
+          
+          <h3>vs. Advanced Memory Formula</h3>
+          <p>Neurozoom focuses more on neurotransmitter support while Advanced Memory Formula includes cerebral blood flow and neuroprotection.</p>
+          
+          <h3>vs. Basic Choline Supplements</h3>
+          <p>Neurozoom offers multi-pathway support versus single-mechanism approaches.</p>
+          
+          <h2>Who Would Benefit Most</h2>
+          <ul>
+            <li>Those experiencing age-related memory changes</li>
+            <li>People under chronic stress affecting cognition</li>
+            <li>Individuals looking for multi-ingredient cognitive support</li>
+            <li>Those who have tried single ingredients without sufficient results</li>
+          </ul>
+          
+          <h2>Realistic Expectations</h2>
+          <p>Most users report noticeable effects within 4-6 weeks. This isn't a stimulant-based formula, so effects are subtle but cumulative. Best results come with consistent use alongside good sleep, nutrition, and mental exercise.</p>
+          
+          <h2>Our Verdict</h2>
+          <p>Neurozoom represents a well-formulated middle-ground approach to cognitive support. It addresses multiple pathways with clinically studied ingredients at reasonable doses. While not the most comprehensive formula available, it offers solid value for those seeking evidence-based cognitive support after 40.</p>`,
           category: "brain",
           readTime: "16 min",
-          date: "2025-03-03",
+          date: "2025-04-18",
           image: "https://i.ibb.co/bgbwKF7m/Neurozoom-REVIEW-We-Analyzed-Every-Ingredient.jpg",
           imageAlt: "Neurozoom supplement bottle with ingredient analysis",
           tags: ["neurozoom", "brain health", "supplements", "review", "cognitive function"]
@@ -2455,39 +2132,108 @@
           id: 19,
           title: "5 Habits That Do More for Your Energy Than Any Supplement",
           excerpt: "Discover five evidence-based habits that build foundational energy levels more effectively than any supplement alone.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">5 Habits That Do More for Your Energy Than Any Supplement</h1>
-              <div class="article-meta">
-                <span class="category-pill-energy" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Energy</span>
-                <span>•</span>
-                <span>10 min read</span>
-                <span>•</span>
-                <span>March 2025</span>
-              </div>
-              <img src="https://i.ibb.co/Wwjp7yj/5-Habits-That-Do-More-for-Your-Energy.jpg" 
-                   alt="Five energy-boosting habits illustrated" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Before investing in energy supplements, master these five foundational habits that build sustainable vitality from the ground up.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. These habits complement but don't replace medical treatment for energy-related conditions.</p>
-              </div>
-              
-              <p>Content would continue with five evidence-based energy habits...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Lifestyle Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Before investing in energy supplements, master these five foundational habits that build sustainable vitality from the ground up.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. These habits complement but don't replace medical treatment for energy-related conditions.</p>
+          </div>
+          
+          <h2>Habit 1: The Protein-First Morning</h2>
+          
+          <h3>Why It Works</h3>
+          <p>Starting your day with 30+ grams of protein stabilizes blood sugar for hours, preventing the mid-morning energy crash that follows carbohydrate-heavy breakfasts.</p>
+          
+          <h3>Simple Implementation</h3>
+          <ul>
+            <li>Greek yogurt with nuts and berries</li>
+            <li>Eggs with vegetables</li>
+            <li>Protein smoothie with whey or plant protein</li>
+            <li>Cottage cheese with fruit</li>
+          </ul>
+          
+          <h3>Expected Timeline</h3>
+          <p>Noticeable energy stabilization within 3-5 days.</p>
+          
+          <h2>Habit 2: Strategic Hydration Timing</h2>
+          
+          <h3>Why It Works</h3>
+          <p>Dehydration is a common but overlooked cause of afternoon fatigue. Your brain is 75% water, and even mild dehydration affects cognitive function and energy.</p>
+          
+          <h3>Simple Implementation</h3>
+          <ul>
+            <li>16oz water upon waking (rehydrate after sleep)</li>
+            <li>8oz water 30 minutes before each meal</li>
+            <li>Limit fluids with meals to prevent digestive dilution</li>
+            <li>Electrolyte addition during hot weather or exercise</li>
+          </ul>
+          
+          <h2>Habit 3: The Afternoon Movement Break</h2>
+          
+          <h3>Why It Works</h3>
+          <p>The 2-3 PM energy dip is partly circadian, but movement increases circulation, oxygen delivery, and neurotransmitter production.</p>
+          
+          <h3>Simple Implementation</h3>
+          <ul>
+            <li>10-minute brisk walk (outside if possible for natural light)</li>
+            <li>5 minutes of stair climbing</li>
+            <li>Standing and stretching every 30 minutes if sedentary</li>
+            <li>Deep breathing exercises (increases oxygen uptake)</li>
+          </ul>
+          
+          <h2>Habit 4: Light Exposure Management</h2>
+          
+          <h3>Why It Works</h3>
+          <p>Your circadian rhythm drives energy fluctuations. Morning light advances your rhythm (more morning energy), while evening blue light delays it (affects sleep quality).</p>
+          
+          <h3>Simple Implementation</h3>
+          <ul>
+            <li>10 minutes of morning sunlight within 30 minutes of waking</li>
+            <li>Blue light blocking glasses after sunset</li>
+            <li>Night mode on devices 2 hours before bed</li>
+            <li>Dim lights in the evening to signal melatonin production</li>
+          </ul>
+          
+          <h2>Habit 5: The 5-4-3-2-1 Stress Reset</h2>
+          
+          <h3>Why It Works</h3>
+          <p>Chronic low-grade stress constantly activates your sympathetic nervous system, draining energy reserves. This quick reset activates the parasympathetic (rest and digest) system.</p>
+          
+          <h3>Simple Implementation</h3>
+          <p>When feeling overwhelmed or fatigued:</p>
+          <ul>
+            <li><strong>5</strong> things you can see</li>
+            <li><strong>4</strong> things you can touch</li>
+            <li><strong>3</strong> things you can hear</li>
+            <li><strong>2</strong> things you can smell</li>
+            <li><strong>1</strong> thing you can taste</li>
+          </ul>
+          
+          <h2>Why These Beat Supplements Alone</h2>
+          
+          <h3>Foundation First</h3>
+          <p>Supplements optimize systems; these habits build the systems being optimized. No supplement compensates for poor foundational habits.</p>
+          
+          <h3>Cumulative Effect</h3>
+          <p>Each habit reinforces the others. Better sleep improves stress resilience, which improves digestion, which improves nutrient absorption.</p>
+          
+          <h3>Sustainability</h3>
+          <p>Unlike supplements that stop working when you stop taking them, these habits build lasting physiological changes.</p>
+          
+          <h2>Implementation Strategy</h2>
+          
+          <h3>Week 1-2: Master One Habit</h3>
+          <p>Choose the habit that addresses your biggest energy challenge. Implement it consistently for two weeks before adding another.</p>
+          
+          <h3>Week 3-4: Add Second Habit</h3>
+          <p>Once the first habit feels automatic, add your second priority.</p>
+          
+          <h3>Month 2: Layer In Remaining Habits</h3>
+          <p>By this point, energy improvements should be noticeable, making additional habits easier to adopt.</p>
+          
+          <p>Remember: Energy is a currency earned through daily habits, not something you can supplement your way into without foundational practices.</p>`,
           category: "energy",
-          readTime: "10 min",
-          date: "2025-03-01",
+          readTime: "15 min",
+          date: "2025-05-30",
           image: "https://i.ibb.co/Wwjp7yj/5-Habits-That-Do-More-for-Your-Energy.jpg",
           imageAlt: "Five energy-boosting habits illustrated",
           tags: ["energy", "habits", "lifestyle", "productivity", "wellness"]
@@ -2496,39 +2242,108 @@
           id: 20,
           title: "The Vital Molecule: Nitric Oxide and Circulation",
           excerpt: "Understand why nitric oxide is essential for circulation after 40 and how to support its production naturally.",
-          content: `
-            <div class="article-header">
-              <h1 class="article-title">The Vital Molecule: Nitric Oxide and Circulation After 40</h1>
-              <div class="article-meta">
-                <span class="category-pill-circulation" style="padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block;">Circulation</span>
-                <span>•</span>
-                <span>12 min read</span>
-                <span>•</span>
-                <span>February 2025</span>
-              </div>
-              <img src="https://i.ibb.co/4nMqjpwB/The-Vital-Molecule-Nitric-Oxide-Circulation.jpg" 
-                   alt="Nitric oxide molecule structure and circulation diagram" 
-                   class="article-hero-image" 
-                   loading="lazy">
-            </div>
-            
-            <div class="article-content">
-              <p>Nitric oxide production naturally declines with age, affecting circulation, energy, and cognitive function. Here's how to support this vital molecule after 40.</p>
-              
-              <div class="article-disclaimer">
-                <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Always consult with a healthcare provider for cardiovascular concerns.</p>
-              </div>
-              
-              <p>Content would continue with nitric oxide support strategies...</p>
-            </div>
-            
-            <div class="article-footer">
-              <p>Written by Cardiovascular Research Team • LIORA Health</p>
-            </div>
-          `,
+          content: `Nitric oxide production naturally declines with age, affecting circulation, energy, and cognitive function. Here's how to support this vital molecule after 40.
+
+          <div class="article-disclaimer">
+            <p><strong>Medical Disclaimer:</strong> This information is for educational purposes only. Always consult with a healthcare provider for cardiovascular concerns.</p>
+          </div>
+          
+          <h2>What Nitric Oxide Does</h2>
+          
+          <h3>Primary Vasodilator</h3>
+          <p>NO signals blood vessels to relax and widen, improving blood flow to all organs and tissues.</p>
+          
+          <h3>Neurotransmitter</h3>
+          <p>Acts as signaling molecule in the brain, affecting memory, learning, and neural communication.</p>
+          
+          <h3>Immune Modulator</h3>
+          <p>Helps regulate immune response and inflammation.</p>
+          
+          <h3>Mitochondrial Function</h3>
+          <p>Supports cellular energy production by improving oxygen delivery to mitochondria.</p>
+          
+          <h2>The Age-Related Decline</h2>
+          
+          <h3>Production Decrease</h3>
+          <p>NO production declines approximately 10-12% per decade after age 40 due to reduced endothelial function and enzyme activity.</p>
+          
+          <h3>Increased Breakdown</h3>
+          <p>Oxidative stress increases with age, breaking down NO faster than it's produced.</p>
+          
+          <h3>Precursor Deficiency</h3>
+          <p>L-arginine and L-citrulline—amino acid precursors to NO—may become less available or efficiently converted.</p>
+          
+          <h2>Natural Support Strategies</h2>
+          
+          <h3>1. Dietary Nitrates</h3>
+          <ul>
+            <li><strong>Beetroot:</strong> Highest natural nitrate content</li>
+            <li><strong>Leafy Greens:</strong> Spinach, arugula, kale</li>
+            <li><strong>Radishes:</strong> Particularly daikon radish</li>
+            <li><strong>Celery:</strong> Moderate nitrate content</li>
+          </ul>
+          
+          <h3>2. Amino Acid Precursors</h3>
+          <ul>
+            <li><strong>L-Citrulline:</strong> Converts to L-arginine, then NO</li>
+            <li><strong>L-Arginine:</strong> Direct NO precursor (though less efficiently converted after 40)</li>
+            <li><strong>Food Sources:</strong> Watermelon (citrulline), nuts, seeds, legumes (arginine)</li>
+          </ul>
+          
+          <h3>3. Antioxidant Protection</h3>
+          <p>Antioxidants protect NO from oxidative breakdown:</p>
+          <ul>
+            <li>Vitamin C</li>
+            <li>Vitamin E</li>
+            <li>Polyphenols (berries, dark chocolate, green tea)</li>
+          </ul>
+          
+          <h3>4. Exercise Stimulation</h3>
+          <p>Physical activity, particularly cardiovascular exercise, stimulates endothelial NO production.</p>
+          
+          <h2>Supplement Options</h2>
+          
+          <h3>Beet Root Extract</h3>
+          <p>Standardized for nitrate content. More concentrated than whole beets.</p>
+          
+          <h3>L-Citrulline</h3>
+          <p>Often more effective than L-arginine supplements due to better absorption and conversion.</p>
+          
+          <h3>Combination Formulas</h3>
+          <p>Formulas that combine nitrates, precursors, and antioxidants for multi-pathway support.</p>
+          
+          <h2>Signs You Might Need NO Support</h2>
+          <ul>
+            <li>Cold hands and feet (especially in warm environments)</li>
+            <li>Exercise fatigue disproportionate to effort</li>
+            <li>Slow recovery from workouts</li>
+            <li>Brain fog that improves with movement</li>
+            <li>Erectile dysfunction (men)</li>
+          </ul>
+          
+          <h2>Testing and Monitoring</h2>
+          
+          <h3>Blood Pressure</h3>
+          <p>Improved NO production often correlates with healthier blood pressure readings.</p>
+          
+          <h3>Exercise Performance</h3>
+          <p>Noticeable improvements in endurance and recovery time.</p>
+          
+          <h3>Temperature Regulation</h3>
+          <p>Improved circulation often means better temperature regulation in extremities.</p>
+          
+          <h2>Safety Considerations</h2>
+          <ul>
+            <li>Consult with healthcare provider if on blood pressure medications</li>
+            <li>Start with lower doses if new to nitrate supplementation</li>
+            <li>Monitor for headaches (can indicate blood vessel dilation)</li>
+            <li>Consider beetroot's effect on urine color (harmless but can be startling)</li>
+          </ul>
+          
+          <p>Nitric oxide support after 40 isn't about chasing youth—it's about maintaining optimal circulation for cognitive function, energy, exercise performance, and overall vitality.</p>`,
           category: "circulation",
-          readTime: "12 min",
-          date: "2025-02-25",
+          readTime: "14 min",
+          date: "2025-06-25",
           image: "https://i.ibb.co/4nMqjpwB/The-Vital-Molecule-Nitric-Oxide-Circulation.jpg",
           imageAlt: "Nitric oxide molecule structure and circulation diagram",
           tags: ["nitric oxide", "circulation", "blood flow", "cardiovascular", "supplements"]
@@ -2736,12 +2551,29 @@
           blogGrid.classList.add('hidden');
           searchResultsInfo.style.display = 'none';
           
-          // Update article detail content
-          articleDetail.innerHTML = article.content;
+          // Update article detail content with back button at bottom
+          const bottomBackButton = `
+            <div style="margin-top: 3rem; text-align: center;">
+              <button class="back-button bottom" onclick="showGrid()">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to All Articles
+              </button>
+            </div>
+          `;
+          
+          // Update all author names to "LIORA Health Research Team"
+          let articleContent = article.content;
+          articleContent = articleContent.replace(/Written by .*? • .*? Researcher/g, 'Written by LIORA Health Research Team');
+          articleContent = articleContent.replace(/Written by .*? • .*? Specialist/g, 'Written by LIORA Health Research Team');
+          articleContent = articleContent.replace(/Written by .*?<br>.*?Research Team/g, 'Written by LIORA Health Research Team');
+          
+          articleDetail.innerHTML = articleContent + bottomBackButton;
           articleDetail.classList.remove('hidden');
           articleDetail.classList.add('active');
           
-          // Show back button
+          // Show back button at top
           backButton.style.display = 'flex';
           
           // Scroll to article
@@ -2755,8 +2587,8 @@
           trackArticleView(articleId, article.title);
         }
         
-        // Show grid function
-        function showGrid() {
+        // Show grid function (accessible globally for onclick)
+        window.showGrid = function() {
           // Hide article, show grid
           articleDetail.classList.remove('active');
           articleDetail.classList.add('hidden');
