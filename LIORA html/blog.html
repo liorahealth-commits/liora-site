@@ -216,31 +216,141 @@
       }
       
       .category-filter {
-        padding: 0.75rem 1.75rem;
-        border: 2px solid var(--light-bg);
-        border-radius: 50px;
-        background: white;
-        color: var(--text-medium);
-        font-weight: 600;
-        font-family: 'Lato', sans-serif;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.95rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-      
-      .category-filter:hover {
-        border-color: var(--secondary-color);
-        color: var(--primary-color);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(51, 51, 51, 0.2);
-      }
-      
-      .category-filter.active {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        border-color: transparent;
-        color: white;
-      }
+  padding: 0.75rem 1.75rem;
+  border: 2px solid var(--light-bg);
+  border-radius: 50px;
+  background: white;
+  color: var(--text-medium);
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.category-filter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* All Topics button - remains black when active */
+.category-filter[data-category="all"] {
+  background: white;
+  color: var(--text-medium);
+  border-color: var(--light-bg);
+}
+
+.category-filter[data-category="all"]:hover {
+  border-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.category-filter[data-category="all"].active {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-color: transparent;
+  color: white;
+}
+
+/* Individual category colors */
+.category-filter[data-category="blood-sugar"]:hover {
+  border-color: #FF5722;
+  color: #FF5722;
+}
+
+.category-filter[data-category="blood-sugar"].active {
+  background: #FF5722;
+  border-color: transparent;
+  color: white;
+}
+
+.category-filter[data-category="inflammation"]:hover {
+  border-color: #FF9800;
+  color: #FF9800;
+}
+
+.category-filter[data-category="inflammation"].active {
+  background: #FF9800;
+  border-color: transparent;
+  color: black;
+}
+
+.category-filter[data-category="energy"]:hover {
+  border-color: #FF4081;
+  color: #FF4081;
+}
+
+.category-filter[data-category="energy"].active {
+  background: #FF4081;
+  border-color: transparent;
+  color: white;
+}
+
+.category-filter[data-category="sleep"]:hover {
+  border-color: #536DFE;
+  color: #536DFE;
+}
+
+.category-filter[data-category="sleep"].active {
+  background: #536DFE;
+  border-color: transparent;
+  color: white;
+}
+
+.category-filter[data-category="hormones"]:hover {
+  border-color: #FF6B6B;
+  color: #FF6B6B;
+}
+
+.category-filter[data-category="hormones"].active {
+  background: #FF6B6B;
+  border-color: transparent;
+  color: white;
+}
+
+.category-filter[data-category="brain"]:hover {
+  border-color: #9013FE;
+  color: #9013FE;
+}
+
+.category-filter[data-category="brain"].active {
+  background: #9013FE;
+  border-color: transparent;
+  color: white;
+}
+
+.category-filter[data-category="metabolism"]:hover {
+  border-color: #B8E986;
+  color: #B8E986;
+}
+
+.category-filter[data-category="metabolism"].active {
+  background: #B8E986;
+  border-color: transparent;
+  color: black;
+}
+
+.category-filter[data-category="muscle"]:hover {
+  border-color: #8BC34A;
+  color: #8BC34A;
+}
+
+.category-filter[data-category="muscle"].active {
+  background: #8BC34A;
+  border-color: transparent;
+  color: black;
+}
+
+.category-filter[data-category="oral"]:hover {
+  border-color: #009688;
+  color: #009688;
+}
+
+.category-filter[data-category="oral"].active {
+  background: #009688;
+  border-color: transparent;
+  color: white;
+}
       
       .search-results-info {
         text-align: center;
@@ -430,11 +540,6 @@
         transition: all 0.3s ease;
         font-family: 'Lato', sans-serif;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-      
-      .back-button.bottom {
-        margin-top: 3rem;
-        margin-bottom: 0;
       }
       
       .back-button:hover {
@@ -1094,13 +1199,6 @@
           
           <!-- Blog Grid Container -->
           <div class="blog-grid-container">
-            <!-- Back Button (hidden by default) -->
-            <button class="back-button back-to-grid" style="display: none;">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Back to All Articles
-            </button>
             
             <!-- Blog Grid (Visible by default) -->
             <div class="blog-grid visible" id="blog-grid">
@@ -2669,11 +2767,12 @@ function showArticle(articleId) {
   // Hide grid, show article
   blogGrid.style.display = 'none';
   searchResultsInfo.style.display = 'none';
+  noResults.style.display = 'none';
   
-  // Update article detail content with back button at bottom
+  // Update article detail content with a simple back button at bottom
   const bottomBackButton = `
     <div style="margin-top: 3rem; text-align: center;">
-      <button class="back-button bottom" id="bottom-back-button" onclick="showGrid()">
+      <button class="back-button" onclick="showGrid()">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
           <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -2681,38 +2780,48 @@ function showArticle(articleId) {
       </button>
     </div>
   `;
-          
-          // Update all author names to "LIORA Health Research Team"
-          let articleContent = article.content;
-          articleContent = articleContent.replace(/Written by .*? • .*? Researcher/g, 'Written by LIORA Health Research Team');
-          articleContent = articleContent.replace(/Written by .*? • .*? Specialist/g, 'Written by LIORA Health Research Team');
-          articleContent = articleContent.replace(/Written by .*?<br>.*?Research Team/g, 'Written by LIORA Health Research Team');
-          
-          articleDetail.innerHTML = articleContent + bottomBackButton;
-          articleDetail.classList.remove('hidden');
-          articleDetail.classList.add('active');
-          
-          // Show back button at top
-          backButton.style.display = 'flex';
-          
-          // Add event listener to bottom back button
-          setTimeout(() => {
-            const bottomBackBtn = document.getElementById('bottom-back-button');
-            if (bottomBackBtn) {
-              bottomBackBtn.addEventListener('click', showGrid);
-            }
-          }, 100);
-          
-          // Scroll to article
-          const articleTop = articleDetail.offsetTop;
-          window.scrollTo({
-            top: articleTop - 100,
-            behavior: 'smooth'
-          });
-          
-          // Track analytics
-          trackArticleView(articleId, article.title);
-        }
+  
+  // Update all author names to "LIORA Health Research Team"
+  let articleContent = article.content;
+  articleContent = articleContent.replace(/Written by .*? • .*? Researcher/g, 'Written by LIORA Health Research Team');
+  articleContent = articleContent.replace(/Written by .*? • .*? Specialist/g, 'Written by LIORA Health Research Team');
+  articleContent = articleContent.replace(/Written by .*?<br>.*?Research Team/g, 'Written by LIORA Health Research Team');
+  
+  articleDetail.innerHTML = `
+    <button class="back-button" onclick="showGrid()" style="margin-bottom: 2rem;">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to All Articles
+    </button>
+    <div class="article-header">
+      <h1 class="article-title">${article.title}</h1>
+      <div class="article-meta">
+        <span>${formatDate(article.date)}</span>
+        <span>•</span>
+        <span>${article.readTime} read</span>
+        <span>•</span>
+        <span class="category-pill-${article.category}">${getCategoryLabel(article.category)}</span>
+      </div>
+    </div>
+    <div class="article-content">
+      ${articleContent}
+      ${bottomBackButton}
+    </div>
+  `;
+  
+  // Show article detail
+  articleDetail.style.display = 'block';
+  
+  // Scroll to top of article
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+  
+  // Track analytics
+  trackArticleView(articleId, article.title);
+}
         
         // Show grid function (accessible globally for onclick)
 window.showGrid = function() {
@@ -2721,13 +2830,9 @@ window.showGrid = function() {
   blogGrid.style.display = 'grid';
   updateSearchResultsInfo();
   
-  // Hide back button
-  backButton.style.display = 'none';
-  
-  // Scroll to grid
-  const gridTop = blogGrid.offsetTop;
+  // Scroll to top of grid
   window.scrollTo({
-    top: gridTop - 120,
+    top: 0,
     behavior: 'smooth'
   });
   
