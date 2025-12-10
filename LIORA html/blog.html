@@ -100,13 +100,13 @@
         --blog-card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         --article-max-width: 800px;
         --transition-duration: 0.4s;
-        --primary-color: #1e3a8a;
-        --secondary-color: #3b82f6;
-        --accent-color: #60a5fa;
-        --light-bg: #f0f9ff;
-        --text-dark: #1e293b;
-        --text-medium: #475569;
-        --text-light: #64748b;
+        --primary-color: #000000;
+        --secondary-color: #333333;
+        --accent-color: #666666;
+        --light-bg: #f5f5f5;
+        --text-dark: #000000;
+        --text-medium: #444444;
+        --text-light: #666666;
       }
       
       /* Blog Hero - COMPLETELY REDESIGNED */
@@ -122,7 +122,7 @@
         overflow: hidden;
         margin-bottom: 3rem;
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+                    url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -162,7 +162,7 @@
       .hero-divider {
         width: 100px;
         height: 3px;
-        background: var(--secondary-color);
+        background: #ffffff;
         margin: 2rem auto;
         border-radius: 2px;
       }
@@ -195,7 +195,7 @@
       #blog-search:focus {
         outline: none;
         border-color: var(--secondary-color);
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.2);
       }
       
       .search-icon {
@@ -233,7 +233,7 @@
         border-color: var(--secondary-color);
         color: var(--primary-color);
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
+        box-shadow: 0 6px 20px rgba(51, 51, 51, 0.2);
       }
       
       .category-filter.active {
@@ -388,12 +388,12 @@
         cursor: pointer;
         transition: all 0.3s ease;
         font-family: 'Lato', sans-serif;
-        box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
       
       .blog-read-more:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       }
       
       /* Article Detail View */
@@ -441,7 +441,7 @@
         background: var(--secondary-color);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 6px 20px rgba(51, 51, 51, 0.3);
       }
       
       .back-button svg {
@@ -495,7 +495,7 @@
         margin: 2.5rem 0 1rem;
         font-family: 'Playfair Display', serif;
         padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--secondary-color);
+        border-bottom: 2px solid #000000;
       }
       
       .article-content h3 {
@@ -530,12 +530,12 @@
       }
       
       .article-highlight {
-        background: linear-gradient(120deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%);
-        border-left: 4px solid var(--secondary-color);
+        background: linear-gradient(120deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.01) 100%);
+        border-left: 4px solid #000000;
         padding: 1.5rem;
         margin: 2rem 0;
         border-radius: 0 8px 8px 0;
-        border: 1px solid rgba(59, 130, 246, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.1);
       }
       
       .article-footer {
@@ -804,22 +804,22 @@
         color: #92400E;
       }
       
-      /* Category pill colors - Updated for navy/blue scheme */
-      .category-pill-prostate { background: #DBEAFE; color: #1E40AF; }
-      .category-pill-gut { background: #D1FAE5; color: #065F46; }
-      .category-pill-metabolism { background: #FEF3C7; color: #92400E; }
-      .category-pill-circulation { background: #E0E7FF; color: #3730A3; }
-      .category-pill-joints { background: #EDE9FE; color: #5B21B6; }
-      .category-pill-brain { background: #BFDBFE; color: #1E40AF; }
-      .category-pill-energy { background: #FEF3C7; color: #92400E; }
-      .category-pill-sleep { background: #DBEAFE; color: #1E40AF; }
-      .category-pill-hormones { background: #FCE7F3; color: #9D174D; }
-      .category-pill-supplements { background: #D1FAE5; color: #065F46; }
-      .category-pill-inflammation { background: #FEE2E2; color: #991B1B; }
-      .category-pill-muscle { background: #BFDBFE; color: #1E40AF; }
-      .category-pill-collagen { background: #EDE9FE; color: #5B21B6; }
-      .category-pill-oral { background: #D1FAE5; color: #065F46; }
-      .category-pill-blood-sugar { background: #FEF3C7; color: #92400E; }
+      /* Category pill colors - Updated for black theme */
+      .category-pill-prostate { background: #e6e6e6; color: #000000; }
+      .category-pill-gut { background: #d9d9d9; color: #000000; }
+      .category-pill-metabolism { background: #cccccc; color: #000000; }
+      .category-pill-circulation { background: #bfbfbf; color: #000000; }
+      .category-pill-joints { background: #b3b3b3; color: #000000; }
+      .category-pill-brain { background: #a6a6a6; color: #000000; }
+      .category-pill-energy { background: #999999; color: #000000; }
+      .category-pill-sleep { background: #8c8c8c; color: #ffffff; }
+      .category-pill-hormones { background: #808080; color: #ffffff; }
+      .category-pill-supplements { background: #737373; color: #ffffff; }
+      .category-pill-inflammation { background: #666666; color: #ffffff; }
+      .category-pill-muscle { background: #595959; color: #ffffff; }
+      .category-pill-collagen { background: #4d4d4d; color: #ffffff; }
+      .category-pill-oral { background: #404040; color: #ffffff; }
+      .category-pill-blood-sugar { background: #333333; color: #ffffff; }
     </style>
     
     <!-- Google Tag Manager -->
@@ -2554,7 +2554,7 @@
           // Update article detail content with back button at bottom
           const bottomBackButton = `
             <div style="margin-top: 3rem; text-align: center;">
-              <button class="back-button bottom" onclick="showGrid()">
+              <button class="back-button bottom" id="bottom-back-button">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
                   <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -2575,6 +2575,14 @@
           
           // Show back button at top
           backButton.style.display = 'flex';
+          
+          // Add event listener to bottom back button
+          setTimeout(() => {
+            const bottomBackBtn = document.getElementById('bottom-back-button');
+            if (bottomBackBtn) {
+              bottomBackBtn.addEventListener('click', showGrid);
+            }
+          }, 100);
           
           // Scroll to article
           const articleTop = articleDetail.offsetTop;
